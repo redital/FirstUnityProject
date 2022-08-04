@@ -1,0 +1,5 @@
+PV=12
+PM=6
+ATK=3
+DEF=4
+EXP=1
