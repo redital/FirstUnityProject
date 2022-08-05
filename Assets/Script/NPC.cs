@@ -15,7 +15,7 @@ public class NPC : Collidable
     
     protected override void OnCollide(Collider2D coll){
 
-        if (Input.GetKeyDown(KeyCode.Space)){
+        if (Input.GetKeyDown(KeyCode.Space) & !GameManager.instanza.combatStatus){
             if (coll.name == "Player"){
                 GameManager.instanza.MostraConversationText(frasi,nome);
 

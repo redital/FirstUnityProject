@@ -68,6 +68,15 @@ public class Enemy : Fighter
                 UpdateMotor((startingPosition - transform.position).normalized);
             }
         }
+
+        if(chasing & GameManager.instanza.chasingEnemy.Find(x=>x.transform.name==transform.name)==null){
+            GameManager.instanza.chasingEnemy.Add(this);
+        }
+        else{
+            if(GameManager.instanza.chasingEnemy.Find(x=>x.transform.name==transform.name)!=null){
+                GameManager.instanza.chasingEnemy.Remove(this);
+            }
+        }
     }
 
     protected override void Death(){

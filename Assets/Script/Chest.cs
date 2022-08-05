@@ -31,7 +31,7 @@ public class Chest : Collectable
 
     // Se il giocatore è a contatto con la chest può depredarla, se nonn è già stato fatto, premendo la barra spaziatrice
     protected override void OnCollect(){
-        if (Input.GetKeyDown(KeyCode.Space)){
+        if (Input.GetKeyDown(KeyCode.Space) & !GameManager.instanza.combatStatus){
             if (collected==false){
                 collected=true;
 

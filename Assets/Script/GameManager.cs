@@ -46,6 +46,7 @@ public class GameManager : MonoBehaviour
     public Player player;
 
     // Indicatore del se si sta combattendo o meno (da implementare)
+    public List<Enemy> chasingEnemy = new List<Enemy>();
     public bool combatStatus;
 
     
@@ -156,6 +157,13 @@ public class GameManager : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Escape)){
             SceneManager.LoadScene("MainMenu");
+        }
+
+        if (chasingEnemy.Count!=0){
+            combatStatus=true;
+        }
+        else{
+            combatStatus=false;
         }
 
          /*
