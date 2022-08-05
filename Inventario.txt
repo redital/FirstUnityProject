@@ -1,2 +1,2 @@
-Monete=79
-Pozione=2
+Monete=79
+Pozione=2

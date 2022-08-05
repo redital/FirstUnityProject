@@ -22,12 +22,14 @@ public class ConversationText
         attivo = true;
         go.SetActive(attivo);
         sfondo.enabled=true;
+        Time.timeScale=0;
     }
 
     public void NascondiTesto(){
         attivo = false;
         go.SetActive(attivo);
         sfondo.enabled=false;
+        Time.timeScale=1;
     }
 
     // Per parlare con qulcuno si preme la barra spaziatrice, per andare avanti passando da una frase all'altra si preme la barra spaziatrice, se la frase è l'ultima si chiude la conversazione

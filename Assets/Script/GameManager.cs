@@ -157,6 +157,7 @@ public class GameManager : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Escape)){
             SceneManager.LoadScene("MainMenu");
+            Time.timeScale=1;
         }
 
         if (chasingEnemy.Count!=0){
