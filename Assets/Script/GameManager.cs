@@ -166,6 +166,11 @@ public class GameManager : MonoBehaviour
             combatStatus=false;
         }
 
+        if (Input.GetKeyDown(KeyCode.G))
+        {
+            Debug.Log(string.Join(", ", chasingEnemy));
+        }
+
          /*
         Le funzioni Update (e le sue varianti) vengono richiamate ad ogni frame, gestiamo quindi qui tutti gli input.
         */

@@ -69,11 +69,14 @@ public class Enemy : Fighter
             }
         }
 
-        if(chasing & GameManager.instanza.chasingEnemy.Find(x=>x.transform.name==transform.name)==null){
-            GameManager.instanza.chasingEnemy.Add(this);
+        //Controllo se il nemico va aggiunto alla lista degli inseguitori
+        if(chasing) {
+            if(GameManager.instanza.chasingEnemy.Find(x=>x.transform.name==transform.name)==null){
+                GameManager.instanza.chasingEnemy.Add(this);
+            }
         }
         else{
-            if(GameManager.instanza.chasingEnemy.Find(x=>x.transform.name==transform.name)!=null){
+            if(GameManager.instanza.chasingEnemy.Find(x=>x.transform.name==transform.name)==this){
                 GameManager.instanza.chasingEnemy.Remove(this);
             }
         }
@@ -81,7 +84,13 @@ public class Enemy : Fighter
 
     protected override void Death(){
         base.Death();
+        //Se muore va tolto dalla lista degli inseguitori (se c'è)
+        if(GameManager.instanza.chasingEnemy.Find(x=>x.transform.name==transform.name)==this){
+            GameManager.instanza.chasingEnemy.Remove(this);
+        }
+        //Distruggo l'oggetto dalla scena
         Destroy(gameObject);
+        //assegno i punti esperienza e lo comunico al giocatore
         GameManager.instanza.MostraFloatingText("+" + expVal.ToString() + " exp", transform.position + new Vector3 (0.2f,0.2f,0), motion:Vector3.up*25, color:Color.blue);
         int nuovoValore=expVal + int.Parse(GameManager.instanza.stats["EXP"]);
         GameManager.instanza.stats["EXP"]=nuovoValore.ToString();

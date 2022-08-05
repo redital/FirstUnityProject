@@ -57,9 +57,7 @@ public class Weapon : Collidable
 
     //Agita la spada, fatto ciò l'attacco è concluso e quindi il collider disattivato
     private void Swing (){
-        Debug.Log("Altro");
         anim.SetTrigger("Swing");
-        Debug.Log("Swing");
         GetComponent<BoxCollider2D>().enabled = false;
     }
 
