@@ -5,8 +5,8 @@ using UnityEngine;
 public class Collidable : MonoBehaviour     // Potrebbe essere una classe astratta
 {
     public ContactFilter2D filter;                      // Criterio in base al quale viene decretata una collisione
-    private BoxCollider2D boxCollider;
-    private Collider2D [] hits = new Collider2D[10];    // Posso gestire al massimo 10 collisioni per frame (non so se sia tanto o poco)
+    protected BoxCollider2D boxCollider;
+    protected Collider2D [] hits = new Collider2D[10];    // Posso gestire al massimo 10 collisioni per frame (non so se sia tanto o poco)
 
     // Start is called before the first frame update
     protected virtual void Start(){

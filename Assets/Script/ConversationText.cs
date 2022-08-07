@@ -36,10 +36,10 @@ public class ConversationText
     public void UpdateConversationText(){
         if (attivo){
             if (Input.GetKeyDown(KeyCode.Space)){   //Forse ha più senso metterlo nel ConversationTextManager
-                if (fraseCorrente<frasi.Length-1)
+                if (fraseCorrente<frasi.Length)
                 {
-                    fraseCorrente++;
                     text.text=frasi[fraseCorrente];
+                    fraseCorrente++;
                 }
                 else
                 {
