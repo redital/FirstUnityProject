@@ -11,8 +11,9 @@ public class Enemy : Fighter
     private bool chasing;
     private bool collidingWithPlayer;
 
+    private bool wandering = false;
+
     private Transform playerTransform;  //Riferimento per trovare la posizione del giocatore (non salvo direttamente la posizione perchè dovrei comunque aggioornarla di volta in volta)
-    private Vector3 startingPosition;
 
     public ContactFilter2D filter;      //Metodo in base al quale si decreta la collisione
     private BoxCollider2D hitbox;       //Collider del nemico. Rappresenta l'area all'interno della quale il nemico può essere considerato colpito
@@ -23,7 +24,7 @@ public class Enemy : Fighter
         base.Start();                   // Per non perdere l'assegnazione del BoxCollider (da Mover) e dell'arma (da Fighter)
         playerTransform = GameObject.Find("Player").transform;
         //playerTransform = GameManager.instanza.player.transform;
-        startingPosition=transform.position;
+        //startingPosition=transform.position;
         hitbox = transform.GetComponent<BoxCollider2D>(); //notare che questo parametro è uguale al BoxCollider, lo teniamo perchè potrebbe esserci casi in cui vogliamo una hitbox diversa dal collider che usiamo per il movimento
         // in caso si volesse usare una hitbox diversa si deve creare un GameObject (visto che ogni GameObject può avere un solo collider) e usare GetChild al posto di transform
     }
@@ -47,7 +48,8 @@ public class Enemy : Fighter
         //Controllo se il nemico deve inseguire il giocatore o meno
         if(Vector3.Distance(startingPosition,transform.position)<chaseLenght){
             if (Vector3.Distance(playerTransform.position,transform.position)<triggerLenght){
-                chasing=true;
+                chasing = true;
+                wandering = false;
             }
         }
         else{
@@ -64,8 +66,12 @@ public class Enemy : Fighter
             }
         }
         else{
-            if(Vector3.Distance(startingPosition,transform.position)>0.01){
+            if(Vector3.Distance(startingPosition,transform.position)>0.01 & !wandering){
                 UpdateMotor((startingPosition - transform.position).normalized);
+            }
+            else{
+                wandering=true;
+                Wandering();
             }
         }
 
