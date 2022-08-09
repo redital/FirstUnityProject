@@ -17,23 +17,7 @@ public class Weapon : Collidable
         anim=GetComponent<Animator>();
     }
     
-    protected override void Update(){
-        if (GetComponent<BoxCollider2D>().enabled){
-            if (Time.time - lastSwing > cooldown){
-                lastSwing = Time.time;
-                base.Update();
-                Swing();
-            }
-        }
-        /*
-        Le funzioni Update (e le sue varianti) vengono richiamate ad ogni frame, gestiamo quindi qui tutti gli input.
-        Qui non abbiamo input, l'update viene "attivato" implicitamente dalle classi figlie quando necessario:
-        Quando il combattente non intende attaccare il BoxCollider è disabilitato e quindi tutto il codice dell'Update viene ignorato.
-        Il criterio in base al quale il BoxCollider viene attivato dipende dalla classe figlia.
-        */
-    }
     
-
     //Il BoxCollider è attivo solo quando il combattente intende attaccare, in tal caso se viene effettivamente colpito un altro combattente viene chiamato il metodo Attack
     protected override void OnCollide(Collider2D coll){
         if(coll.tag == "Fighter"){
@@ -46,7 +30,7 @@ public class Weapon : Collidable
     //Metodo deputato al trasferimento del danno da arma a combattente colpito
     protected virtual void Attack(Collider2D coll){
         Damage dmg = new Damage{
-        attackPower = baseDamage*transform.parent.GetComponent<Fighter>().ATK,  //Viene recuperato il valore della statistica di attacco dell'attaccante per il calcoo della potenza d'attacco
+        attackPower = baseDamage*transform.parent.GetComponent<Fighter>().ATK,  //Viene recuperato il valore della statistica di attacco dell'attaccante per il calcolo della potenza d'attacco
         origin = transform.position,
         pushForce = pushForce
         };
@@ -55,10 +39,16 @@ public class Weapon : Collidable
         coll.SendMessage("RecivedDamage",dmg);
     }
 
-    //Agita la spada, fatto ciò l'attacco è concluso e quindi il collider disattivato
-    private void Swing (){
-        anim.SetTrigger("Swing");
-        GetComponent<BoxCollider2D>().enabled = false;
+    //Agita la spada, il collider è gestito durante l'animazione: attivato all'inizio e disattivato alla fine
+    public void Swing (){
+        if (Time.time - lastSwing > cooldown){
+            lastSwing = Time.time;
+            anim.SetTrigger("Swing");
+        }
+    }
+
+    public void Skill (string skillName){
+        anim.SetTrigger(skillName);
     }
 
 }

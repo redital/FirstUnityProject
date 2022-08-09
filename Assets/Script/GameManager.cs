@@ -129,6 +129,7 @@ public class GameManager : MonoBehaviour
         stats = Gestione.GestioneDizionari.LetturaDizionario("Statistiche.txt");
         inventario = Gestione.GestioneDizionari.LetturaDizionario("Inventario.txt");
         monete = int.Parse(inventario["Monete"]);
+        player.LoadStats();
 
         /*
         posizione = Gestione.GestioneDizionari.LetturaDizionario("Posizione.txt");

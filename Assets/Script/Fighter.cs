@@ -18,6 +18,10 @@ public class Fighter : Mover
     //Arma equipaggiata
     protected Weapon weapon;
 
+    //Set di abilità
+
+    protected List<Skill> skillSet = new List<Skill>();
+
     //Sistema per evitare di rimanere bloccati ed avere un attimo di respiro
     protected float immuneTime = 1.0f;
     protected float lastImmune;
@@ -31,7 +35,8 @@ public class Fighter : Mover
 
     //Il danno è gestito dall'arma(classe Weapon), non dal compattente, il combattente decide erò quando usare l'arma
     protected void Attack(){
-        weapon.GetComponent<BoxCollider2D>().enabled = true;
+        weapon.Swing();
+        //weapon.GetComponent<BoxCollider2D>().enabled = true;
     }
     
     //L'arma avversaria trasferisce il danno (inteso come struct Damage) al combattente con cui collide

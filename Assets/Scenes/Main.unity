@@ -11413,6 +11413,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1720223114}
     - target: {fileID: 4179321339966419125, guid: 068c6a40f0365e844b1fbdb8b7852df3, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1720223114}
+    - target: {fileID: 4179321339966419125, guid: 068c6a40f0365e844b1fbdb8b7852df3, type: 3}
       propertyPath: floatingTextManager
       value: 
       objectReference: {fileID: 820427991}
