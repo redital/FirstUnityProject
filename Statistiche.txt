@@ -1,5 +1,9 @@
-PV=12
-PM=6
-ATK=3
-DEF=4
-EXP=1
+PVMAX=12
+PV=7
+PAMAX=4
+PA=4
+PMMAX=6
+PM=6
+ATK=3
+DEF=4
+EXP=1

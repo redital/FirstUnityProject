@@ -19,27 +19,22 @@ namespace Gestione          //Penso possa essere rimosso e fare tutto in maniera
     {
         // Metodo che legge un file e trascrive le informazioni in un dizionario, restituisce il dizionario compilato
         public static Dictionary<string, string> LetturaDizionario(string nomeFile){
-            string text = "";
             Dictionary<string, string> dizionario = new Dictionary<string, string>();
 
             using (var sr = new StreamReader(nomeFile))
             {
-                // Read the stream as a string.
-                text = sr.ReadToEnd();
-            }
-            
-            string[] lines = text.Split('\n');
-
-            foreach (string line in lines){
-                try
+                while (sr.Peek() >= 0)
                 {
-                    dizionario.Add(line.Split("=")[0],line.Split("=")[1]);
+                    string line=sr.ReadLine();
+                    try
+                    {
+                        dizionario.Add(line.Split("=")[0],line.Split("=")[1]);
+                    }
+                    catch (System.Exception)
+                    {
+                        Debug.Log("C'è una riga extra: " + '"' + line +'"');
+                    }
                 }
-                catch (System.Exception)
-                {
-                    Debug.Log("C'è una riga extra: " + '"' + line +'"');
-                }
-                    
             }
             return dizionario;
         }
