@@ -10,12 +10,12 @@ public class BarraPA : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        barraPA.maxValue = int.Parse(GameManager.instanza.stats["PAMAX"]);
+        barraPA.maxValue = GameManager.instanza.player.PAMAX;
     }
 
     // Update is called once per frame
     void Update()
     {
-        barraPA.value=GameObject.Find("Player").GetComponent<Player>().PA;
+        barraPA.value=GameManager.instanza.player.PA;
     }
 }

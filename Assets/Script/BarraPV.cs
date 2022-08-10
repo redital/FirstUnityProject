@@ -10,13 +10,13 @@ public class BarraPV : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        barraPV.maxValue = int.Parse(GameManager.instanza.stats["PVMAX"]);
+        barraPV.maxValue = GameManager.instanza.player.PVMAX;;
     }
 
     // Update is called once per frame
     void Update()
     {
-        barraPV.value=GameObject.Find("Player").GetComponent<Player>().PV;
+        barraPV.value=GameManager.instanza.player.PV;
 
     }
 }
