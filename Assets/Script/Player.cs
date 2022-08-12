@@ -10,13 +10,16 @@ public class Player : Fighter
     public int PA;
     public int PAMAX;
 
+    public int EXP;
+    public int NextLevelEXP;
+
     private bool usingSkill;
     private float skillLastCasted;
     private int lastSkill;
 
     protected override void Start(){
         base.Start();                   // Per non perdere l'assegnazione del BoxCollider (da Mover) e dell'arma (da Fighter)
-        
+
         LoadStats();
 
         skillSet.Add(new Skill{
@@ -30,6 +33,10 @@ public class Player : Fighter
 
     public void LoadStats(){
         // Carico le statistiche salvate
+        LV=int.Parse(GameManager.instanza.stats["LV"]);
+        EXP=int.Parse(GameManager.instanza.stats["EXP"]);
+        NextLevelEXP=20*LV;
+
         PVMAX=int.Parse(GameManager.instanza.stats["PVMAX"]);
         PAMAX=int.Parse(GameManager.instanza.stats["PAMAX"]);
 
@@ -70,7 +77,8 @@ public class Player : Fighter
             }
         }
 
-        if(usingSkill){                                                         //Se la skill è finita rimetto i parametri com'erano (sto pensando di cambiarlo, perchè ora come ora se uso una skill passiva non posso usare le altre skill mentre è attiva)
+        //Se la skill è finita rimetto i parametri com'erano (sto pensando di cambiarlo, perchè ora come ora se uso una skill passiva non posso usare le altre skill mentre è attiva)
+        if(usingSkill){
             if(Time.time-skillLastCasted > skillSet[lastSkill].skillDuration){
                 ATK=(int)Math.Round(ATK/skillSet[lastSkill].ATKMultiplier);
                 DEF=(int)Math.Round(DEF/skillSet[lastSkill].DEFMultiplier);
@@ -78,15 +86,20 @@ public class Player : Fighter
             }
         }
 
-        /*
-        if (!weapon.GetComponent<BoxCollider2D>().enabled){
-            ATK=int.Parse(GameManager.instanza.stats["ATK"]);
-        }
-        */
-
         //Aggiorno, altrimenti quando salvo non salva questi cambiamenti
         GameManager.instanza.stats["PV"]=PV.ToString();
         GameManager.instanza.stats["PA"]=PA.ToString();
+        EXP=int.Parse(GameManager.instanza.stats["EXP"]);
+        
+
+        //Se raggiunge il numero di punti esperienza richiesti sale di livello e si aggiornano le informazioni
+        if(EXP==NextLevelEXP){
+            LV++;
+            EXP=0;
+            GameManager.instanza.stats["EXP"]=EXP.ToString();
+            NextLevelEXP=20*LV;
+            GameManager.instanza.stats["LV"]=LV.ToString();
+        }
 
         /*
         Le funzioni Update (e le sue varianti) vengono richiamate ad ogni frame, gestiamo quindi qui tutti gli input.

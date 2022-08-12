@@ -56,8 +56,8 @@ public class ConversationTextManager : MonoBehaviour
         return conversationText;
     }
 
-    // Se esiste un ConversationText lo aggiorno
-    private void Update(){
+    // Se esiste un ConversationText lo aggiorno. Uso LateUpdate perchè se dovesse capitare che si aggiorna prima di altro mi ritrovo che la barra spaziatrice che chiude il dialogo, lo riapre da capo.
+    private void LateUpdate(){
         if (conversationText!=null){
             conversationText.UpdateConversationText();
         } 

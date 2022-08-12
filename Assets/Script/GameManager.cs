@@ -20,9 +20,16 @@ public class GameManager : MonoBehaviour
             Destroy (gameObject);
             return;
         }
-        
+        SceneManager.sceneLoaded += RiposizionaGiocatore;   // Ogni volta che viene caricata una nuova scena va posizionato il giocatore nel suo SpownPoint
+        SceneManager.sceneLoaded += Pulizia;                // Ogni volta che viene caricata una nuova scena occorre eliminare eventuali duplicati di alcuni oggetti unici (quelli che ci si porta nel DontDestroyOnLoad)
         SceneManager.sceneLoaded += Carica; // Gestione tramite eventi: questa riga indica che quando accade SceneManager.sceneLoaded allora deve seguire Carica
         DontDestroyOnLoad(gameObject);
+
+        // Non vogliamo distruggere oggetti di valenza generale tra una scena e l'altra
+        DontDestroyOnLoad(instanza.player.gameObject);
+        DontDestroyOnLoad(instanza.floatingTextManager.transform.parent.gameObject);
+        DontDestroyOnLoad(instanza.barraPA.transform.parent.gameObject);                // Si potrebbe cambiare direttamente con il padre (HUD)
+        DontDestroyOnLoad(instanza.menuDiPausa.gameObject);
     }
 
     // Risorse
@@ -37,6 +44,9 @@ public class GameManager : MonoBehaviour
     public string scena;
     public Vector3 position;
 
+    // Riferimenti alla UI
+    public MenuDiPausa menuDiPausa;
+    public BarraPA barraPA;             // Si potrebbe cambiare direttamente con il padre (HUD) (è quello di prima)
 
     // Riferimenti ai TextManager
     public FloatingTextManager floatingTextManager;
@@ -72,7 +82,7 @@ public class GameManager : MonoBehaviour
             motion = new Vector3(0,0,0);
         }
         
-        floatingTextManager.MostraTesto( testo,  fontSize,  ((Color)color),  ((Vector3)position),  ((Vector3)motion),  durata);
+        floatingTextManager.MostraTesto(testo,  fontSize,  ((Color)color),  ((Vector3)position),  ((Vector3)motion),  durata);
     }
     
     /* Metodo per mostrare sullo schermo un ConversationText
@@ -107,19 +117,52 @@ public class GameManager : MonoBehaviour
         conversationTextManager.MostraTesto(testo, speaker,  fontSize,  ((Color)color),  ((Vector3)position),  ((Vector3)motion));
     }
 
+    public void RiposizionaGiocatore(Scene S, LoadSceneMode mode){
+        try
+        {
+            player.transform.position = GameObject.Find("SpawnPoint").transform.position;
+        }
+        catch (System.Exception)
+        {
+        }
+    }
+
+    public void Pulizia(Scene S, LoadSceneMode mode){
+        DistruggiDuplicati(instanza.player.gameObject);
+        DistruggiDuplicati(instanza.floatingTextManager.transform.parent.gameObject);
+        DistruggiDuplicati(instanza.barraPA.transform.parent.gameObject);               // Si potrebbe cambiare direttamente con il padre (HUD) (è quello di prima)
+        DistruggiDuplicati(instanza.menuDiPausa.gameObject);
+    }
+
+    public void DistruggiDuplicati(GameObject oggetto){
+        GameObject[] temp = GameObject.FindObjectsOfType(typeof(GameObject)) as GameObject[];   // Prendo tutti i GameObject
+        List<GameObject> gos = new List<GameObject>();
+        for (int i = 0; i < temp.Length; i++){          // Tra tutti i GameObject cerco quelli che hanno lo stesso nome di quelli d'interesse
+            if (temp[i].name==oggetto.name){
+                gos.Add(temp[i]);
+            }
+        }
+        for (int i = 0; i < gos.Count; i++){            // Tra tutti quelli con lo stesso nome tengo solo quello d'interesse e distruggo gli altri
+            if (gos[i]!=oggetto)
+            {
+                Destroy(gos[i]);
+            }
+        }
+    }
+
     //Aggiorna i file con i valori attualmente salvati nei dizionari
     public void Salva(){
 
         Gestione.GestioneDizionari.ScritturaDizionario(stats,"Statistiche.txt");
         Gestione.GestioneDizionari.ScritturaDizionario(inventario,"Inventario.txt");
 
-        /*
+        
         posizione["Scena"] = SceneManager.GetActiveScene().name;
-        posizione["x"] = Player.transform.position.x.ToString();
-        posizione["y"] = Player.transform.position.y.ToString();
-        posizione["z"] = Player.transform.position.z.ToString();
+        posizione["x"] = player.transform.position.x.ToString();
+        posizione["y"] = player.transform.position.y.ToString();
+        posizione["z"] = player.transform.position.z.ToString();
         Gestione.GestioneDizionari.ScritturaDizionario(posizione,"Posizione.txt");
-        */
+        
 
         Debug.Log("Dati salvati");
     }
@@ -131,12 +174,12 @@ public class GameManager : MonoBehaviour
         monete = int.Parse(inventario["Monete"]);
         player.LoadStats();
 
-        /*
+        
         posizione = Gestione.GestioneDizionari.LetturaDizionario("Posizione.txt");
         scena = posizione["Scena"];
         SceneManager.LoadScene(scena);
-        Player.transform.position = new Vector3(float.Parse(posizione["x"]),float.Parse(posizione["y"]),float.Parse(posizione["z"]));
-        */
+        player.transform.position = new Vector3(float.Parse(posizione["x"]),float.Parse(posizione["y"]),float.Parse(posizione["z"]));
+        
 
         Debug.Log("Dati caricati");
     }
@@ -167,7 +210,8 @@ public class GameManager : MonoBehaviour
         else{
             combatStatus=false;
         }
-
+        
+        //stampa di controllo, effettivamente potrebbe essere tolta ormai
         if (Input.GetKeyDown(KeyCode.G))
         {
             Debug.Log(string.Join(", ", chasingEnemy));

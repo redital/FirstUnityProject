@@ -8,6 +8,9 @@ public class CameraMotor : MonoBehaviour
     public Transform lookAt;        // La camera segue il giocatore, memorizziamo il transform del giocatore per poterne prendere la posizione
     private Vector3 moveDelta;
 
+    private void Start(){
+        lookAt=GameObject.Find("Player").transform;
+    }
 
     // Update is called once per frame
     private void LateUpdate()

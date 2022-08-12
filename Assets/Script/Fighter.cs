@@ -6,6 +6,8 @@ using UnityEngine;
 public class Fighter : Mover
 {
     //Statistiche cambattente
+    public int LV=1;
+
     public int PVMAX = 10;
     public int PV = 10;
     public int ATK=5;

@@ -47,6 +47,7 @@ public class ConversationText
                 }
             }
 
+            //totalmente inutile da quando ho messo timescale=0
             go.transform.position += motion*Time.deltaTime; // Se si imposta del movimento e il testo è attivo applichiamo il movimento
         }
         
