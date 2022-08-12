@@ -366,6 +366,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4943201239623930375, guid: d607cc6d7f363d044ad1348c82b5373c, type: 3}
+      propertyPath: frasi.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4943201239623930375, guid: d607cc6d7f363d044ad1348c82b5373c, type: 3}
+      propertyPath: frasi.Array.data[2]
+      value: "Questa \xE8 la mia seconda frase"
+      objectReference: {fileID: 0}
     - target: {fileID: 4943201239623930393, guid: d607cc6d7f363d044ad1348c82b5373c, type: 3}
       propertyPath: m_Name
       value: Talker
