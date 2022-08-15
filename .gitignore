@@ -49,7 +49,10 @@ crashlytics-build.properties
  
 # Unity User Layout
 UserSettings/Layouts/
+UserSettings/Layouts/default-2021.dwlt
+
 
 # Settings Unity
 Assets/Plugins/GitHub/
 Assets/Plugins/GitHub.meta
+
