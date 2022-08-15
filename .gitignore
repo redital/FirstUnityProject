@@ -49,3 +49,7 @@ crashlytics-build.properties
  
 # Unity User Layout
 UserSettings/Layouts/
+
+# Settings Unity
+Assets/Plugins/GitHub/
+Assets/Plugins/GitHub.meta
