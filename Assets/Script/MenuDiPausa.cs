@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 
 public class MenuDiPausa : MonoBehaviour
@@ -8,13 +9,36 @@ public class MenuDiPausa : MonoBehaviour
     private Animator anim;
     private bool attivo;
 
-    public TMPro.TextMeshProUGUI testoNomeLivello;
+    private TMPro.TextMeshProUGUI testoNomeLivello;
+
+    private Image spriteArma;
+    private TMPro.TextMeshProUGUI nomeArma;
+    private TMPro.TextMeshProUGUI bonusArma;
+
+    private Image[] abilità = new Image[5];
+    private Sprite noAbilità;
+
+    private TMPro.TextMeshProUGUI testoMonete;
+
+
 
     private void Start(){
         anim=GetComponent<Animator>();
         attivo=false;                           // All'inizio il menu di pausa è chiuso
         testoNomeLivello=GameObject.Find("TestoNomeLivello").GetComponent<TMPro.TextMeshProUGUI>();
-        //GetComponent<TMPro.TextMeshProUGUI>().text
+
+        nomeArma=GameObject.Find("NomeArma").GetComponent<TMPro.TextMeshProUGUI>();
+        bonusArma=GameObject.Find("BonusArma").GetComponent<TMPro.TextMeshProUGUI>();
+        spriteArma=GameObject.Find("SpriteArma").GetComponent<Image>();
+
+        noAbilità=GameObject.Find("Abilità 1").GetComponent<Image>().sprite;
+        for (int i = 0; i < 5; i++)
+        {
+            abilità[i]=GameObject.Find("Abilità " + (i+1)).GetComponent<Image>();
+        }
+
+        testoMonete=GameObject.Find("TestoMonete").GetComponent<TMPro.TextMeshProUGUI>();
+
         AggiornaContenuto();
     }
 
@@ -33,6 +57,28 @@ public class MenuDiPausa : MonoBehaviour
 
     private void AggiornaContenuto(){
         testoNomeLivello.text= /*testoNomeLivello.text*/ "Nemaco - LV " + GameManager.instanza.stats["LV"];
+
+        nomeArma.text=GameManager.instanza.player.transform.GetChild(0).GetComponent<Weapon>().nomeArma;
+        bonusArma.text="ATK Bonus " + (GameManager.instanza.player.transform.GetChild(0).GetComponent<Weapon>().baseDamage-1)*100 +"%";
+        spriteArma.sprite=GameManager.instanza.player.transform.GetChild(0).GetComponent<SpriteRenderer>().sprite;
+
+        for (int i = 0; i < 5; i++)
+        {
+            if (i<GameManager.instanza.player.skillSet.Count){
+                if (GameManager.instanza.player.skillSet[i]!=null){
+                    abilità[i].sprite=GameManager.instanza.player.skillSet[i].sprite;
+                }
+                else{
+                    abilità[i].sprite=noAbilità;
+                }
+            }
+            else{
+                abilità[i].sprite=noAbilità;
+            }
+        }
+        
+        testoMonete.text= /*testoNomeLivello.text*/ "Monete: " + GameManager.instanza.inventario["Monete"];
+
     }
 
     private void Update(){

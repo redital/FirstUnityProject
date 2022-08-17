@@ -59,6 +59,13 @@ public class GameManager : MonoBehaviour
     public List<Enemy> chasingEnemy = new List<Enemy>();
     public bool combatStatus;
 
+    // Lista ti tutte le skill
+    public List<Skill> skillList = new List<Skill>();
+
+    private void Start(){
+        skillList=LetturaListaSkill("ListaSkill.txt");
+    }
+
     
     
     // Logica

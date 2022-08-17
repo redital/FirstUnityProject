@@ -8,6 +8,11 @@ public class Fighter : Mover
     //Statistiche cambattente
     public int LV=1;
 
+    public int PA=10;
+    public int PAMAX=10;
+    public float PARecovery=0.0f;
+    public float PARecoveryAmount=0.1f;
+
     public int PVMAX = 10;
     public int PV = 10;
     public int ATK=5;
@@ -22,7 +27,7 @@ public class Fighter : Mover
 
     //Set di abilità
 
-    protected List<Skill> skillSet = new List<Skill>();
+    public List<Skill> skillSet = new List<Skill>();
 
     //Sistema per evitare di rimanere bloccati ed avere un attimo di respiro
     protected float immuneTime = 1.0f;
@@ -58,6 +63,18 @@ public class Fighter : Mover
         }
 
         
+    }
+
+    protected virtual void FixedUpdate(){
+        //Quando si è accumulato almeno un punto abilità questo viene assegnato (ricordo PA è un intero)
+        if ((int)Math.Floor(PARecovery)==1)
+        {
+            if (PA<PAMAX)
+            {
+                PA++;
+            }
+            PARecovery+=-1.0f;
+        }
     }
 
     protected virtual void Death(){

@@ -31,7 +31,8 @@ public class Enemy : Fighter
     
     
     // Update is called once per frame
-    protected virtual void FixedUpdate(){
+    protected override void FixedUpdate(){
+        base.FixedUpdate();
         //Controllo se c'è collisione con il giocatore
         hitbox.OverlapCollider(filter,hits);
         collidingWithPlayer = false;

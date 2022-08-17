@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class Weapon : Collidable
 {
-    public int baseDamage = 1;          //Danno base dovuto all'arma, il danno totale è calcolato come AttaccoBase*ATKAttaccante/DEFRicevennte
+    public string nomeArma = "Spada di legno";
+
+    public float baseDamage = 1;          //Danno base dovuto all'arma, il danno totale è calcolato come AttaccoBase*ATKAttaccante/DEFRicevennte
     public float pushForce = 2.0f;
 
     private float cooldown = 0.25f;      //Si può seferrare un attacco ogni <cooldown> secondi (questo anche e sopratutto perchè l'animazione dura <cooldown> secondi (non è automatica la cosa))
@@ -37,6 +39,13 @@ public class Weapon : Collidable
 
         //GameManager.instanza.MostraFloatingText(dmg.damageAmount.ToString(), transform.position);
         coll.SendMessage("RecivedDamage",dmg);
+
+        //Ogni volta che un colpo va a segno si recuperano un tot di PA
+        if (Time.time - lastSwing > cooldown){
+            lastSwing = Time.time;
+            transform.parent.GetComponent<Fighter>().PARecovery+=transform.parent.GetComponent<Fighter>().PARecoveryAmount;
+        }
+        
     }
 
     //Agita la spada, il collider è gestito durante l'animazione: attivato all'inizio e disattivato alla fine

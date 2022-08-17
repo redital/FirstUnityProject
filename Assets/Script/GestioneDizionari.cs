@@ -28,7 +28,7 @@ namespace Gestione          //Penso possa essere rimosso e fare tutto in maniera
                     string line=sr.ReadLine();
                     try
                     {
-                        dizionario.Add(line.Split("=")[0],line.Split("=")[1]);
+                        dizionario.Add(line.Split("=")[0] , line.Split("=")[1]);
                     }
                     catch (System.Exception)
                     {
@@ -74,6 +74,40 @@ namespace Gestione          //Penso possa essere rimosso e fare tutto in maniera
 
         public static void AggiornaStatistiche(string chiave, string valore){
             AggiornaCose(chiave, valore, "Statistiche.txt");
+        }
+
+        public static List<Skill> LetturaListaSkill(string nomeFile){
+            //Dictionary<string, string> dizionario = new Dictionary<string, string>();
+            List<Skill> skillList = new List<Skill>();
+
+            using (var sr = new StreamReader(nomeFile))
+            {
+                while (sr.Peek() >= 0)
+                {
+                    string[] lines = new string[7];
+                    for (int i = 0; i < 7; i++)
+                    {
+                        lines[i]=sr.ReadLine();
+                    }
+                    Skill skill = new Skill{
+                        name=lines[0].Split("=")[1],
+                        ATKMultiplier=float.Parse(lines[1].Split("=")[1]),
+                        DEFMultiplier=float.Parse(lines[2].Split("=")[1]),
+                        skillDuration=float.Parse(lines[3].Split("=")[1])/60.0f,  //non credo sia la soluzione migliore ma è l'unica che mi viene in mente
+                        PAConsumati=int.Parse(lines[4].Split("=")[1]),
+                        sprite=Resources.Load("IconeAbilità/"+lines[5].Split("=")[1]) as Sprite
+                    };
+                    try
+                    {
+                        skillList.Add(skill);
+                    }
+                    catch (System.Exception)
+                    {
+                        Debug.Log("non sono riuscito ad aggiungere " + lines);
+                    }
+                }
+            }
+            return skillList;
         }
 
     }

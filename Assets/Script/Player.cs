@@ -7,9 +7,6 @@ using UnityEngine;
 
 public class Player : Fighter
 {
-    public int PA;
-    public int PAMAX;
-
     public int EXP;
     public int NextLevelEXP;
 
@@ -22,13 +19,8 @@ public class Player : Fighter
 
         LoadStats();
 
-        skillSet.Add(new Skill{
-            name="RotationSkill",
-            ATKMultiplier=2.0f,
-            DEFMultiplier=1.0f,
-            skillDuration=50.0f/60.0f,  //non credo sia la soluzione migliore ma è l'unica che mi viene in mente
-            PAConsumati=1
-        });
+        skillSet.Add(null);        
+        skillSet.Add(GameManager.instanza.skillList.Find(x => x.name=="RotationSkill"));
     }
 
     public void LoadStats(){
@@ -47,7 +39,8 @@ public class Player : Fighter
         DEF=int.Parse(GameManager.instanza.stats["DEF"]);
     }
 
-    private void FixedUpdate(){
+    protected override void FixedUpdate(){
+        base.FixedUpdate();
         //Imposto il movimento del giocatore in base agli input ricevuti
         float x = Input.GetAxisRaw("Horizontal");
         float y = Input.GetAxisRaw("Vertical");
@@ -63,17 +56,18 @@ public class Player : Fighter
             int indice;                                                         //numero premuto
             bool is_a_number = Int32.TryParse(Input.inputString, out indice);   //controllo se è effettivamente un numero e nel caso lo memorizzo
             if (is_a_number && indice > 0 && indice <= skillSet.Count){         //se è un numero ed è un numero accettabile (se ho 3 skill e premi 4 non succede nulla)
-                Skill skill=skillSet[indice-1];                                 //prendo la skill corrispondente al numero
-                if(PA-skill.PAConsumati>=0){
-                    PA=PA - skill.PAConsumati;
-                    ATK=(int)(ATK*skill.ATKMultiplier);
-                    DEF=(int)(DEF*skill.DEFMultiplier);
-                    weapon.Skill(skill.name);                                       //performo la skill
-                    usingSkill=true;
-                    skillLastCasted=Time.time;
-                    lastSkill=indice-1;
-                }
-                
+                if (skillSet[indice-1]!=null){
+                    Skill skill=skillSet[indice-1];                                 //prendo la skill corrispondente al numero
+                    if(PA-skill.PAConsumati>=0){
+                        PA=PA - skill.PAConsumati;
+                        ATK=(int)(ATK*skill.ATKMultiplier);
+                        DEF=(int)(DEF*skill.DEFMultiplier);
+                        weapon.Skill(skill.name);                                       //performo la skill
+                        usingSkill=true;
+                        skillLastCasted=Time.time;
+                        lastSkill=indice-1;
+                    }
+                }    
             }
         }
 

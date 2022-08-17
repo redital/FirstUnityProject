@@ -9,4 +9,5 @@ public class Skill
     public float DEFMultiplier;
     public float skillDuration;
     public int PAConsumati;
+    public Sprite sprite;
 }
