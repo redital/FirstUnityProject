@@ -110,6 +110,38 @@ namespace Gestione          //Penso possa essere rimosso e fare tutto in maniera
             return skillList;
         }
 
+        public static List<Item> LetturaListaItems(string nomeFile){
+            //Dictionary<string, string> dizionario = new Dictionary<string, string>();
+            List<Item> itemList = new List<Item>();
+
+            using (var sr = new StreamReader(nomeFile))
+            {
+                while (sr.Peek() >= 0)
+                {
+                    string[] lines = new string[5];
+                    for (int i = 0; i < 5; i++)
+                    {
+                        lines[i]=sr.ReadLine();
+                    }
+                    Item item = new Item{
+                        name=lines[0].Split("=")[1],
+                        quantità=int.Parse(lines[1].Split("=")[1]),
+                        spriteName=lines[2].Split("=")[1],
+                        isStackable=lines[3].Split("=")[1]=="true"
+                    };
+                    try
+                    {
+                        itemList.Add(item);
+                    }
+                    catch (System.Exception)
+                    {
+                        Debug.Log("non sono riuscito ad aggiungere " + lines);
+                    }
+                }
+            }
+            return itemList;
+        }
+
     }
 
 }

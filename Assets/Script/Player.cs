@@ -14,13 +14,30 @@ public class Player : Fighter
     private float skillLastCasted;
     private int lastSkill;
 
+    public Inventario inventario;
+
     protected override void Start(){
         base.Start();                   // Per non perdere l'assegnazione del BoxCollider (da Mover) e dell'arma (da Fighter)
 
         LoadStats();
 
-        skillSet.Add(null);        
-        skillSet.Add(GameManager.instanza.skillList.Find(x => x.name=="RotationSkill"));
+        // Inizializzo lo skillset con 5 skill vuote
+        for (int i = 0; i < 5; i++)
+        {
+            skillSet.Add(null);
+        }
+             
+        skillSet[1]=GameManager.instanza.skillList.Find(x => x.name=="RotationSkill");
+
+
+        inventario=new Inventario();
+        foreach (string key in GameManager.instanza.inventario.Keys)
+        {
+            if (GameManager.instanza.itemList.Find(x => x.name==key)!=null)
+            {
+                inventario.AddItem(GameManager.instanza.itemList.Find(x => x.name==key),int.Parse(GameManager.instanza.inventario[key]));
+            }
+        }
     }
 
     public void LoadStats(){

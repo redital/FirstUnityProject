@@ -1,2 +1,3 @@
 Monete=79
-Pozione=2
+Spada di legno=1
+Cristiani=3

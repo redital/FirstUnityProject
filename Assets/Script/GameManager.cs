@@ -59,11 +59,15 @@ public class GameManager : MonoBehaviour
     public List<Enemy> chasingEnemy = new List<Enemy>();
     public bool combatStatus;
 
-    // Lista ti tutte le skill
+    // Lista di tutte le skill
     public List<Skill> skillList = new List<Skill>();
+
+    // Lista di tutti gli ogetti
+    public List<Item> itemList = new List<Item>();
 
     private void Start(){
         skillList=LetturaListaSkill("ListaSkill.txt");
+        itemList=LetturaListaItems("ListaOggetti.txt");
     }
 
     
@@ -209,6 +213,7 @@ public class GameManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape)){
             SceneManager.LoadScene("MainMenu");
             Time.timeScale=1;
+            instanza.menuDiPausa.NascondiMenuDiPausa();
         }
 
         if (chasingEnemy.Count!=0){

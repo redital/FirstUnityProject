@@ -1,0 +1,10 @@
+name=Spada di legno
+quantità=1
+spriteName=weapon_0
+isStackable=false
+|
+name=Cristiani
+quantità=1
+spriteName=Player_1
+isStackable=true
+|
