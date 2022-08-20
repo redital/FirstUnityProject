@@ -103,6 +103,7 @@ public class MenuDiPausa : MonoBehaviour
             if (inventario.itemList[i]!=null){
                 goRectTransform.transform.GetChild(0).gameObject.SetActive(true);
                 goRectTransform.transform.GetChild(0).GetComponent<Image>().sprite=Resources.Load("IconeOggetti/"+inventario.itemList[i].spriteName) as Sprite;
+                goRectTransform.transform.GetChild(0).GetComponent<RectTransform>().anchoredPosition = new Vector2(0,0);
                 
                 goRectTransform.transform.GetChild(1).gameObject.SetActive(inventario.itemList[i].isStackable);
                 goRectTransform.transform.GetChild(1).GetComponent<TMPro.TextMeshProUGUI>().text=inventario.itemList[i].quantità.ToString();
@@ -166,6 +167,12 @@ public class MenuDiPausa : MonoBehaviour
             }
             
         }
+    }
+
+
+    public void MoveItem(int posizioneIniziale, int posizioneFinale){
+        inventario.MoveItem(posizioneIniziale,posizioneFinale);
+        AggiornaContenuto();
     }
 
     private void Update(){

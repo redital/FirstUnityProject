@@ -5,30 +5,37 @@ using UnityEngine;
 public class Inventario
 {
     public List<Item> itemList;
+    public int capienza=20;        // Il numero di slot che vogliamo rendere disponibili
 
-    public Inventario(){
+    public Inventario(){            // Costruttore
         itemList = new List<Item>();
-        for (int i = 0; i < 20; i++)
+        // L'inventario viene inizializzato con il numero di slot che vogliamo rendere disponibili
+        for (int i = 0; i < capienza; i++)
         {
             itemList.Add(null);
         }
     }
 
+    // Metodo per l'aggiunta di oggetti all'inventario
     public void AddItem(Item item, int quantità){
         
         bool trovato=false;
-        
+        // Se l'oggetto è impilabile, cerco una occorrenza di tale oggetto nell'inventario
         if (item.isStackable){    
             foreach (Item currentItem in itemList){
                 if (currentItem!=null){
                     if (currentItem.name==item.name){
+                        // Se lo trovo aggiorno la quantità dell'occorrenza già presente
                         currentItem.quantità+=quantità;
                         trovato=true;
+                        return;
                     }
                 }
             }
         }
 
+        // Se non trovo nessuna occorrenza oppure l'oggetto non è impilabile, allora aggiungo l'oggetto 
+        // Se l'ogetto non è impilabile, la ricerca precedente non viene eseguita e quindi trovato sarà sicuramente false
         if (!trovato)
         {
             for (int i = 0; i < itemList.Count; i++)
@@ -41,35 +48,14 @@ public class Inventario
                 }
             }
             
+            // Se l'oggetto viene aggiunto c'è un return, se si arriva qui quindi vuol dire che non è stato possibile aggiungere l'oggetto
             Debug.Log("Inventario pieno");
         }
-        
-        
+    }
 
-
-        /*
-                if (item.isStackable)
-                {
-                    bool trovato=false;
-                    foreach (Item currentItem in itemList)
-                    {
-                        if (currentItem.name==item.name)
-                        {
-                            currentItem.quantità+=item.quantità;
-                            trovato=true;
-                        }
-                    }
-                    if (!trovato)
-                    {
-                        itemList[i]=item;
-                        //itemList.Add(item);
-                    }
-                }
-                else{
-                    itemList[i]=item;
-                    //itemList.Add(item);
-                }       
-        */
-
+    public void MoveItem(int posizioneIniziale, int posizioneFinale){
+        Item temp = itemList[posizioneIniziale];
+        itemList[posizioneIniziale] = itemList[posizioneFinale];
+        itemList[posizioneFinale] = temp;
     }
 }
