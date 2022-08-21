@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -80,6 +81,7 @@ public class MenuDiPausa : MonoBehaviour
             if (GameManager.instanza.player.skillSet[i]!=null){
                 goRectTransform.transform.GetChild(0).gameObject.SetActive(true);
                 goRectTransform.transform.GetChild(0).GetComponent<Image>().sprite=GameManager.instanza.player.skillSet[i].sprite;
+                goRectTransform.transform.GetChild(0).GetComponent<RectTransform>().anchoredPosition = new Vector2(0,0);
                 
                 goRectTransform.transform.GetChild(1).gameObject.SetActive(true);
                 goRectTransform.transform.GetChild(1).GetComponent<TMPro.TextMeshProUGUI>().text=GameManager.instanza.player.skillSet[i].PAConsumati.ToString();
@@ -169,10 +171,53 @@ public class MenuDiPausa : MonoBehaviour
         }
     }
 
+    public void EquipaggiaArma(int indice){
+        Debug.Log("Equipaggiata arma nello slot " + (indice+1));
+        
+        Item temp=GameManager.instanza.itemList.Find(x => x.name==GameManager.instanza.player.transform.GetChild(0).GetComponent<Weapon>().nomeArma);
+
+        GameManager.instanza.player.transform.GetChild(0).GetComponent<Weapon>().nomeArma=inventario.itemList[indice].name;
+        GameManager.instanza.player.transform.GetChild(0).GetComponent<Weapon>().baseDamage=inventario.itemList[indice].feature;
+        GameManager.instanza.player.transform.GetChild(0).GetComponent<SpriteRenderer>().sprite=Resources.Load("IconeOggetti/"+inventario.itemList[indice].spriteName) as Sprite;
+
+        inventario.itemList[indice]=temp;
+        
+        AggiornaContenuto();
+    }
+
+    public void ConsumaOggetto(int indice){
+        Debug.Log("Consumato oggetto nello slot " + (indice+1));
+
+        inventario.itemList[indice].quantità--;
+
+        if (inventario.itemList[indice].name=="Cristiani"){
+            GameManager.instanza.player.Heal((int)Math.Round(inventario.itemList[indice].feature));
+        }
+        else{
+            Debug.Log("Oggetto specifico non implementato");
+        }
+
+        if (inventario.itemList[indice].quantità<1){
+            inventario.itemList[indice]=null;
+        }
+        
+        AggiornaContenuto();
+    }
 
     public void MoveItem(int posizioneIniziale, int posizioneFinale){
         inventario.MoveItem(posizioneIniziale,posizioneFinale);
         AggiornaContenuto();
+    }
+
+    public void MoveSkill(int posizioneIniziale, int posizioneFinale){
+        Skill temp = GameManager.instanza.player.skillSet[posizioneIniziale];
+        GameManager.instanza.player.skillSet[posizioneIniziale] = GameManager.instanza.player.skillSet[posizioneFinale];
+        GameManager.instanza.player.skillSet[posizioneFinale] = temp;
+        AggiornaContenuto();
+    }
+
+    public Item GetItem(int indice){
+        return inventario.itemList[indice];
     }
 
     private void Update(){

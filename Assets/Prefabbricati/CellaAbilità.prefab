@@ -146,6 +146,8 @@ GameObject:
   - component: {fileID: 6582637945588819820}
   - component: {fileID: 6582637945588819822}
   - component: {fileID: 6582637945588819821}
+  - component: {fileID: 8771106742976361642}
+  - component: {fileID: 2489424163888736797}
   m_Layer: 5
   m_Name: Image
   m_TagString: Untagged
@@ -211,6 +213,30 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &8771106742976361642
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6582637945588819811}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0361bcd3a8966f143bb5ef3966d54e41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!225 &2489424163888736797
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6582637945588819811}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &6582637946050991964
 GameObject:
   m_ObjectHideFlags: 0
@@ -222,6 +248,7 @@ GameObject:
   - component: {fileID: 6582637946050991965}
   - component: {fileID: 6582637946050991967}
   - component: {fileID: 6582637946050991966}
+  - component: {fileID: 6525867828016003882}
   m_Layer: 5
   m_Name: "CellaAbilit\xE0"
   m_TagString: Untagged
@@ -289,3 +316,15 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &6525867828016003882
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6582637946050991964}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa93a068b9faf994aa11d8bb4a2112f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

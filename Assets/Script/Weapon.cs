@@ -6,7 +6,7 @@ public class Weapon : Collidable
 {
     public string nomeArma = "Spada di legno";
 
-    public float baseDamage = 1;          //Danno base dovuto all'arma, il danno totale è calcolato come AttaccoBase*ATKAttaccante/DEFRicevennte
+    public float baseDamage = 1.0f;      //Danno base dovuto all'arma, il danno totale è calcolato come AttaccoBase*ATKAttaccante/DEFRicevennte
     public float pushForce = 2.0f;
 
     private float cooldown = 0.25f;      //Si può seferrare un attacco ogni <cooldown> secondi (questo anche e sopratutto perchè l'animazione dura <cooldown> secondi (non è automatica la cosa))

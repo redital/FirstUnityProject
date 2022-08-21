@@ -1,7 +1,7 @@
 name=RotationSkill
-ATKMultiplier=2
-DEFMultiplier=1
-skillDuration=50
-PAConsumati=1 
+ATKMultiplier=2.0
+DEFMultiplier=1.0
+skillDuration=50.0
+PAConsumati=1
 Sprite=RotationSkill
 |

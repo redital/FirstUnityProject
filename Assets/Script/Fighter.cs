@@ -60,9 +60,18 @@ public class Fighter : Mover
                 PV=0;
                 Death();
             }
-        }
+        }        
+    }
 
-        
+    public void Heal(int amount){
+        if (PV+amount<=PVMAX)
+        {
+            PV+=amount;
+        }
+        else
+        {
+            PV=PVMAX;
+        }
     }
 
     protected virtual void FixedUpdate(){

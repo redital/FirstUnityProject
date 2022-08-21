@@ -1,10 +1,21 @@
 name=Spada di legno
+tipo=Arma
 quantità=1
 spriteName=weapon_0
 isStackable=false
+feature=1.0
 |
 name=Cristiani
+tipo=Consumabile
 quantità=1
 spriteName=Player_1
 isStackable=true
+feature=2.0
+|
+name=Stocco
+tipo=Arma
+quantità=1
+spriteName=Weapon_1
+isStackable=false
+feature=2.0
 |

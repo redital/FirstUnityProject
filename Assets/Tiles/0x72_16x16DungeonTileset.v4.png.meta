@@ -1090,7 +1090,7 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1098,6 +1098,27 @@ TextureImporter:
       bones: []
       spriteID: 0b7e8aa0ffd3277458150a3f22b6825b
       internalID: 1335020588
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Weapon_1
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 225
+        width: 10
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8992a08e38383243ba324cc5c89b756
+      internalID: 778302387
       vertices: []
       indices: 
       edges: []
@@ -1135,31 +1156,32 @@ TextureImporter:
       floor_10: 1052012897
       floor_05: 1694585095
       Stairs_5: 1235496123
-      weapon_0: -1283067595
-      Stairs_4: -403441177
-      floor_04: 308217704
-      Stairs_3: 139990120
-      HealingFountain_2: 523658077
-      floor_13: -1790186994
-      DoubleBox_0: 1128854635
-      Pillar_1: 64938593
-      WallBottom_2: -625756392
-      Stairs_1: 1580835475
-      floor_11: -1275536111
-      floor_00: 105901354
-      Pillar_2: 1304347155
-      WallTop_0: 481082526
-      floor_07: -2146438029
-      Player_0: 1273526723
-      floor_12: 863365451
-      Chest_1: -902647318
-      Pillar_0: 1439148513
-      floor_01: 1415280870
-      WallBottom_0: 2008304331
-      SingleBox_0: -1931839505
-      HealingFountain_0: -2081026924
-      WallBottom_1: -79153199
-      floor_08: 278076726
+      weapon_0: -403441177
+      Stairs_4: 308217704
+      floor_04: 139990120
+      Weapon_1: -1283067595
+      Stairs_3: 523658077
+      HealingFountain_2: -1790186994
+      floor_13: 1128854635
+      DoubleBox_0: 64938593
+      Pillar_1: -625756392
+      WallBottom_2: 1580835475
+      Stairs_1: -1275536111
+      floor_11: 105901354
+      floor_00: 1304347155
+      Pillar_2: 481082526
+      WallTop_0: -2146438029
+      floor_07: 1273526723
+      Player_0: 863365451
+      floor_12: -902647318
+      Chest_1: 1439148513
+      Pillar_0: 1415280870
+      floor_01: 2008304331
+      WallBottom_0: -1931839505
+      SingleBox_0: -2081026924
+      HealingFountain_0: -79153199
+      WallBottom_1: 278076726
+      floor_08: 778302387
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

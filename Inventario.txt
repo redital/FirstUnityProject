@@ -1,3 +1,3 @@
 Monete=79
-Spada di legno=1
 Cristiani=3
+Stocco=1

@@ -20,6 +20,7 @@ public class GameManager : MonoBehaviour
             Destroy (gameObject);
             return;
         }
+        SceneManager.sceneLoaded += CreaEventSystem;
         SceneManager.sceneLoaded += RiposizionaGiocatore;   // Ogni volta che viene caricata una nuova scena va posizionato il giocatore nel suo SpownPoint
         SceneManager.sceneLoaded += Pulizia;                // Ogni volta che viene caricata una nuova scena occorre eliminare eventuali duplicati di alcuni oggetti unici (quelli che ci si porta nel DontDestroyOnLoad)
         SceneManager.sceneLoaded += Carica; // Gestione tramite eventi: questa riga indica che quando accade SceneManager.sceneLoaded allora deve seguire Carica
@@ -30,6 +31,7 @@ public class GameManager : MonoBehaviour
         DontDestroyOnLoad(instanza.floatingTextManager.transform.parent.gameObject);
         DontDestroyOnLoad(instanza.barraPA.transform.parent.gameObject);                // Si potrebbe cambiare direttamente con il padre (HUD)
         DontDestroyOnLoad(instanza.menuDiPausa.gameObject);
+        //DontDestroyOnLoad(instanza.eventSystem);
     }
 
     // Risorse
@@ -46,6 +48,7 @@ public class GameManager : MonoBehaviour
 
     // Riferimenti alla UI
     public MenuDiPausa menuDiPausa;
+    public GameObject eventSystem;
     public BarraPA barraPA;             // Si potrebbe cambiare direttamente con il padre (HUD) (è quello di prima)
 
     // Riferimenti ai TextManager
@@ -128,6 +131,32 @@ public class GameManager : MonoBehaviour
         conversationTextManager.MostraTesto(testo, speaker,  fontSize,  ((Color)color),  ((Vector3)position),  ((Vector3)motion));
     }
 
+    public void CreaEventSystem(Scene S, LoadSceneMode mode){
+        // Vorrei fare un ciclo ma per qualche motivo non cambia l'oggetto all'interno
+        GameObject temp1=GameObject.Find("EventSystem");
+        if (temp1!=null)
+        {
+            Debug.Log(GameObject.Find("EventSystem"));
+            Destroy(temp1);
+        }
+        /*
+        GameObject temp2=GameObject.Find("EventSystem");
+        if (temp2!=null)
+        {
+            Debug.Log(GameObject.Find("EventSystem"));
+            Destroy(temp2);
+        }
+        GameObject temp3=GameObject.Find("EventSystem");
+        if (temp3!=null)
+        {
+            Debug.Log(GameObject.Find("EventSystem"));
+            Destroy(temp3);
+        }
+        */
+
+        GameObject.Instantiate(eventSystem);
+    }
+
     public void RiposizionaGiocatore(Scene S, LoadSceneMode mode){
         try
         {
@@ -143,6 +172,7 @@ public class GameManager : MonoBehaviour
         DistruggiDuplicati(instanza.floatingTextManager.transform.parent.gameObject);
         DistruggiDuplicati(instanza.barraPA.transform.parent.gameObject);               // Si potrebbe cambiare direttamente con il padre (HUD) (è quello di prima)
         DistruggiDuplicati(instanza.menuDiPausa.gameObject);
+        //DistruggiDuplicati(instanza.eventSystem);
     }
 
     public void DistruggiDuplicati(GameObject oggetto){

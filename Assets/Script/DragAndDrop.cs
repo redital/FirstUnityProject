@@ -34,6 +34,22 @@ public class DragAndDrop : MonoBehaviour, IPointerClickHandler,IEndDragHandler,I
     void OnDoubleClick()
     {
         Debug.Log("Double Clicked");
+        if (transform.parent.name.Split(" ")[0]=="CellaInventario"){
+            Item item=GameManager.instanza.menuDiPausa.GetItem(int.Parse(transform.parent.name.Split(" ")[1])-1);
+            if (item!=null){
+                if (item.tipo=="Arma")
+                {
+                    GameManager.instanza.menuDiPausa.EquipaggiaArma(int.Parse(transform.parent.name.Split(" ")[1])-1);
+                }
+                if (item.tipo=="Consumabile")
+                {
+                    GameManager.instanza.menuDiPausa.ConsumaOggetto(int.Parse(transform.parent.name.Split(" ")[1])-1);
+                }   
+            }
+        }
+        if (transform.parent.name.Split(" ")[0]=="CellaAbilità"){
+            Debug.Log("Doppio Click su Abilità");
+        }
     }
 
     public void OnBeginDrag(PointerEventData eventData){

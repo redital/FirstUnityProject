@@ -22,7 +22,16 @@ public class ItemSlot : MonoBehaviour, IDropHandler
             oggettoDroppato.GetComponent<DragAndDrop>().ResetCanvasGroup();
 
             //Debug.Log("da " + (int.Parse(cellaDiPartenza.name.Split(" ")[1])) + " a " + (int.Parse(cellaDestinazione.name.Split(" ")[1])));
-            GameManager.instanza.menuDiPausa.MoveItem(int.Parse(cellaDiPartenza.name.Split(" ")[1])-1,int.Parse(cellaDestinazione.name.Split(" ")[1])-1);
+            
+            if (oggettoDroppato.transform.parent.name.Split(" ")[0]=="CellaInventario")
+            {
+                GameManager.instanza.menuDiPausa.MoveItem(int.Parse(cellaDiPartenza.name.Split(" ")[1])-1,int.Parse(cellaDestinazione.name.Split(" ")[1])-1);
+            }
+            
+            if (oggettoDroppato.transform.parent.name.Split(" ")[0]=="CellaAbilità")
+            {
+                GameManager.instanza.menuDiPausa.MoveSkill(int.Parse(cellaDiPartenza.name.Split(" ")[1])-1,int.Parse(cellaDestinazione.name.Split(" ")[1])-1);
+            }
         }
     }
 }

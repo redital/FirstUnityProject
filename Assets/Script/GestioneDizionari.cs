@@ -1,4 +1,5 @@
 using System;
+using System.Globalization;
 using System.IO;
 
 using System.Linq;
@@ -91,9 +92,9 @@ namespace Gestione          //Penso possa essere rimosso e fare tutto in maniera
                     }
                     Skill skill = new Skill{
                         name=lines[0].Split("=")[1],
-                        ATKMultiplier=float.Parse(lines[1].Split("=")[1]),
-                        DEFMultiplier=float.Parse(lines[2].Split("=")[1]),
-                        skillDuration=float.Parse(lines[3].Split("=")[1])/60.0f,  //non credo sia la soluzione migliore ma è l'unica che mi viene in mente
+                        ATKMultiplier=float.Parse(lines[1].Split("=")[1],CultureInfo.InvariantCulture.NumberFormat),
+                        DEFMultiplier=float.Parse(lines[2].Split("=")[1],CultureInfo.InvariantCulture.NumberFormat),
+                        skillDuration=float.Parse(lines[3].Split("=")[1],CultureInfo.InvariantCulture.NumberFormat)/60.0f,  //non credo sia la soluzione migliore ma è l'unica che mi viene in mente
                         PAConsumati=int.Parse(lines[4].Split("=")[1]),
                         sprite=Resources.Load("IconeAbilità/"+lines[5].Split("=")[1]) as Sprite
                     };
@@ -118,16 +119,18 @@ namespace Gestione          //Penso possa essere rimosso e fare tutto in maniera
             {
                 while (sr.Peek() >= 0)
                 {
-                    string[] lines = new string[5];
-                    for (int i = 0; i < 5; i++)
+                    string[] lines = new string[7];
+                    for (int i = 0; i < 7; i++)
                     {
                         lines[i]=sr.ReadLine();
                     }
                     Item item = new Item{
                         name=lines[0].Split("=")[1],
-                        quantità=int.Parse(lines[1].Split("=")[1]),
-                        spriteName=lines[2].Split("=")[1],
-                        isStackable=lines[3].Split("=")[1]=="true"
+                        tipo=lines[1].Split("=")[1],
+                        quantità=int.Parse(lines[2].Split("=")[1]),
+                        spriteName=lines[3].Split("=")[1],
+                        isStackable=lines[4].Split("=")[1]=="true",
+                        feature=float.Parse(lines[5].Split("=")[1],CultureInfo.InvariantCulture.NumberFormat)
                     };
                     try
                     {
