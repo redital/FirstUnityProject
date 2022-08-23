@@ -21,9 +21,9 @@ public class GameManager : MonoBehaviour
             return;
         }
         SceneManager.sceneLoaded += CreaEventSystem;
-        SceneManager.sceneLoaded += RiposizionaGiocatore;   // Ogni volta che viene caricata una nuova scena va posizionato il giocatore nel suo SpownPoint
+        //SceneManager.sceneLoaded += RiposizionaGiocatore;   // Ogni volta che viene caricata una nuova scena va posizionato il giocatore nel suo SpownPoint
         SceneManager.sceneLoaded += Pulizia;                // Ogni volta che viene caricata una nuova scena occorre eliminare eventuali duplicati di alcuni oggetti unici (quelli che ci si porta nel DontDestroyOnLoad)
-        SceneManager.sceneLoaded += Carica; // Gestione tramite eventi: questa riga indica che quando accade SceneManager.sceneLoaded allora deve seguire Carica
+        SceneManager.sceneLoaded += Carica;                 // Gestione tramite eventi: questa riga indica che quando accade SceneManager.sceneLoaded allora deve seguire Carica
         DontDestroyOnLoad(gameObject);
 
         // Non vogliamo distruggere oggetti di valenza generale tra una scena e l'altra
@@ -88,7 +88,7 @@ public class GameManager : MonoBehaviour
 
         Questo metodo richiama il metodo del FloatingTextManager e serve per impostare i valori di default ma sopratutto per permettere una gestione centralizzata
     */
-    public void MostraFloatingText(string testo, Vector3 position, Vector3? motion = null, Color? color = null, int fontSize = 33, float durata = 1.5f){
+    public void MostraFloatingText(string testo, Vector3 position, Vector3? motion = null, Color? color = null, int fontSize = 46, float durata = 1.5f){
         if(color==null){
             color=Color.white;
         }
@@ -111,7 +111,7 @@ public class GameManager : MonoBehaviour
 
         Questo metodo richiama il metodo del ConversationTextManager e serve per impostare i valori di default ma sopratutto per permettere una gestione centralizzata
     */
-    public void MostraConversationText(string[] testo, string speaker, Vector3? position = null, Vector3? motion = null, Color? color = null, int fontSize = 33){
+    public void MostraConversationText(string[] testo, string speaker, Vector3? position = null, Vector3? motion = null, Color? color = null, int fontSize = 46){
         if(conversationTextManager.GetConversationText().attivo){
             return;
         }
@@ -121,7 +121,7 @@ public class GameManager : MonoBehaviour
             color=Color.white;
         }
         if(position==null){
-            position = Camera.main.ViewportToWorldPoint (new Vector3(390.0f/Camera.main.pixelWidth + 0.01f, 0.20f,0));
+            position = Camera.main.ViewportToWorldPoint (new Vector3(900.0f/Camera.main.pixelWidth + 0.01f, 0.135f,0));
             //Debug.Log(300.0f/Camera.main.pixelWidth);
         }
         if(motion==null){
@@ -157,13 +157,12 @@ public class GameManager : MonoBehaviour
         GameObject.Instantiate(eventSystem);
     }
 
-    public void RiposizionaGiocatore(Scene S, LoadSceneMode mode){
-        try
-        {
+    public void RiposizionaGiocatore(){
+        try{
             player.transform.position = GameObject.Find("SpawnPoint").transform.position;
         }
-        catch (System.Exception)
-        {
+        catch (System.Exception){
+            Debug.Log("No SpawnPoint");
         }
     }
 

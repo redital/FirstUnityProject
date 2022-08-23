@@ -6,8 +6,8 @@ public class Enemy : Fighter
 {
     public int expVal = 1;              //Esperienza da dare al giocatore quando sconfigge il nemico
 
-    public float triggerLenght = 1;     //Distanza dal personaggio da cui lo si inizia ad inseguire
-    public float chaseLenght = 2;       //Distanza dalla posizione iniziale da cui lo si inizia a seguire
+    public float triggerLenght = 2;     //Distanza dal personaggio da cui lo si inizia ad inseguire
+    public float chaseLenght = 4;       //Distanza dalla posizione iniziale da cui lo si inizia a seguire
     private bool chasing;
     private bool collidingWithPlayer;
 
@@ -44,6 +44,10 @@ public class Enemy : Fighter
                 }   
             }
             hits[i]=null;
+        }
+        if (Vector3.Distance(playerTransform.position,transform.position)<0.1f)
+        {
+            collidingWithPlayer = true;
         }
 
         //Controllo se il nemico deve inseguire il giocatore o meno

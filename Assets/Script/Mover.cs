@@ -1,19 +1,25 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Mover : MonoBehaviour
 {
+    protected Sprite davanti;
+    public Sprite dietro;
+    public Sprite diLato; 
+
     // Movimenti base
     protected BoxCollider2D BoxCollider;
     protected Vector3 moveDelta;
     protected RaycastHit2D hit;
+    protected float speed = 1.5f;
 
     // Sistema Wandering (cammina in maniera random senza allontanarsi troppo dal punto di partenza)
-    public float wanderingMoveSpeed = 0.08f;
-    public float wanderingMinTime=1.0f, wanderingMaxTime=4.0f;
+    protected float wanderingMoveSpeed = 0.16f;
+    protected float wanderingMinTime=1.0f, wanderingMaxTime=4.0f;
     protected float wanderingDecisionTimeCount = -1.0f;
-    public float maxWanderingDistance = 0.5f;
+    protected float maxWanderingDistance = 0.5f;
 
     protected Vector3 startingPosition;
 
@@ -39,6 +45,7 @@ public class Mover : MonoBehaviour
     protected virtual void Start(){
         BoxCollider = GetComponent<BoxCollider2D>();
         
+        davanti=GetComponent<SpriteRenderer>().sprite;
         startingPosition=this.transform.position;
     }
 
@@ -67,7 +74,7 @@ public class Mover : MonoBehaviour
         }
         else{
             // Setto il tempo per cui durerà la prossima mossa
-            wanderingDecisionTimeCount = Random.Range(wanderingMinTime, wanderingMaxTime);
+            wanderingDecisionTimeCount = UnityEngine.Random.Range(wanderingMinTime, wanderingMaxTime);
  
             // Scelgo la direzione in cui si muoverà per i prossimi decisionTimeCount secondi
             ChooseWanderingMoveDirection();
@@ -77,8 +84,8 @@ public class Mover : MonoBehaviour
     protected void ChooseWanderingMoveDirection()
     {
         // Scelgo randomicamente la direzione tra quelle impostate
-        firstCurrentWanderingMoveDirection = Mathf.FloorToInt(Random.Range(0, moveDirections.Length));
-        secondCurrentWanderingMoveDirection = Mathf.FloorToInt(Random.Range(0, moveDirections.Length));
+        firstCurrentWanderingMoveDirection = Mathf.FloorToInt(UnityEngine.Random.Range(0, moveDirections.Length));
+        secondCurrentWanderingMoveDirection = Mathf.FloorToInt(UnityEngine.Random.Range(0, moveDirections.Length));
     }
 
 
@@ -87,27 +94,42 @@ public class Mover : MonoBehaviour
         moveDelta=input;
 
         //flip del personaggio a seconda che si vada a destra o a sinistra
-        if(moveDelta.x>0){
-            transform.localScale = new Vector3(1,1,1);
-        }
-        else{
-            if (moveDelta.x<0){ 
+        if (Math.Abs(moveDelta.x)>Math.Abs(moveDelta.y)){
+            if(moveDelta.x>0){
+                GetComponent<SpriteRenderer>().sprite = diLato;
+                transform.localScale = new Vector3(1,1,1);
+            }
+            if(moveDelta.x<0){
+                GetComponent<SpriteRenderer>().sprite = diLato; 
                 transform.localScale = new Vector3(-1,1,1);
             }
         }
+        else{
+            if(moveDelta.y>0){
+                GetComponent<SpriteRenderer>().sprite = dietro;
+            }
+            if(moveDelta.y<0){
+                GetComponent<SpriteRenderer>().sprite = davanti;
+            }
+        }
+        
 
         //controllo collisioni asse y
-        hit=Physics2D.BoxCast(transform.position,BoxCollider.size,0,new Vector2(0,moveDelta.y),Mathf.Abs(moveDelta.y*Time.deltaTime),LayerMask.GetMask("Actor","Blocking"));
+        hit=Physics2D.BoxCast(transform.position,BoxCollider.size,0,new Vector2(0,moveDelta.y),Mathf.Abs(moveDelta.y*Time.deltaTime*speed),LayerMask.GetMask("Actor","Blocking"));
 
         if (hit.collider==null){
-            transform.Translate(0,moveDelta.y*Time.deltaTime,0);        
+            transform.Translate(0,moveDelta.y*Time.deltaTime*speed,0);
         }
 
         //controllo collisioni asse x
-        hit=Physics2D.BoxCast(transform.position,BoxCollider.size,0,new Vector2(moveDelta.x,0),Mathf.Abs(moveDelta.x*Time.deltaTime),LayerMask.GetMask("Actor","Blocking"));
+        hit=Physics2D.BoxCast(transform.position,BoxCollider.size,0,new Vector2(moveDelta.x,0),Mathf.Abs(moveDelta.x*Time.deltaTime*speed),LayerMask.GetMask("Actor","Blocking"));
 
         if (hit.collider==null){
-            transform.Translate(moveDelta.x*Time.deltaTime,0,0);        
+            transform.Translate(moveDelta.x*Time.deltaTime*speed,0,0);
+        }
+
+        if (this.transform.GetChild(0).name=="WeaponPosition"){
+            this.transform.GetChild(0).GetChild(0).GetComponent<Weapon>().UpdateWeaponPosition(input);
         }
     }
 }

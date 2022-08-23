@@ -31,7 +31,7 @@ public class ConversationTextManager : MonoBehaviour
         conversationText.speaker.text = speaker;
         conversationText.speaker.fontSize = fontSize;
         conversationText.speaker.color = color;
-        conversationText.goSpeaker.transform.position = Camera.main.WorldToScreenPoint(position + new Vector3(0,0.2f,0));
+        conversationText.goSpeaker.transform.position = Camera.main.WorldToScreenPoint(position + new Vector3(0,0.3f,0));
 
         conversationText.MostraTesto();
     }

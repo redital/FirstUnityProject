@@ -37,7 +37,7 @@ public class Fighter : Mover
 
     protected override void Start(){
         base.Start();
-        weapon = transform.GetChild(0).GetComponent<Weapon>();
+        weapon = transform.GetChild(0).GetChild(0).GetComponent<Weapon>();
     }
 
     //Il danno è gestito dall'arma(classe Weapon), non dal compattente, il combattente decide erò quando usare l'arma

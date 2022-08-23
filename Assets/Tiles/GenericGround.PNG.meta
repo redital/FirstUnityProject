@@ -1,0 +1,5293 @@
+fileFormatVersion: 2
+guid: 0cb2a42dbafabf94a9c2a4dccc527c7c
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 97
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: CiottoliVerdeVivo_0
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 256
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ac87a377556d7142b0980fb071a61cc
+      internalID: 1594362907
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GenericGround 1_1
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 256
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f7102f47e8be134ea66c4e25caa431f
+      internalID: -1681124098
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CiottoliVerdeVivo_6
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 256
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32afdb11597bc2e4eb0171db25fd3fb7
+      internalID: -2076583850
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GenericGround 1_3
+      rect:
+        serializedVersion: 2
+        x: 303
+        y: 256
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be215157cb7c5e349a5bae92e84bb2e4
+      internalID: 1554736776
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GenericGround 1_4
+      rect:
+        serializedVersion: 2
+        x: 335
+        y: 256
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aad4611b44293d743ba0c2ff9a673d4c
+      internalID: 318211664
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GenericGround 1_5
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 256
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 274ee8fa085f3d44da93acfe020cba9f
+      internalID: 1641040387
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CespuglioVerdeVivo
+      rect:
+        serializedVersion: 2
+        x: 1263
+        y: 256
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f4b019a1787bdb49ac7f04bd9941ffe
+      internalID: 1363543404
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CespuglioVerdeBottiglia
+      rect:
+        serializedVersion: 2
+        x: 1295
+        y: 256
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e73ebe994c1e7cf49a0158aa6c8a7266
+      internalID: 760282417
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GenericGround 1_8
+      rect:
+        serializedVersion: 2
+        x: 1327
+        y: 256
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 17fb15d33492fbe4ba5b97b278f129e5
+      internalID: -1177311378
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GenericGround 1_9
+      rect:
+        serializedVersion: 2
+        x: 1359
+        y: 256
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 026f7b14ccf933d4ba8b61b99535e16e
+      internalID: -1084038350
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GenericGround 1_10
+      rect:
+        serializedVersion: 2
+        x: 1391
+        y: 256
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a7864c12f185354a8d43b06ffdab401
+      internalID: 2036423365
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CiottoliVerdeVivo_1
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 224
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fec3a13ffd10ea842b7a6d2c5c5edebe
+      internalID: 544499747
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CiottoliVerdeVivo_2
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 224
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46d290bc30d44f14d88de067dd534beb
+      internalID: 734342963
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CiottoliVerdeVivo_3
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 224
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad5823155e7e8db4f9a197531fdb1f19
+      internalID: 1246377845
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CiottoliVerdeVivo_4
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 224
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3240b5ba18e65d428c8805b97df16c2
+      internalID: -23061934
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GenericGround 1_15
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 224
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 515e95b2ca0ae3e4ca3a8fd3fc753c02
+      internalID: 1955352062
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CiottoliVerdeVivo_5
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 224
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c50e699a9454d17488ceea487709e41c
+      internalID: 1937439842
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GenericGround 1_17
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 224
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 858249b99d6605f41acb05d93cfa516b
+      internalID: -142127521
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GenericGround 1_18
+      rect:
+        serializedVersion: 2
+        x: 303
+        y: 224
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67c8785a41490a74ba30111c7eeb7a26
+      internalID: 641863378
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GenericGround 1_19
+      rect:
+        serializedVersion: 2
+        x: 335
+        y: 224
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e420d5888e9b02544bde84a88635200b
+      internalID: -352653598
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GenericGround 1_20
+      rect:
+        serializedVersion: 2
+        x: 367
+        y: 224
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57cf3c4f1b1deb347b0f91500b47cebb
+      internalID: 1615862075
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GenericGround 1_21
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 224
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ceb5fa44ebf566242a2b50c67b7877ef
+      internalID: 44229679
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GenericGround 1_22
+      rect:
+        serializedVersion: 2
+        x: 431
+        y: 224
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99dfd1969c945a944bfddc16b1a3416a
+      internalID: -2082385517
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ErbaVerdeVivo_0
+      rect:
+        serializedVersion: 2
+        x: 495
+        y: 224
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3336999f6aceb084ab185f809e9b261f
+      internalID: -1078539150
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ErbaVerdeVivo_1
+      rect:
+        serializedVersion: 2
+        x: 527
+        y: 224
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46b2fda2fcfc68046af349e9b178fd08
+      internalID: 575078526
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ErbaVerdeVivo_2
+      rect:
+        serializedVersion: 2
+        x: 559
+        y: 224
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa558c31104f9a44997077f3f91abfbd
+      internalID: 1919214937
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GenericGround 1_26
+      rect:
+        serializedVersion: 2
+        x: 591
+        y: 224
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a14b929b241c8594ba866f44091cd4ae
+      internalID: 610472495
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GenericGround 1_27
+      rect:
+        serializedVersion: 2
+        x: 623
+        y: 224
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66c3baf83c4cbd14ea3c18f5edbcb441
+      internalID: 1377468837
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GenericGround 1_28
+      rect:
+        serializedVersion: 2
+        x: 655
+        y: 224
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56ed24affcbad934890db25cae349c0e
+      internalID: -1413276836
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ErbaVerdeBottiglia_0
+      rect:
+        serializedVersion: 2
+        x: 751
+        y: 224
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0cc88768cbaa0b45ac37fa9a3a78440
+      internalID: -81366894
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ErbaVerdeBottiglia_1
+      rect:
+        serializedVersion: 2
+        x: 783
+        y: 224
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ab2554ee4c7c1641a2406bbf95d5b77
+      internalID: -203585976
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ErbaVerdeBottiglia_2
+      rect:
+        serializedVersion: 2
+        x: 815
+        y: 224
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2ae9c79a84bdfd40ac4a1fefce52aca
+      internalID: -579931518
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GenericGround 1_32
+      rect:
+        serializedVersion: 2
+        x: 847
+        y: 224
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f726b27eb719534489e1153707416f1
+      internalID: -1830932379
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GenericGround 1_33
+      rect:
+        serializedVersion: 2
+        x: 879
+        y: 224
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 631728ac55d47f5498452fa385e00ab3
+      internalID: 2062331894
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GenericGround 1_34
+      rect:
+        serializedVersion: 2
+        x: 911
+        y: 224
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8758329411de10441bd54f53ff25e56d
+      internalID: -432065141
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GenericGround 1_35
+      rect:
+        serializedVersion: 2
+        x: 1007
+        y: 224
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22abd0c31e05f75478dc529bc827ce05
+      internalID: -418084044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GenericGround 1_36
+      rect:
+        serializedVersion: 2
+        x: 1039
+        y: 224
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f00045c64882f341a690976a7baf041
+      internalID: 694449119
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GenericGround 1_37
+      rect:
+        serializedVersion: 2
+        x: 1071
+        y: 224
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ecb18b06f763a0e459e89e41ef391c93
+      internalID: 1178820638
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GenericGround 1_38
+      rect:
+        serializedVersion: 2
+        x: 1103
+        y: 224
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a7ea9f9cd163734cabd348ab59d2053
+      internalID: -656467042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GenericGround 1_39
+      rect:
+        serializedVersion: 2
+        x: 1135
+        y: 224
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78a20f6e49a289f4c82ae95cd6d3fd95
+      internalID: -861090642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GenericGround 1_40
+      rect:
+        serializedVersion: 2
+        x: 1167
+        y: 224
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25dc31f1f4a588448a194f51db270088
+      internalID: -1198347704
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GenericGround 1_41
+      rect:
+        serializedVersion: 2
+        x: 1263
+        y: 224
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60c06cc7f19387b4481f5f3bf04593a7
+      internalID: -2025354550
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GenericGround 1_42
+      rect:
+        serializedVersion: 2
+        x: 1295
+        y: 224
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 30a6112def8158b42aaba54be8246314
+      internalID: 1342867061
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GenericGround 1_43
+      rect:
+        serializedVersion: 2
+        x: 1327
+        y: 224
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83a9b4ae62b134b4ebf2e7d7cd8024dd
+      internalID: -477412444
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GenericGround 1_44
+      rect:
+        serializedVersion: 2
+        x: 1359
+        y: 224
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff7198894a8b41740924379f96f0ca57
+      internalID: 312532310
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GenericGround 1_45
+      rect:
+        serializedVersion: 2
+        x: 1391
+        y: 224
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c46f3241dd6d4154da7908997ddd65b8
+      internalID: -454557833
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GenericGround 1_46
+      rect:
+        serializedVersion: 2
+        x: 1423
+        y: 224
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c67acb12d3541dd428efe745679797a1
+      internalID: -1262903563
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CiottoliVerdeVivo_7
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 192
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8e5f97f09c4b034c9432d29204dd665
+      internalID: -1660332351
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CiottoliVerdeVivo_8
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 192
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5efb73bd603faf94a8690774511984a6
+      internalID: -1259907672
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CiottoliVerdeVivo_9
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 192
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a39eefdad01bf441a7ab768baba738f
+      internalID: 1726701286
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CiottoliVerdeVivo_10
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 192
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 401476ab9d6a8ab4fb3a872e2015fff0
+      internalID: -428708932
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CiottoliVerdeVivo_11
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 192
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1aba3ba357de434789943508985971d
+      internalID: 1041921223
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CiottoliVerdeVivo_12
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 192
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 357f98a4bd5f9ed46a43b67777c61811
+      internalID: -441001115
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GenericGround 1_53
+      rect:
+        serializedVersion: 2
+        x: 239
+        y: 192
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0a3eb9e0555b5741ac139698bc81e69
+      internalID: 2114487777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GenericGround 1_54
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 192
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d1711a9b091d3246b9c9e4b0736af49
+      internalID: -1084306268
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GenericGround 1_55
+      rect:
+        serializedVersion: 2
+        x: 303
+        y: 192
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2dd5e2f30c20f084394de92e30c4bc87
+      internalID: 177997246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GenericGround 1_56
+      rect:
+        serializedVersion: 2
+        x: 335
+        y: 192
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d54aa624556206149aa303753f07478d
+      internalID: -2039989854
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GenericGround 1_57
+      rect:
+        serializedVersion: 2
+        x: 367
+        y: 192
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00f43e933cb59ad48bbd2338a2824791
+      internalID: -526411015
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GenericGround 1_58
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 192
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 734a57da262c2ef4380c1371701f991d
+      internalID: 558811417
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ErbaVerdeVivo_3
+      rect:
+        serializedVersion: 2
+        x: 495
+        y: 192
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 933dbb7b542a694439196b828aa2ffd0
+      internalID: -70118209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ErbaVerdeVivo_4
+      rect:
+        serializedVersion: 2
+        x: 527
+        y: 192
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: baf343244c34f3c42802a2579ac5ccc0
+      internalID: 1323810336
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ErbaVerdeVivo_5
+      rect:
+        serializedVersion: 2
+        x: 559
+        y: 192
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b019d0cf23d7d684c8e8a86f3a94ef37
+      internalID: 870577714
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GenericGround 1_63
+      rect:
+        serializedVersion: 2
+        x: 591
+        y: 192
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c66012544ad6b2e4f8354528d9d0586a
+      internalID: 1795916822
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GenericGround 1_64
+      rect:
+        serializedVersion: 2
+        x: 623
+        y: 192
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af49848eff21cf34abcf7578cf1b2358
+      internalID: 1298930379
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GenericGround 1_65
+      rect:
+        serializedVersion: 2
+        x: 655
+        y: 192
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2c8d359de93cbf4c8fa1add0a4fa0b6
+      internalID: 972679927
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GenericGround 1_66
+      rect:
+        serializedVersion: 2
+        x: 687
+        y: 192
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72e805df08c422148a21a2c6832c50ff
+      internalID: 326962451
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ErbaVerdeBottiglia_3
+      rect:
+        serializedVersion: 2
+        x: 751
+        y: 192
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ed334013756dc445becc2c2bba85631
+      internalID: 1738706982
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ErbaVerdeBottiglia_4
+      rect:
+        serializedVersion: 2
+        x: 783
+        y: 192
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5040904f56a4181498118f51db777d1d
+      internalID: -784134396
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ErbaVerdeBottiglia_5
+      rect:
+        serializedVersion: 2
+        x: 815
+        y: 192
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd2558bfb12cb524398619b2bf5a5af0
+      internalID: 68793604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GenericGround 1_70
+      rect:
+        serializedVersion: 2
+        x: 847
+        y: 192
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df0b9d4e925e8df498beee09682b6976
+      internalID: -266996765
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GenericGround 1_71
+      rect:
+        serializedVersion: 2
+        x: 879
+        y: 192
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7d5063a74f271545870db509983d00f
+      internalID: 1376659296
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GenericGround 1_72
+      rect:
+        serializedVersion: 2
+        x: 911
+        y: 192
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e7cd7dc5624e0124cbfa0df9518cf775
+      internalID: 652933081
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ErbaVerdeBottiglia_9
+      rect:
+        serializedVersion: 2
+        x: 943
+        y: 192
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fef53f73fe1ea0d46b1933b13c85d66a
+      internalID: 528532641
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GenericGround 1_74
+      rect:
+        serializedVersion: 2
+        x: 975
+        y: 192
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ccce338c05e33ac4fa8f10011a908175
+      internalID: -658305354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GenericGround 1_75
+      rect:
+        serializedVersion: 2
+        x: 1007
+        y: 192
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee38b8cd18173214b81d5a0873aefcda
+      internalID: -467475433
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GenericGround 1_76
+      rect:
+        serializedVersion: 2
+        x: 1039
+        y: 192
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ebb03c0f12dd7f46a08af5d26927aea
+      internalID: -2065121283
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GenericGround 1_77
+      rect:
+        serializedVersion: 2
+        x: 1071
+        y: 192
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c8bdb68040c1d054ebe9394d2ed9698e
+      internalID: 1334531884
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GenericGround 1_78
+      rect:
+        serializedVersion: 2
+        x: 1103
+        y: 192
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5df031120fa8a041b9c044938230979
+      internalID: 2032050818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GenericGround 1_79
+      rect:
+        serializedVersion: 2
+        x: 1135
+        y: 192
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d137a8750d44dc14387d5e7759cbce02
+      internalID: -1932724341
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GenericGround 1_80
+      rect:
+        serializedVersion: 2
+        x: 1167
+        y: 192
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3aad8508391a31143838884ef7c0191c
+      internalID: -1946980636
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GenericGround 1_81
+      rect:
+        serializedVersion: 2
+        x: 1199
+        y: 192
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ced53d8d1370eea45b5763913ea529bc
+      internalID: -1045464241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GenericGround 1_82
+      rect:
+        serializedVersion: 2
+        x: 1231
+        y: 192
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1479d476e4acb0b4c9797eae9bcfeb04
+      internalID: -2005091258
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GenericGround 1_83
+      rect:
+        serializedVersion: 2
+        x: 1263
+        y: 192
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e63430d462285154dba6e703fe926ac6
+      internalID: 1048586630
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GenericGround 1_84
+      rect:
+        serializedVersion: 2
+        x: 1295
+        y: 192
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c77248aa14c7754ebded756dfcaf799
+      internalID: -1947801020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GenericGround 1_85
+      rect:
+        serializedVersion: 2
+        x: 1327
+        y: 192
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 208901ea240b70547bed59a408bf5f0d
+      internalID: 523210115
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GenericGround 1_86
+      rect:
+        serializedVersion: 2
+        x: 1359
+        y: 192
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87ec915a5337b3948a3cb10332556bba
+      internalID: -1825412018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GenericGround 1_87
+      rect:
+        serializedVersion: 2
+        x: 1391
+        y: 192
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e5cfad6e26d2a34a93793a244c57096
+      internalID: 350277634
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GenericGround 1_88
+      rect:
+        serializedVersion: 2
+        x: 1423
+        y: 192
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54e130600957aff478e204427f2ea088
+      internalID: 727326565
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GenericGround 1_89
+      rect:
+        serializedVersion: 2
+        x: 1455
+        y: 192
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 159a4166af50a9a4ab3123bbac5ab45a
+      internalID: -705486009
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GenericGround 1_90
+      rect:
+        serializedVersion: 2
+        x: 1487
+        y: 192
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f2fbb64a935f8b4fad3c47e08b488d2
+      internalID: -2075966908
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CiottoliVerdeVivo_13
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 160
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e60306f173a418c45bab6564de75f6a9
+      internalID: 505801685
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CiottoliVerdeVivo_14
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 160
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3249db37a870d349a26250629aff647
+      internalID: -756042737
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CiottoliVerdeVivo_15
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 160
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e0f8915394714f46a2f4c8ba2053157
+      internalID: -369582595
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GenericGround 1_94
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 160
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d30030bda710dc946bf73dad2ddfad2e
+      internalID: 71603119
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GenericGround 1_95
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 160
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b65c360f34e30d14997b6911c3b205f9
+      internalID: -707460771
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GenericGround 1_96
+      rect:
+        serializedVersion: 2
+        x: 239
+        y: 160
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bdd2e06c0f02d99428263fde4663abde
+      internalID: 2138258889
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GenericGround 1_97
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 160
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: adb3da10fc4b9364a884a3b0aabcfc35
+      internalID: -546289219
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GenericGround 1_98
+      rect:
+        serializedVersion: 2
+        x: 303
+        y: 160
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2e5b1b09d39ca74a99ddb38de853788
+      internalID: -937563995
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GenericGround 1_99
+      rect:
+        serializedVersion: 2
+        x: 335
+        y: 160
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de88c830917bb274bb7c9efc19a8b917
+      internalID: -856191234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GenericGround 1_100
+      rect:
+        serializedVersion: 2
+        x: 367
+        y: 160
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9c4cfcda40b3694584209d06228217d
+      internalID: 1342521791
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GenericGround 1_101
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 160
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 088fba180e9faad45bf20c032b577a6f
+      internalID: -2119248285
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GenericGround 1_102
+      rect:
+        serializedVersion: 2
+        x: 463
+        y: 160
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84b92d3532aa0954fbfde43c5012c559
+      internalID: 626773877
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ErbaVerdeVivo_6
+      rect:
+        serializedVersion: 2
+        x: 495
+        y: 160
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56fee45fb545cc84caf54ec77a55f67f
+      internalID: -777084383
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ErbaVerdeVivo_7
+      rect:
+        serializedVersion: 2
+        x: 527
+        y: 160
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70165360e68586647b261486282fae5a
+      internalID: 1687993548
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ErbaVerdeVivo_8
+      rect:
+        serializedVersion: 2
+        x: 559
+        y: 160
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c23bda773ea3024f8061a1e1302de61
+      internalID: 898440352
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ErbaVerdeVivo_18
+      rect:
+        serializedVersion: 2
+        x: 591
+        y: 160
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c94b12406aaf9924e8877fd064ef9a57
+      internalID: 1733853338
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ErbaVerdeVivo_9
+      rect:
+        serializedVersion: 2
+        x: 623
+        y: 160
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b300830b2521d6498b5dc39f4162654
+      internalID: 1924435280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GenericGround 1_108
+      rect:
+        serializedVersion: 2
+        x: 655
+        y: 160
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f11ee9f120248794b90e16dfc304cde3
+      internalID: 2005834802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ErbaVerdeVivo_17
+      rect:
+        serializedVersion: 2
+        x: 687
+        y: 160
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc82cf07020f555409505bab3cb7efee
+      internalID: -993941336
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GenericGround 1_110
+      rect:
+        serializedVersion: 2
+        x: 719
+        y: 160
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf19f0a4cacb2d94596202cdc8c62d85
+      internalID: -1067862410
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ErbaVerdeBottiglia_6
+      rect:
+        serializedVersion: 2
+        x: 751
+        y: 160
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75af2ac0bf55dcb42a5750c1af625575
+      internalID: -787033552
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ErbaVerdeBottiglia_7
+      rect:
+        serializedVersion: 2
+        x: 783
+        y: 160
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b775278a38f2ebb4681d2830dfc04fff
+      internalID: 1656063231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ErbaVerdeBottiglia_8
+      rect:
+        serializedVersion: 2
+        x: 815
+        y: 160
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8566bd64a24aeec48aa2b87ee18543ea
+      internalID: -1353389948
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ErbaVerdeBottiglia_18
+      rect:
+        serializedVersion: 2
+        x: 847
+        y: 160
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd6a1d78081261047b698cddd0a7b713
+      internalID: -587455987
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GenericGround 1_115
+      rect:
+        serializedVersion: 2
+        x: 879
+        y: 160
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 948d3a76f1de18140bc8568a7f0b140b
+      internalID: -1251526755
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ErbaVerdeBottiglia_11
+      rect:
+        serializedVersion: 2
+        x: 911
+        y: 160
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1ae0d893357d7b4d8f7c06e8b321ca6
+      internalID: -1898952571
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GenericGround 1_117
+      rect:
+        serializedVersion: 2
+        x: 943
+        y: 160
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b5369233a91b87488505f0c4772dcf1
+      internalID: -1094937272
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ErbaVerdeBottiglia_14
+      rect:
+        serializedVersion: 2
+        x: 975
+        y: 160
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 834fba931b7126546887fe44a378fb97
+      internalID: 1865937037
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GenericGround 1_119
+      rect:
+        serializedVersion: 2
+        x: 1007
+        y: 160
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d631994c3c5b86947bf05459ad380338
+      internalID: 860290859
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GenericGround 1_120
+      rect:
+        serializedVersion: 2
+        x: 1039
+        y: 160
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9c1d2162e03e1a418226cc2c5d38609
+      internalID: 1883674337
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GenericGround 1_121
+      rect:
+        serializedVersion: 2
+        x: 1071
+        y: 160
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 157ad467aaca22b45888eda1e5ca0aee
+      internalID: -1133531096
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GenericGround 1_122
+      rect:
+        serializedVersion: 2
+        x: 1103
+        y: 160
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ab07c74df8f58c46b2d2fc2a1246106
+      internalID: 1847058050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GenericGround 1_123
+      rect:
+        serializedVersion: 2
+        x: 1135
+        y: 160
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7aaf611b37795af4f8e601facb7c1ca5
+      internalID: -904729337
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GenericGround 1_124
+      rect:
+        serializedVersion: 2
+        x: 1167
+        y: 160
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fdb67a317c58e7a41a9a71606bd2ad53
+      internalID: -1224113833
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GenericGround 1_125
+      rect:
+        serializedVersion: 2
+        x: 1199
+        y: 160
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0585d633253684f499d10bc5db082ed0
+      internalID: 256887514
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GenericGround 1_126
+      rect:
+        serializedVersion: 2
+        x: 1231
+        y: 160
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26bb55de1ba00904d8ba30a8b92d011b
+      internalID: -2105726655
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GenericGround 1_127
+      rect:
+        serializedVersion: 2
+        x: 1263
+        y: 160
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b47bfc9df161e5447a4807b4261f8d9a
+      internalID: -199631447
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GenericGround 1_128
+      rect:
+        serializedVersion: 2
+        x: 1295
+        y: 160
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8796631c69175894a8b54309769203b1
+      internalID: 1512063467
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GenericGround 1_129
+      rect:
+        serializedVersion: 2
+        x: 1327
+        y: 160
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9413431959604454f949480f946efcd3
+      internalID: -143914374
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GenericGround 1_130
+      rect:
+        serializedVersion: 2
+        x: 1359
+        y: 160
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20c0add46e73bd14795c6ee63e606e74
+      internalID: 1076386556
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GenericGround 1_131
+      rect:
+        serializedVersion: 2
+        x: 1391
+        y: 160
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c615dde32e23cc04bb1308b9f2c63202
+      internalID: -653749450
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GenericGround 1_132
+      rect:
+        serializedVersion: 2
+        x: 1423
+        y: 160
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c027ec95fb6d5c1428958e19ed576b1a
+      internalID: -302879905
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GenericGround 1_133
+      rect:
+        serializedVersion: 2
+        x: 1455
+        y: 160
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7b8b7a7dc69bee4aa2eaaa9a81ebbfb
+      internalID: 1464640015
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GenericGround 1_134
+      rect:
+        serializedVersion: 2
+        x: 1487
+        y: 160
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f8d8685279508940ba07b1477ec862f
+      internalID: 1270213468
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CiottoliVerdeVivo_16
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54254666025ebe146919d5e54274de1e
+      internalID: 1501867227
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GenericGround 1_136
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54df4257ca05aa746a293d752c3a69da
+      internalID: -2040975519
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GenericGround 1_137
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8505c9ef610e00341b51cb9bbfa382b8
+      internalID: -186933888
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GenericGround 1_138
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b9854eda99ceb54d8219d6d16c79196
+      internalID: 569840817
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GenericGround 1_139
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5aa88f61d1576c747810746f943b2ed2
+      internalID: 1856884742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GenericGround 1_140
+      rect:
+        serializedVersion: 2
+        x: 239
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f592c6a30e0d62947b1d6e1c558d4220
+      internalID: -464149003
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GenericGround 1_141
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 292593bf8fd69cb42814aedb38695ccf
+      internalID: -1111913653
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GenericGround 1_142
+      rect:
+        serializedVersion: 2
+        x: 303
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b174688900bab56488f0fbaa6ed51c24
+      internalID: -1181271559
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GenericGround 1_143
+      rect:
+        serializedVersion: 2
+        x: 335
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 571ebfcceda9dca41b092387a78e6ef9
+      internalID: -1826539312
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GenericGround 1_144
+      rect:
+        serializedVersion: 2
+        x: 367
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f872a42e1e87a44192d615b77f96795
+      internalID: 54303782
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GenericGround 1_145
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 95867ac9f85a9e54789b01cd2a7a1f10
+      internalID: 246440419
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GenericGround 1_146
+      rect:
+        serializedVersion: 2
+        x: 431
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 837919935b4b54c41b31fb6153cb7fac
+      internalID: 1880649325
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GenericGround 1_147
+      rect:
+        serializedVersion: 2
+        x: 463
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba157134232b89545823066d06d9059a
+      internalID: 1704937260
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GenericGround 1_148
+      rect:
+        serializedVersion: 2
+        x: 495
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31880a7f4c0e7ce45aa74ebf4606b993
+      internalID: -1746318866
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GenericGround 1_149
+      rect:
+        serializedVersion: 2
+        x: 591
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44527b869889c9d42a0db98436d24a0f
+      internalID: 1120162396
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ErbaVerdeVivo_10
+      rect:
+        serializedVersion: 2
+        x: 623
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b08309daf582f064db08cecc0981cc19
+      internalID: 971135449
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GenericGround 1_151
+      rect:
+        serializedVersion: 2
+        x: 655
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ab8a8139c29fba4fb181f3053a83922
+      internalID: -542873535
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ErbaVerdeVivo_16
+      rect:
+        serializedVersion: 2
+        x: 687
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 948bf3a3a29375147b8e9b74fab21842
+      internalID: -1353658885
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GenericGround 1_153
+      rect:
+        serializedVersion: 2
+        x: 847
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de46d03c0f38c8c428fe28debd80b197
+      internalID: -1068070752
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ErbaVerdeBottiglia_10
+      rect:
+        serializedVersion: 2
+        x: 879
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7d1d81137f1a834ea3fad4094d76612
+      internalID: 1653491120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GenericGround 1_155
+      rect:
+        serializedVersion: 2
+        x: 911
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3864097ec3c3a0645a15537352b8ca3f
+      internalID: 12031767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ErbaVerdeBottiglia_16
+      rect:
+        serializedVersion: 2
+        x: 943
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f71b006978332e54fbf8fef8b358e8f7
+      internalID: -620080604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GenericGround 1_157
+      rect:
+        serializedVersion: 2
+        x: 975
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0b9ed43acee2d3488de9bb9a9d37e7c
+      internalID: -2069250983
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GenericGround 1_158
+      rect:
+        serializedVersion: 2
+        x: 1103
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d69f20acad9ba4d4dbbcd78b127794d8
+      internalID: -12522461
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GenericGround 1_159
+      rect:
+        serializedVersion: 2
+        x: 1135
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0efc03ca4cf8aed4986bb18cb6a4ed09
+      internalID: -1180314158
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GenericGround 1_160
+      rect:
+        serializedVersion: 2
+        x: 1167
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be0ea4d9b8d16c64f8088c5b1f68ecee
+      internalID: 1370851630
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GenericGround 1_161
+      rect:
+        serializedVersion: 2
+        x: 1199
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5a95958404b1914b8fa88df706631b4
+      internalID: 780301549
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GenericGround 1_162
+      rect:
+        serializedVersion: 2
+        x: 1231
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d7029a0179f9a141be91c7a98039896
+      internalID: 1514769624
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GenericGround 1_163
+      rect:
+        serializedVersion: 2
+        x: 1359
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e9e037124fcf73498a504cbf9bd9554
+      internalID: 1049403433
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GenericGround 1_164
+      rect:
+        serializedVersion: 2
+        x: 1391
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 529198d6f631daf40867d22ba713297b
+      internalID: -1644549436
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GenericGround 1_165
+      rect:
+        serializedVersion: 2
+        x: 1423
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3fbd90c76d093d498f0383baa0a0fca
+      internalID: -1768400425
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GenericGround 1_166
+      rect:
+        serializedVersion: 2
+        x: 1455
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d5fcb548481e334e8cf6e6acddc45e2
+      internalID: -2091870964
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GenericGround 1_167
+      rect:
+        serializedVersion: 2
+        x: 1487
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3dd4bd0a55c15024eae0cd8e68b0749b
+      internalID: 1935847618
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GenericGround 1_168
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f03110afeaede2e45a036d0b7add42e8
+      internalID: -1970201957
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GenericGround 1_169
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ffe4c77fbdf7af49943c61f718c353b
+      internalID: -1707092392
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GenericGround 1_170
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24364a5ded356974a99ca5aa62c41b7e
+      internalID: 706677360
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GenericGround 1_171
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a6f6f7a20e576d43999786d301ab5f8
+      internalID: -148763926
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GenericGround 1_172
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d042aec7ee4c684db339b9b38bb8b39
+      internalID: -484998582
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GenericGround 1_173
+      rect:
+        serializedVersion: 2
+        x: 239
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 04cee105e74392c4abde16323cbcd6a8
+      internalID: -2142248913
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GenericGround 1_174
+      rect:
+        serializedVersion: 2
+        x: 303
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee5fc8a40f9ff7e4f854f7af7258ec2c
+      internalID: -1879145462
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GenericGround 1_175
+      rect:
+        serializedVersion: 2
+        x: 335
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65a597cdb7d848049973502ee87c2908
+      internalID: 1739410198
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GenericGround 1_176
+      rect:
+        serializedVersion: 2
+        x: 367
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75c4327fc9cedbc4eb553786412d087b
+      internalID: 1778746149
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GenericGround 1_177
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe29df5c2f9a8b24ca53b5f45a7a6bed
+      internalID: -1637135016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GenericGround 1_178
+      rect:
+        serializedVersion: 2
+        x: 431
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51d3ff79997f3e840a0bbdeb0572ac0d
+      internalID: -2100861064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GenericGround 1_179
+      rect:
+        serializedVersion: 2
+        x: 463
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d706925d14fc234b9d0dfdcb04f7f34
+      internalID: 1857027310
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ErbaVerdeVivo_11
+      rect:
+        serializedVersion: 2
+        x: 559
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb8e51d66b9d0b34fb9f979e57fcba48
+      internalID: 1483583830
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ErbaVerdeVivo_12
+      rect:
+        serializedVersion: 2
+        x: 591
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5b2020226d3470408c730970da4840c
+      internalID: 918318368
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GenericGround 1_182
+      rect:
+        serializedVersion: 2
+        x: 623
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: afcd45f20aedb3345bd6681b644c3d45
+      internalID: 1622605845
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ErbaVerdeVivo_13
+      rect:
+        serializedVersion: 2
+        x: 655
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57fc3d54a547f1549b9325cf82d853e5
+      internalID: -1630433226
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ErbaVerdeVivo_14
+      rect:
+        serializedVersion: 2
+        x: 687
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c164214a2829f9143ab919ad049e8433
+      internalID: -1960575247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GenericGround 1_185
+      rect:
+        serializedVersion: 2
+        x: 815
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cfdcd8f43b52bfe4d859ff49fd3eaba4
+      internalID: -1894393415
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ErbaVerdeBottiglia_12
+      rect:
+        serializedVersion: 2
+        x: 847
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4f1a5f93ebf41141a18cf0769b172e6
+      internalID: 1568148106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GenericGround 1_187
+      rect:
+        serializedVersion: 2
+        x: 879
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47d9fb33ed2674e408279a4c58930aff
+      internalID: -936415153
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ErbaVerdeBottiglia_13
+      rect:
+        serializedVersion: 2
+        x: 911
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f038dcd51dc88f446b969708d5a65470
+      internalID: -117310351
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GenericGround 1_189
+      rect:
+        serializedVersion: 2
+        x: 943
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e8b4d023607bf247971d5b3841990cf
+      internalID: -223083035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GenericGround 1_190
+      rect:
+        serializedVersion: 2
+        x: 975
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a41304820226834458d62b1feaca833c
+      internalID: 616808925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GenericGround 1_191
+      rect:
+        serializedVersion: 2
+        x: 1071
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c34f0bba25a37ad43bb768acd68a50f3
+      internalID: -86750180
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GenericGround 1_192
+      rect:
+        serializedVersion: 2
+        x: 1103
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b30c8374eb54e6c49969b87d4b04e7c8
+      internalID: 1721516912
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GenericGround 1_193
+      rect:
+        serializedVersion: 2
+        x: 1135
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f18e5f8d2b1200a48990f4eefb21a950
+      internalID: 2132594574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GenericGround 1_194
+      rect:
+        serializedVersion: 2
+        x: 1167
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f2766e41bac123478124cdf35192835
+      internalID: -521797644
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GenericGround 1_195
+      rect:
+        serializedVersion: 2
+        x: 1199
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53598fba95258fb45805435a07e73d11
+      internalID: -2015048295
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GenericGround 1_196
+      rect:
+        serializedVersion: 2
+        x: 1231
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0e9a1e5376c6fd4492953958aa53f79
+      internalID: -162241991
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GenericGround 1_197
+      rect:
+        serializedVersion: 2
+        x: 1327
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 033e775c6cfb7674eb0d5beaff624a3a
+      internalID: -159448961
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GenericGround 1_198
+      rect:
+        serializedVersion: 2
+        x: 1359
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98b668d5b811a5d4ba5fd780efc02c48
+      internalID: 72452503
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GenericGround 1_199
+      rect:
+        serializedVersion: 2
+        x: 1391
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a51ffa3d5b8d7c41af22b3e3ee7adcd
+      internalID: 1542948785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GenericGround 1_200
+      rect:
+        serializedVersion: 2
+        x: 1423
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: faa27b5978a1157448ca9216d4c83473
+      internalID: 434841757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GenericGround 1_201
+      rect:
+        serializedVersion: 2
+        x: 1455
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 541ea380c2f6eae428aac939c1a44d2b
+      internalID: -613143469
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GenericGround 1_202
+      rect:
+        serializedVersion: 2
+        x: 1487
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9385ec11e7a17b45afe832522d7b0c1
+      internalID: 1483008001
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GenericGround 1_203
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 246c6a1297df5f642bcdb60a3cd5dd09
+      internalID: -607364302
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GenericGround 1_204
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7fa0460ed5c875647bb59f7612f503ac
+      internalID: 307398004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GenericGround 1_205
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e479988d4e5e7f94797f901c4531abcf
+      internalID: -783182707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GenericGround 1_206
+      rect:
+        serializedVersion: 2
+        x: 335
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 751598f331837d74baae365fe350b9e4
+      internalID: 1134429481
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GenericGround 1_207
+      rect:
+        serializedVersion: 2
+        x: 367
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff020637c8f55a34bb64b9b9f9b9e81a
+      internalID: -301576009
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GenericGround 1_208
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b46e366b11df57b4696a5317a74a60c9
+      internalID: 281670250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GenericGround 1_209
+      rect:
+        serializedVersion: 2
+        x: 591
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47570605e619c8241a33b11d17f610fa
+      internalID: -255242314
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ErbaVerdeVivo_15
+      rect:
+        serializedVersion: 2
+        x: 623
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 240c86f1225bbf7428c05fbf80095fe8
+      internalID: 286758874
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GenericGround 1_211
+      rect:
+        serializedVersion: 2
+        x: 655
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4445b420c0586494b9f79bed6443a64a
+      internalID: -958410655
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GenericGround 1_212
+      rect:
+        serializedVersion: 2
+        x: 687
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dfeb507816a96b34e84c0be12fc8ddae
+      internalID: -1612404820
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GenericGround 1_213
+      rect:
+        serializedVersion: 2
+        x: 847
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9a3d506bae0d894ea5bac53fb4570f6
+      internalID: 1664315824
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ErbaVerdeBottiglia_15
+      rect:
+        serializedVersion: 2
+        x: 879
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8eb4be8f88a3859408e517788bcbd8e5
+      internalID: -4855176
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GenericGround 1_215
+      rect:
+        serializedVersion: 2
+        x: 911
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8cc31cdf0f280a048aff33bbcf709e1b
+      internalID: -1719517460
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GenericGround 1_216
+      rect:
+        serializedVersion: 2
+        x: 943
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8d4e89fb6cecc445bc9559a2a66f8da
+      internalID: 868890171
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GenericGround 1_217
+      rect:
+        serializedVersion: 2
+        x: 1103
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 30fb8101009648d4e826b999deebf819
+      internalID: 799992220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GenericGround 1_218
+      rect:
+        serializedVersion: 2
+        x: 1135
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 238b90fdd8bb56241bfcbf9bce16e532
+      internalID: -256665970
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GenericGround 1_219
+      rect:
+        serializedVersion: 2
+        x: 1167
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f13b0405db1d1d943a82fddd8cbe7292
+      internalID: 1296742329
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GenericGround 1_220
+      rect:
+        serializedVersion: 2
+        x: 1199
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1eb0b858016f62642b31e18c5b8dc5e6
+      internalID: -414216486
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GenericGround 1_221
+      rect:
+        serializedVersion: 2
+        x: 1359
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52b40d98195eea74f9ebd8feaf9d9b32
+      internalID: -1815760999
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GenericGround 1_222
+      rect:
+        serializedVersion: 2
+        x: 1391
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37f9791ab1f10d0458e3ed9c7caf0763
+      internalID: 1286608322
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GenericGround 1_223
+      rect:
+        serializedVersion: 2
+        x: 1423
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68dfb30c97a86014ca4f901ba672b477
+      internalID: 246574033
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GenericGround 1_224
+      rect:
+        serializedVersion: 2
+        x: 1455
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a34a16459b1aaef4cba03b51164add0f
+      internalID: 436039350
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GenericGround 1_225
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36927e946f1d9964fb4f1e3ea9519cdc
+      internalID: -733040128
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GenericGround 1_226
+      rect:
+        serializedVersion: 2
+        x: 367
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7fda39725ac8a3944b3ee11c94fa7ac2
+      internalID: -1402388813
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ErbaVerdeVivo_sbagliato
+      rect:
+        serializedVersion: 2
+        x: 623
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f815e5a87c33ff64d9d5070ae4cf10af
+      internalID: -2036414373
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GenericGround 1_228
+      rect:
+        serializedVersion: 2
+        x: 655
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4bb965956729b4440938f94c43601ecf
+      internalID: 2016704070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GenericGround 1_229
+      rect:
+        serializedVersion: 2
+        x: 879
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f640ca9cf51422b498558cef75f65d5a
+      internalID: -1390975274
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GenericGround 1_230
+      rect:
+        serializedVersion: 2
+        x: 911
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c7f158fc7347724996c6b1d6471d3ef
+      internalID: -22660229
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GenericGround 1_231
+      rect:
+        serializedVersion: 2
+        x: 1135
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d39215e2dfc8d694cbab848d2a60f005
+      internalID: -119755222
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GenericGround 1_232
+      rect:
+        serializedVersion: 2
+        x: 1167
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f95f84800a165a4aad52e183aeba5f1
+      internalID: 561399019
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GenericGround 1_233
+      rect:
+        serializedVersion: 2
+        x: 1391
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 244fe9feff676c44589243472213dd50
+      internalID: -15408074
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GenericGround 1_234
+      rect:
+        serializedVersion: 2
+        x: 1423
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9dcbb267e072164e95536d0fa400212
+      internalID: 1463151265
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GenericGround 1_0
+      rect:
+        serializedVersion: 2
+        x: 741
+        y: 178
+        width: 797
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97d6d1e0af7277f4cb20d57c4ec53f9a
+      internalID: -2028308921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      GenericGround 1_77: 1334531884
+      GenericGround 1_222: 1286608322
+      GenericGround 1_172: -484998582
+      GenericGround 1_1: -1681124098
+      GenericGround 1_231: -119755222
+      GenericGround 1_89: -705486009
+      GenericGround 1_187: -936415153
+      ErbaVerdeBottiglia_13: -117310351
+      ErbaVerdeBottiglia_5: 68793604
+      GenericGround 1_22: -2082385517
+      GenericGround 1_132: -302879905
+      GenericGround 1_234: 1463151265
+      GenericGround 1_20: 1615862075
+      GenericGround 1_46: -1262903563
+      GenericGround 1_208: 281670250
+      GenericGround 1_144: 54303782
+      CiottoliVerdeVivo_1: 544499747
+      GenericGround 1_224: 436039350
+      ErbaVerdeVivo_17: -993941336
+      GenericGround 1_159: -1180314158
+      ErbaVerdeVivo_5: 870577714
+      GenericGround 1_27: 1377468837
+      ErbaVerdeVivo_16: -2036414373
+      GenericGround 1_45: -454557833
+      GenericGround 1_85: 523210115
+      GenericGround 1_137: -186933888
+      GenericGround 1_200: 434841757
+      GenericGround 1_206: 1134429481
+      GenericGround 1_141: -1111913653
+      GenericGround 1_40: -1198347704
+      ErbaVerdeVivo_14: -1960575247
+      GenericGround 1_128: 1512063467
+      GenericGround 1_190: 616808925
+      GenericGround 1_35: -418084044
+      GenericGround 1_42: 1342867061
+      GenericGround 1_209: -255242314
+      GenericGround 1_0: -2028308921
+      GenericGround 1_18: 641863378
+      CiottoliVerdeVivo_10: -428708932
+      GenericGround 1_218: -256665970
+      GenericGround 1_10: 2036423365
+      GenericGround 1_37: 1178820638
+      GenericGround 1_66: 326962451
+      GenericGround 1_177: -1637135016
+      GenericGround 1_8: -1177311378
+      GenericGround 1_55: 177997246
+      ErbaVerdeBottiglia_2: -579931518
+      GenericGround 1_211: -958410655
+      GenericGround 1_219: 1296742329
+      GenericGround 1_175: 1739410198
+      ErbaVerdeBottiglia_6: -787033552
+      GenericGround 1_83: 1048586630
+      GenericGround 1_229: -1390975274
+      ErbaVerdeVivo_10: 971135449
+      GenericGround 1_233: -15408074
+      GenericGround 1_78: 2032050818
+      CiottoliVerdeVivo_3: 1246377845
+      GenericGround 1_98: -937563995
+      GenericGround 1_191: -86750180
+      GenericGround 1_63: 1795916822
+      GenericGround 1_230: -22660229
+      GenericGround 1_75: -467475433
+      ErbaVerdeVivo_4: 1323810336
+      GenericGround 1_74: -658305354
+      GenericGround 1_125: 256887514
+      GenericGround 1_185: -1894393415
+      CespuglioVerdeBottiglia: 760282417
+      GenericGround 1_64: 1298930379
+      GenericGround 1_170: 706677360
+      GenericGround 1_169: -1707092392
+      GenericGround 1_140: -464149003
+      GenericGround 1_139: 1856884742
+      GenericGround 1_134: 1270213468
+      GenericGround 1_129: -143914374
+      GenericGround 1_160: 1370851630
+      ErbaVerdeBottiglia_4: -784134396
+      GenericGround 1_39: -861090642
+      ErbaVerdeVivo_7: 1687993548
+      ErbaVerdeBottiglia_12: 1568148106
+      CiottoliVerdeVivo_16: 1501867227
+      GenericGround 1_88: 727326565
+      GenericGround 1_146: 1880649325
+      ErbaVerdeBottiglia_9: 528532641
+      ErbaVerdeVivo_18: 1733853338
+      GenericGround 1_174: -1879145462
+      ErbaVerdeVivo_6: -777084383
+      ErbaVerdeBottiglia_16: -620080604
+      GenericGround 1_164: -1644549436
+      GenericGround 1_108: 2005834802
+      GenericGround 1_82: -2005091258
+      ErbaVerdeBottiglia_10: 1653491120
+      CiottoliVerdeVivo_0: 1594362907
+      GenericGround 1_196: -162241991
+      GenericGround 1_123: -904729337
+      ErbaVerdeVivo_9: 1924435280
+      GenericGround 1_163: 1049403433
+      ErbaVerdeVivo_8: 898440352
+      GenericGround 1_136: -2040975519
+      GenericGround 1_202: 1483008001
+      GenericGround 1_100: 1342521791
+      GenericGround 1_178: -2100861064
+      GenericGround 1_165: -1768400425
+      GenericGround 1_110: -1067862410
+      GenericGround 1_54: -1084306268
+      GenericGround 1_90: -2075966908
+      GenericGround 1_86: -1825412018
+      GenericGround 1_225: -733040128
+      GenericGround 1_173: -2142248913
+      GenericGround 1_80: -1946980636
+      GenericGround 1_201: -613143469
+      CiottoliVerdeVivo_5: 1937439842
+      ErbaVerdeBottiglia_11: -1898952571
+      GenericGround 1_142: -1181271559
+      GenericGround 1_203: -607364302
+      ErbaVerdeVivo_0: -1078539150
+      GenericGround 1_43: -477412444
+      GenericGround 1_212: -1612404820
+      ErbaVerdeVivo_sbagliato: -2036414373
+      GenericGround 1_94: 71603119
+      GenericGround 1_161: 780301549
+      CiottoliVerdeVivo_9: 1726701286
+      GenericGround 1_127: -199631447
+      GenericGround 1_217: 799992220
+      ErbaVerdeVivo_2: 1919214937
+      GenericGround 1_179: 1857027310
+      ErbaVerdeBottiglia_3: 1738706982
+      GenericGround 1_147: 1704937260
+      GenericGround 1_96: 2138258889
+      GenericGround 1_198: 72452503
+      GenericGround 1_3: 1554736776
+      ErbaVerdeVivo_12: 918318368
+      GenericGround 1_56: -2039989854
+      ErbaVerdeVivo_13: -1630433226
+      GenericGround 1_57: -526411015
+      GenericGround 1_145: 246440419
+      GenericGround 1_65: 972679927
+      GenericGround 1_189: -223083035
+      CiottoliVerdeVivo_6: -2076583850
+      GenericGround 1_151: -542873535
+      ErbaVerdeVivo_3: -70118209
+      GenericGround 1_207: -301576009
+      GenericGround 1_195: -2015048295
+      GenericGround 1_216: 868890171
+      GenericGround 1_223: 246574033
+      CiottoliVerdeVivo_7: -1660332351
+      GenericGround 1_4: 318211664
+      GenericGround 1_81: -1045464241
+      GenericGround 1_153: -1068070752
+      CiottoliVerdeVivo_15: -369582595
+      GenericGround 1_158: -12522461
+      GenericGround 1_17: -142127521
+      GenericGround 1_157: -2069250983
+      ErbaVerdeVivo_11: 1483583830
+      ErbaVerdeBottiglia_15: -4855176
+      GenericGround 1_226: -1402388813
+      GenericGround 1_119: 860290859
+      GenericGround 1_15: 1955352062
+      CiottoliVerdeVivo_12: -441001115
+      CiottoliVerdeVivo_11: 1041921223
+      GenericGround 1_199: 1542948785
+      GenericGround 1_34: -432065141
+      GenericGround 1_176: 1778746149
+      GenericGround 1_122: 1847058050
+      ErbaVerdeBottiglia_14: 1865937037
+      ErbaVerdeBottiglia_7: 1656063231
+      GenericGround 1_79: -1932724341
+      CiottoliVerdeVivo_4: -23061934
+      GenericGround 1_205: -783182707
+      GenericGround 1_131: -653749450
+      GenericGround 1_36: 694449119
+      GenericGround 1_167: 1935847618
+      GenericGround 1_28: -1413276836
+      GenericGround 1_213: 1664315824
+      GenericGround 1_87: 350277634
+      GenericGround 1_192: 1721516912
+      GenericGround 1_59: -367067797
+      ErbaVerdeVivo_1: 575078526
+      GenericGround 1_38: -656467042
+      GenericGround 1_58: 558811417
+      GenericGround 1_70: -266996765
+      GenericGround 1_138: 569840817
+      CiottoliVerdeVivo_14: -756042737
+      ErbaVerdeVivo_15: 286758874
+      ErbaVerdeBottiglia_18: -587455987
+      GenericGround 1_197: -159448961
+      GenericGround 1_124: -1224113833
+      CiottoliVerdeVivo_8: -1259907672
+      GenericGround 1_143: -1826539312
+      GenericGround 1_130: 1076386556
+      GenericGround 1_115: -1251526755
+      GenericGround 1_117: -1094937272
+      GenericGround 1_33: 2062331894
+      GenericGround 1_182: 1622605845
+      GenericGround 1_166: -2091870964
+      GenericGround 1_97: -546289219
+      GenericGround 1_162: 1514769624
+      GenericGround 1_204: 307398004
+      GenericGround 1_76: -2065121283
+      GenericGround 1_215: -1719517460
+      ErbaVerdeBottiglia_0: -81366894
+      GenericGround 1_126: -2105726655
+      CiottoliVerdeVivo_2: 734342963
+      GenericGround 1_95: -707460771
+      ErbaVerdeBottiglia_1: -203585976
+      GenericGround 1_171: -148763926
+      GenericGround 1_228: 2016704070
+      GenericGround 1_84: -1947801020
+      ErbaVerdeBottiglia_8: -1353389948
+      GenericGround 1_71: 1376659296
+      GenericGround 1_120: 1883674337
+      GenericGround 1_19: -352653598
+      GenericGround 1_221: -1815760999
+      GenericGround 1_102: 626773877
+      GenericGround 1_149: 1120162396
+      CespuglioVerdeVivo: 1363543404
+      GenericGround 1_121: -1133531096
+      GenericGround 1_72: 652933081
+      GenericGround 1_155: 12031767
+      GenericGround 1_41: -2025354550
+      GenericGround 1_26: 610472495
+      GenericGround 1_133: 1464640015
+      CiottoliVerdeVivo_13: 505801685
+      GenericGround 1_148: -1746318866
+      GenericGround 1_9: -1084038350
+      GenericGround 1_101: -2119248285
+      GenericGround 1_53: 2114487777
+      GenericGround 1_168: -1970201957
+      GenericGround 1_44: 312532310
+      GenericGround 1_99: -856191234
+      GenericGround 1_220: -414216486
+      GenericGround 1_5: 1641040387
+      GenericGround 1_193: 2132594574
+      GenericGround 1_21: 44229679
+      GenericGround 1_194: -521797644
+      GenericGround 1_32: -1830932379
+      GenericGround 1_232: 561399019
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
