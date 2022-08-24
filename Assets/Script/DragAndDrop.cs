@@ -17,7 +17,6 @@ public class DragAndDrop : MonoBehaviour, IPointerClickHandler,IEndDragHandler,I
     }
 
     public void OnPointerClick(PointerEventData eventData){
-        Debug.Log("Hai cliccato");
         int clickCount = eventData.clickCount;
 
         if (clickCount == 1)
@@ -28,12 +27,12 @@ public class DragAndDrop : MonoBehaviour, IPointerClickHandler,IEndDragHandler,I
 
     void OnSingleClick()
     {
-        Debug.Log("Single Clicked");
+        //Debug.Log("Single Clicked");
     }
 
     void OnDoubleClick()
     {
-        Debug.Log("Double Clicked");
+        //Debug.Log("Double Clicked");
         if (transform.parent.name.Split(" ")[0]=="CellaInventario"){
             Item item=GameManager.instanza.menuDiPausa.GetItem(int.Parse(transform.parent.name.Split(" ")[1])-1);
             if (item!=null){

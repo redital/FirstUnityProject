@@ -32,12 +32,18 @@ public class GameManager : MonoBehaviour
         DontDestroyOnLoad(instanza.barraPA.transform.parent.gameObject);                // Si potrebbe cambiare direttamente con il padre (HUD)
         DontDestroyOnLoad(instanza.menuDiPausa.gameObject);
         //DontDestroyOnLoad(instanza.eventSystem);
+
+        // Volevo metterlo nello start ma siccome il primo Carica viene chiamato a scena caricata nell'Awake, alloraavverrebbe dopo, ma queste cose servono per il carica quindi lo metto qui
+        skillList=LetturaListaSkill("ListaSkill.txt");
+        itemList=LetturaListaItems("ListaOggetti.txt");
     }
 
     // Risorse
     // Tutte le informazioni sono salvate all'interno di file che vengono letti quando i dati vengono caricati e memorizzati all'interno di dizionari
     public Dictionary<string, string> stats = new Dictionary<string, string>();
-    public Dictionary<string, string> inventario = new Dictionary<string, string>();
+    public Dictionary<int, Item> inventario = new Dictionary<int, Item>();
+    public Dictionary<string, string> posizioniInventario = new Dictionary<string, string>();
+    
     // Il salvataggio/Caricamento della posizione non è ancora stato implementato, ci sono stati dei tentativi fallimentari :(
     public Dictionary<string, string> posizione = new Dictionary<string, string>();
     
@@ -64,14 +70,12 @@ public class GameManager : MonoBehaviour
 
     // Lista di tutte le skill
     public List<Skill> skillList = new List<Skill>();
+    // Lista skill apprese
+    public List<Skill> skillApprese = new List<Skill>();
 
     // Lista di tutti gli ogetti
     public List<Item> itemList = new List<Item>();
 
-    private void Start(){
-        skillList=LetturaListaSkill("ListaSkill.txt");
-        itemList=LetturaListaItems("ListaOggetti.txt");
-    }
 
     
     
@@ -194,7 +198,10 @@ public class GameManager : MonoBehaviour
     public void Salva(){
 
         Gestione.GestioneDizionari.ScritturaDizionario(stats,"Statistiche.txt");
-        Gestione.GestioneDizionari.ScritturaDizionario(inventario,"Inventario.txt");
+        Gestione.GestioneDizionari.ScritturaInventario(inventario,"Inventario.txt");
+        Gestione.GestioneDizionari.ScritturaDizionario(posizioniInventario,"PosizioniInventario.txt");
+        Gestione.GestioneDizionari.ScritturaSkillApprese(skillApprese,"SkillApprese.txt");
+        Gestione.GestioneDizionari.ScritturaSkillEquipaggiate(player.skillSet,"SkillEquipaggiate.txt");
 
         
         posizione["Scena"] = SceneManager.GetActiveScene().name;
@@ -210,9 +217,18 @@ public class GameManager : MonoBehaviour
     //Aggiorna i dizionari con i valori attualmente salvati nei file
     public void Carica(){
         stats = Gestione.GestioneDizionari.LetturaDizionario("Statistiche.txt");
-        inventario = Gestione.GestioneDizionari.LetturaDizionario("Inventario.txt");
-        monete = int.Parse(inventario["Monete"]);
+        inventario = Gestione.GestioneDizionari.LetturaInventario("Inventario.txt");
+        posizioniInventario = Gestione.GestioneDizionari.LetturaDizionario("PosizioniInventario.txt");
+        skillApprese = Gestione.GestioneDizionari.LetturaSkillApprese("SkillApprese.txt");
+        player.skillSet = Gestione.GestioneDizionari.LetturaSkillEquipaggiate("SkillEquipaggiate.txt");
+        
+        monete = int.Parse(stats["Monete"]);
         player.LoadStats();
+
+
+        player.transform.GetChild(0).GetChild(0).GetComponent<Weapon>().nomeArma=itemList.Find(x => x.name==stats["Arma"]).name;
+        player.transform.GetChild(0).GetChild(0).GetComponent<Weapon>().baseDamage=itemList.Find(x => x.name==stats["Arma"]).feature;
+        player.transform.GetChild(0).GetChild(0).GetComponent<SpriteRenderer>().sprite=Resources.Load("IconeOggetti/"+itemList.Find(x => x.name==stats["Arma"]).spriteName) as Sprite;
 
         
         posizione = Gestione.GestioneDizionari.LetturaDizionario("Posizione.txt");

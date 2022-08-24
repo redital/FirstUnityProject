@@ -39,8 +39,8 @@ public class Chest : Collectable
                 GameManager.instanza.MostraFloatingText("+" + coinsAmmount + " monete!", position:transform.position + new Vector3 (0,0.2f,0), motion:Vector3.up*25, color:Color.yellow);
 
                 // Aggiorno l'inventario
-                int nuovoValore=coinsAmmount + int.Parse(GameManager.instanza.inventario["Monete"]);
-                GameManager.instanza.inventario["Monete"]=nuovoValore.ToString();
+                int nuovoValore=coinsAmmount + int.Parse(GameManager.instanza.stats["Monete"]);
+                GameManager.instanza.stats["Monete"]=nuovoValore.ToString();
                 
 
                 GetComponent<SpriteRenderer>().sprite = emptyChest;

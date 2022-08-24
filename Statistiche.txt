@@ -8,3 +8,5 @@ PMMAX=6
 PM=6
 ATK=3
 DEF=4
+Monete=79
+Arma=Stocco

@@ -21,21 +21,17 @@ public class Player : Fighter
 
         LoadStats();
 
-        // Inizializzo lo skillset con 5 skill vuote
-        for (int i = 0; i < 5; i++)
-        {
-            skillSet.Add(null);
-        }
-             
-        skillSet[1]=GameManager.instanza.skillList.Find(x => x.name=="RotationSkill");
+        LoadInventario();
+        
+    }
 
-
+    public void LoadInventario(){
         inventario=new Inventario();
-        foreach (string key in GameManager.instanza.inventario.Keys)
+        foreach (int key in GameManager.instanza.inventario.Keys)
         {
-            if (GameManager.instanza.itemList.Find(x => x.name==key)!=null)
+            if (GameManager.instanza.itemList.Find(x => x.name==GameManager.instanza.inventario[key].name)!=null)
             {
-                inventario.AddItem(GameManager.instanza.itemList.Find(x => x.name==key),int.Parse(GameManager.instanza.inventario[key]));
+                inventario.AddItem(GameManager.instanza.itemList.Find(x => x.name==GameManager.instanza.inventario[key].name),GameManager.instanza.inventario[key].quantità);
             }
         }
     }
@@ -77,9 +73,9 @@ public class Player : Fighter
                     Skill skill=skillSet[indice-1];                                 //prendo la skill corrispondente al numero
                     if(PA-skill.PAConsumati>=0){
                         PA=PA - skill.PAConsumati;
-                        ATK=(int)(ATK*skill.ATKMultiplier);
-                        DEF=(int)(DEF*skill.DEFMultiplier);
-                        weapon.Skill(skill.name);                                       //performo la skill
+                        ATK=(int)Math.Round((ATK*skill.ATKMultiplier));
+                        DEF=(int)Math.Round((DEF*skill.DEFMultiplier));
+                        weapon.Skill(skill.name);                                   //performo la skill
                         usingSkill=true;
                         skillLastCasted=Time.time;
                         lastSkill=indice-1;

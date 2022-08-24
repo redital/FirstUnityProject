@@ -23,6 +23,8 @@ public class MenuDiPausa : MonoBehaviour
     private TMPro.TextMeshProUGUI testoMonete;
 
     private Inventario inventario;
+    private Dictionary<string, string> posizioniInventario = new Dictionary<string, string>();
+    private Dictionary<string, string> dizionarioInventario = new Dictionary<string, string>();
     public Transform cellaInventario;
     public Transform containerInventario;
 
@@ -94,10 +96,15 @@ public class MenuDiPausa : MonoBehaviour
         }
 
         // Inventario        
-        testoMonete.text= /*testoNomeLivello.text*/ "Monete: " + GameManager.instanza.inventario["Monete"];
+        testoMonete.text= /*testoNomeLivello.text*/ "Monete: " + GameManager.instanza.stats["Monete"];
 
-        inventario=GameManager.instanza.player.inventario;    //da cambiare e gestire tutto con l'inventario del game manager (per ora i due sono slegati)
-
+        AggiornaInventario(inventario);
+        inventario=GameManager.instanza.player.inventario;    //da cambiare e gestire tutto con l'inventario dal game manager (per ora i due sono slegati)
+        inventario=RiordinaInventario(inventario);
+//============================================================================================================================================
+//============================================================================================================================================
+//============================================================================================================================================
+//============================================================================================================================================
         for (int i = 0; i < inventario.itemList.Count; i++)
         {
             RectTransform goRectTransform=GameObject.Find("CellaInventario " + (i+1)).GetComponent<RectTransform>();
@@ -116,6 +123,109 @@ public class MenuDiPausa : MonoBehaviour
                 goRectTransform.transform.GetChild(1).gameObject.SetActive(false);
             }
         }
+
+        SetPosizioniInventario(inventario);
+        GameManager.instanza.posizioniInventario=SetPosizioniInventario(inventario);
+
+        AggiornaInventario(inventario);
+    }
+
+    private Inventario RiordinaInventario(Inventario inventario){
+
+        posizioniInventario=GameManager.instanza.posizioniInventario;
+        
+        Inventario inInventario = new Inventario();
+        Inventario fuoriInventario = new Inventario();
+
+        string[] keys = new string[20];
+        int k=0;
+
+        // Metto tutti gli oggetti con posizione assegnata nella giusta posizione in un inventario ausiliario
+        foreach (string key in posizioniInventario.Keys)
+        {
+            // Controllo se sono effettivamente nell'inventario (potrebbero essere stati utilizzati nel frattempo)(Per qualche motivo da NullReferenceException...)
+            try
+            {
+                if (inventario.itemList.Find(x => x.name==posizioniInventario[key])!=null){
+                    inInventario.itemList[int.Parse(key)-1]=inventario.itemList.Find(x => x.name==posizioniInventario[key]);
+                    keys[k]=key;
+                    k++;
+                }                
+            }
+            catch{
+
+            }
+        }
+
+        // Rimuovo sia dalle posizioniInventario sia dall'inventario gli oggetti appena aggiunti
+        for (int j = 0; j < k; j++)
+        {
+            inventario.itemList.Remove(inventario.itemList.Find(x => x.name==posizioniInventario[keys[j]]));
+            posizioniInventario.Remove(keys[j]);
+        }
+
+        // Gli oggetti rimanenti sono quelli senza posto assegnato 
+        fuoriInventario=inventario;
+
+        // Pulisco le posizioni
+        foreach (string key in posizioniInventario.Keys)
+        {
+            Debug.Log(posizioniInventario[key] + " non trovato nell'inventario. Lo elimino");
+        }
+        posizioniInventario = new Dictionary<string, string>();
+
+        // Metto gli elementi con posizione assegnate al proprio posto, poi aggiungo gli altri elementi
+        inventario = new Inventario();
+        for (int i = 0; i < inInventario.itemList.Count; i++)
+        {
+            if (inInventario.itemList[i]!=null)
+            {
+                inventario.itemList[i]=inInventario.itemList[i];
+            }
+        }
+        foreach (Item item in fuoriInventario.itemList)
+        {
+            if (item!=null){
+                inventario.AddItem(item, item.quantità);
+            }   
+        }
+
+        // Stampa di controllo
+        /*
+        for (int i = 0; i < inventario.itemList.Count; i++)
+        {   
+            if (inventario.itemList[i]!=null)
+            {
+                Debug.Log(inventario.itemList[i].name + " in posizione " + i);
+            }
+            
+        }
+        */
+
+        return inventario;
+    }
+    private Dictionary<string,string> SetPosizioniInventario(Inventario inventario){
+        Dictionary<string, string> posizioniInventario = new Dictionary<string, string>();
+        for (int i = 0; i < inventario.itemList.Count; i++){
+            if (inventario.itemList[i]!=null){
+                posizioniInventario[(i+1).ToString()]=inventario.itemList[i].name;
+            }
+        }
+        
+        return posizioniInventario;
+    }
+    private void AggiornaInventario(Inventario inventario){
+        GameManager.instanza.inventario=new Dictionary<int, Item>();
+        int indice=0;
+        foreach (Item item in inventario.itemList)
+        {
+            if (item!=null)
+            {
+                GameManager.instanza.inventario[indice]=item;
+                indice++;
+            }
+        }
+        GameManager.instanza.player.LoadInventario();
     }
 
     private void InizializzaAbilità(){
@@ -180,7 +290,11 @@ public class MenuDiPausa : MonoBehaviour
         GameManager.instanza.player.transform.GetChild(0).GetChild(0).GetComponent<Weapon>().baseDamage=inventario.itemList[indice].feature;
         GameManager.instanza.player.transform.GetChild(0).GetChild(0).GetComponent<SpriteRenderer>().sprite=Resources.Load("IconeOggetti/"+inventario.itemList[indice].spriteName) as Sprite;
 
+        GameManager.instanza.stats["Arma"]=inventario.itemList[indice].name;
+
         inventario.itemList[indice]=temp;
+
+        GameManager.instanza.posizioniInventario[(indice+1).ToString()]=temp.name;
         
         AggiornaContenuto();
     }
@@ -206,6 +320,24 @@ public class MenuDiPausa : MonoBehaviour
 
     public void MoveItem(int posizioneIniziale, int posizioneFinale){
         inventario.MoveItem(posizioneIniziale,posizioneFinale);
+        if (inventario.itemList[posizioneIniziale]!=null)
+        {
+            GameManager.instanza.posizioniInventario[(posizioneIniziale+1).ToString()]=inventario.itemList[posizioneIniziale].name;
+        }
+        else
+        {
+            GameManager.instanza.posizioniInventario.Remove((posizioneIniziale+1).ToString());
+        }
+        
+        if (inventario.itemList[posizioneFinale]!=null)
+        {
+            GameManager.instanza.posizioniInventario[(posizioneFinale+1).ToString()]=inventario.itemList[posizioneFinale].name;
+        }
+        else
+        {
+            GameManager.instanza.posizioniInventario.Remove((posizioneFinale+1).ToString());
+        }
+
         AggiornaContenuto();
     }
 

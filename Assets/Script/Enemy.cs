@@ -45,7 +45,7 @@ public class Enemy : Fighter
             }
             hits[i]=null;
         }
-        if (Vector3.Distance(playerTransform.position,transform.position)<0.1f)
+        if (Vector3.Distance(playerTransform.position,transform.position)<0.32f)
         {
             collidingWithPlayer = true;
         }
