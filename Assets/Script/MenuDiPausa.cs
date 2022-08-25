@@ -9,6 +9,7 @@ public class MenuDiPausa : MonoBehaviour
 {
     private Animator anim;
     private bool attivo;
+    private bool abilitàAppreseAttivo;
 
     private TMPro.TextMeshProUGUI testoNomeLivello;
 
@@ -16,9 +17,11 @@ public class MenuDiPausa : MonoBehaviour
     private TMPro.TextMeshProUGUI nomeArma;
     private TMPro.TextMeshProUGUI bonusArma;
 
-    private Image[] abilità = new Image[5];
     public Transform cellaAbilità;
     public Transform containerAbilità;
+
+    public Transform testoAbilità;
+    public Transform containerAbilitàApprese;
 
     private TMPro.TextMeshProUGUI testoMonete;
 
@@ -43,6 +46,7 @@ public class MenuDiPausa : MonoBehaviour
 
         // Abilità
         InizializzaAbilità();
+        InizializzaAbilitàAppresa();
 
         //Inventario
         testoMonete=GameObject.Find("TestoMonete").GetComponent<TMPro.TextMeshProUGUI>();
@@ -54,15 +58,40 @@ public class MenuDiPausa : MonoBehaviour
 
     public void MostraMenuDiPausa(){
         AggiornaContenuto();
-        //                                      // Non metto il timescale qui perchè altrimenti freeza subito tutto e non parte l'animazione, anche metterlo dopo è uguale, devo aspettare che l'animazione sia finita
-        anim.SetTrigger("ApriMenu");            // Faccio partire l'animazione di entrata del menu
+        //                                         // Non metto il timescale qui perchè altrimenti freeza subito tutto e non parte l'animazione, anche metterlo dopo è uguale, devo aspettare che l'animazione sia finita
+        anim.SetTrigger("ApriMenu");               // Faccio partire l'animazione di entrata del menu
         attivo=true;
     }
 
     public void NascondiMenuDiPausa(){
-        Time.timeScale=1;                       // Rimetto il timescale a 1 altrimenti non può fare l'animazione e rimane tutto bloccato
-        anim.SetTrigger("ChiudiMenu");          // Faccio partire l'animazione di uscita del menu
+        GameManager.instanza.RiprendiGioco();      // Rimetto il timescale a 1 altrimenti non può fare l'animazione e rimane tutto bloccato
+        if (abilitàAppreseAttivo)
+        {
+            NascondiAbilitàApprese();
+        }
+        anim.SetTrigger("ChiudiMenu");             // Faccio partire l'animazione di uscita del menu
         attivo=false;
+    }
+
+    public void MostraAbilitàApprese(){
+        if (attivo)
+        {
+            GameManager.instanza.RiprendiGioco(); 
+            //                                      // Non metto il timescale qui perchè altrimenti freeza subito tutto e non parte l'animazione, anche metterlo dopo è uguale, devo aspettare che l'animazione sia finita
+            anim.SetTrigger("ApriAbilitàApprese");            // Faccio partire l'animazione di entrata del menu
+            abilitàAppreseAttivo=true;
+        }
+        
+    }
+
+    public void NascondiAbilitàApprese(){
+        if (attivo)
+        {
+            GameManager.instanza.RiprendiGioco();      // Rimetto il timescale a 1 altrimenti non può fare l'animazione e rimane tutto bloccato
+            anim.SetTrigger("ChiudiAbilitàApprese");          // Faccio partire l'animazione di uscita del menu
+            abilitàAppreseAttivo=false;            
+        }
+
     }
 
     private void AggiornaContenuto(){
@@ -78,7 +107,7 @@ public class MenuDiPausa : MonoBehaviour
 
         for (int i = 0; i < GameManager.instanza.player.skillSet.Count; i++)
         {
-            RectTransform goRectTransform=GameObject.Find("CellaAbilità " + (i+1)).GetComponent<RectTransform>();
+            RectTransform goRectTransform=GameObject.Find(containerAbilità.gameObject.name + "/CellaAbilità " + (i+1)).GetComponent<RectTransform>();
 
             if (GameManager.instanza.player.skillSet[i]!=null){
                 goRectTransform.transform.GetChild(0).gameObject.SetActive(true);
@@ -95,16 +124,78 @@ public class MenuDiPausa : MonoBehaviour
             }
         }
 
+        // Abilità apprese
+
+        float dimensioneCella=120.0f;
+        containerAbilitàApprese.GetComponent<RectTransform>().sizeDelta=new Vector2(containerAbilitàApprese.GetComponent<RectTransform>().sizeDelta.x, GameManager.instanza.skillApprese.Count*dimensioneCella + (GameManager.instanza.skillApprese.Count)*6.0f +10.0f);
+        for (int i=0; i <GameManager.instanza.skillApprese.Count;i++)
+        {
+            if (GameObject.Find(containerAbilitàApprese.gameObject.name + "/CellaAbilità " + (i+1))==null)
+            {
+                RectTransform cellaAbilitàRectTransform = Instantiate (cellaAbilità,containerAbilitàApprese).GetComponent<RectTransform>();
+                cellaAbilitàRectTransform.gameObject.name = "CellaAbilità " + (i+1);
+                cellaAbilitàRectTransform.gameObject.SetActive(true);
+                cellaAbilitàRectTransform.anchoredPosition = new Vector2(+17.0f, - i*dimensioneCella - (i)*6.0f -10.0f);
+                
+                RectTransform testoAbilitàRectTransform = Instantiate (testoAbilità,containerAbilitàApprese).GetComponent<RectTransform>();
+                testoAbilitàRectTransform.gameObject.name = "TestoAbilità " + (i+1);
+                testoAbilitàRectTransform.gameObject.SetActive(true);
+                testoAbilitàRectTransform.anchoredPosition = new Vector2(+17.0f + dimensioneCella + 6.0f, - i*dimensioneCella - (i)*6.0f -10.0f);
+                testoAbilitàRectTransform.transform.GetComponent<TMPro.TextMeshProUGUI>().text=GameManager.instanza.skillApprese[i].name;
+                testoAbilitàRectTransform.transform.GetChild(0).GetComponent<TMPro.TextMeshProUGUI>().text=GameManager.instanza.skillApprese[i].descrizione;
+                
+            }
+            
+            RectTransform goRectTransform=GameObject.Find(containerAbilitàApprese.gameObject.name + "/CellaAbilità " + (i+1)).GetComponent<RectTransform>();
+            RectTransform textRectTransform=GameObject.Find(containerAbilitàApprese.gameObject.name + "/TestoAbilità " + (i+1)).GetComponent<RectTransform>();
+
+            if (GameManager.instanza.skillApprese[i]!=null){
+                goRectTransform.transform.GetChild(0).gameObject.SetActive(true);
+                goRectTransform.transform.GetChild(0).GetComponent<Image>().sprite=GameManager.instanza.skillApprese[i].sprite;
+                goRectTransform.transform.GetChild(0).GetComponent<RectTransform>().anchoredPosition = new Vector2(0,0);
+                
+                goRectTransform.transform.GetChild(1).gameObject.SetActive(true);
+                goRectTransform.transform.GetChild(1).GetComponent<TMPro.TextMeshProUGUI>().text=GameManager.instanza.skillApprese[i].PAConsumati.ToString();
+                
+                
+                textRectTransform.transform.gameObject.SetActive(true);
+                textRectTransform.transform.GetComponent<TMPro.TextMeshProUGUI>().text=GameManager.instanza.skillApprese[i].name;
+                
+                textRectTransform.transform.GetChild(0).gameObject.SetActive(true);
+                textRectTransform.transform.GetChild(0).GetComponent<TMPro.TextMeshProUGUI>().text=GameManager.instanza.skillApprese[i].descrizione;
+
+            }
+            else{
+                goRectTransform.transform.GetChild(0).gameObject.SetActive(false);
+                goRectTransform.transform.GetChild(1).gameObject.SetActive(false);
+
+                textRectTransform.transform.gameObject.SetActive(false);
+                textRectTransform.transform.GetChild(0).gameObject.SetActive(false);
+            }
+        
+        }
+        
+        bool finito = false;
+        for (int i = GameManager.instanza.skillApprese.Count; i < 50 & !finito; i++)
+        {
+            if (GameObject.Find(containerAbilitàApprese.gameObject.name + "/CellaAbilità " + (i+1))!=null)
+            {
+                Destroy(GameObject.Find(containerAbilitàApprese.gameObject.name + "/CellaAbilità " + (i+1)));
+                Destroy(GameObject.Find(containerAbilitàApprese.gameObject.name + "/TestoAbilità " + (i+1)));
+            }
+            else
+            {
+                finito=true;
+            }
+        }
+        
+
         // Inventario        
         testoMonete.text= /*testoNomeLivello.text*/ "Monete: " + GameManager.instanza.stats["Monete"];
 
         AggiornaInventario(inventario);
         inventario=GameManager.instanza.player.inventario;    //da cambiare e gestire tutto con l'inventario dal game manager (per ora i due sono slegati)
         inventario=RiordinaInventario(inventario);
-//============================================================================================================================================
-//============================================================================================================================================
-//============================================================================================================================================
-//============================================================================================================================================
         for (int i = 0; i < inventario.itemList.Count; i++)
         {
             RectTransform goRectTransform=GameObject.Find("CellaInventario " + (i+1)).GetComponent<RectTransform>();
@@ -257,6 +348,46 @@ public class MenuDiPausa : MonoBehaviour
         }
     }
 
+    private void InizializzaAbilitàAppresa(){
+
+        int y = 0;
+        float dimensioneCella = 120f;
+        int i=0;
+
+        containerAbilitàApprese.GetComponent<RectTransform>().sizeDelta=new Vector2(containerAbilitàApprese.GetComponent<RectTransform>().sizeDelta.x, GameManager.instanza.skillApprese.Count*dimensioneCella + (GameManager.instanza.skillApprese.Count)*6.0f +10.0f);
+        foreach (Skill skill in GameManager.instanza.skillApprese)
+        {
+            i++;
+            RectTransform cellaAbilitàRectTransform = Instantiate (cellaAbilità,containerAbilitàApprese).GetComponent<RectTransform>();
+            cellaAbilitàRectTransform.gameObject.name = "CellaAbilità " + i;
+            cellaAbilitàRectTransform.gameObject.SetActive(true);
+            cellaAbilitàRectTransform.anchoredPosition = new Vector2(+17.0f, - y*dimensioneCella - (y)*6.0f -10.0f);
+            
+            RectTransform testoAbilitàRectTransform = Instantiate (testoAbilità,containerAbilitàApprese).GetComponent<RectTransform>();
+            testoAbilitàRectTransform.gameObject.name = "TestoAbilità " + i;
+            testoAbilitàRectTransform.gameObject.SetActive(true);
+            testoAbilitàRectTransform.anchoredPosition = new Vector2(+17.0f + dimensioneCella + 6.0f, - y*dimensioneCella - (y)*6.0f -10.0f);
+            testoAbilitàRectTransform.transform.GetComponent<TMPro.TextMeshProUGUI>().text=skill.name;
+            testoAbilitàRectTransform.transform.GetChild(0).GetComponent<TMPro.TextMeshProUGUI>().text=skill.descrizione;
+
+
+            if (skill!=null){
+                cellaAbilitàRectTransform.transform.GetChild(0).gameObject.SetActive(true);
+                cellaAbilitàRectTransform.transform.GetChild(0).GetComponent<Image>().sprite=skill.sprite;
+                
+                cellaAbilitàRectTransform.transform.GetChild(1).gameObject.SetActive(true);
+                cellaAbilitàRectTransform.transform.GetChild(1).GetComponent<TMPro.TextMeshProUGUI>().text=skill.PAConsumati.ToString();
+                
+            }
+            else{
+                cellaAbilitàRectTransform.transform.GetChild(0).gameObject.SetActive(false);
+                cellaAbilitàRectTransform.transform.GetChild(1).gameObject.SetActive(false);
+            }
+
+            y++;
+        }
+    }
+
     private void InizializzaInventario(){
         inventario=GameManager.instanza.player.inventario;
 
@@ -318,6 +449,44 @@ public class MenuDiPausa : MonoBehaviour
         AggiornaContenuto();
     }
 
+    public void EquipaggiaAbilità(int indice){
+        Debug.Log("Equipaggiata abilità nello slot " + (indice+1));
+
+        if (!GameManager.instanza.player.skillSet.Contains(null))
+        {
+            return;
+        }
+
+        Skill equipaggiata = GameManager.instanza.skillApprese[indice];
+        if (GameManager.instanza.player.skillSet.Contains(equipaggiata))
+        {
+            return;
+        }
+
+        int libero = -1;
+        for (int i = GameManager.instanza.player.skillSet.Count-1; i > -1; i--)
+        {
+            if (GameManager.instanza.player.skillSet[i]==null)
+            {
+                libero=i;
+            }
+        }
+        if (libero<0)
+        {
+            return;
+        }
+        GameManager.instanza.player.skillSet[libero]=equipaggiata;
+        
+        AggiornaContenuto();
+    }
+
+    public void DequipaggiaAbilità(int indice){
+        Debug.Log("Dequipaggiata abilità nello slot " + (indice+1));
+        GameManager.instanza.player.skillSet[indice]=null;
+
+        AggiornaContenuto();
+    }
+
     public void MoveItem(int posizioneIniziale, int posizioneFinale){
         inventario.MoveItem(posizioneIniziale,posizioneFinale);
         if (inventario.itemList[posizioneIniziale]!=null)
@@ -361,8 +530,18 @@ public class MenuDiPausa : MonoBehaviour
                 NascondiMenuDiPausa();
             }
         }
-        if (anim.GetCurrentAnimatorStateInfo(0).IsName("Attivo") & attivo){
-            Time.timeScale=0;                   // Se l'animazione "Attivo" è in corso allora l'apertura del menù è finita, non faccio lo stesso con "Inattivo" perchè con il inattivo viene dopo l'animazione di uscita ma se il timescale è a 0 non parte proprio l'animazione d''uscita e rimane quindi bloccato
+        if (anim.GetCurrentAnimatorStateInfo(0).IsName("Attivo") & attivo & !abilitàAppreseAttivo){
+            GameManager.instanza.FermaGioco();                   // Se l'animazione "Attivo" è in corso allora l'apertura del menù è finita, non faccio lo stesso con "Inattivo" perchè con il inattivo viene dopo l'animazione di uscita ma se il timescale è a 0 non parte proprio l'animazione d''uscita e rimane quindi bloccato
+        }
+        
+        if (anim.GetCurrentAnimatorStateInfo(0).IsName("Attivo abilità apprese") & abilitàAppreseAttivo){
+            GameManager.instanza.FermaGioco();                   // Se l'animazione "Attivo" è in corso allora l'apertura del menù è finita, non faccio lo stesso con "Inattivo" perchè con il inattivo viene dopo l'animazione di uscita ma se il timescale è a 0 non parte proprio l'animazione d''uscita e rimane quindi bloccato
+            anim.ResetTrigger("ApriAbilitàApprese");
+        }
+
+        if (!attivo)
+        {
+            abilitàAppreseAttivo=false;
         }
     }
 }

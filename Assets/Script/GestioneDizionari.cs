@@ -87,8 +87,8 @@ namespace Gestione          //Penso possa essere rimosso e fare tutto in maniera
             {
                 while (sr.Peek() >= 0)
                 {
-                    string[] lines = new string[7];
-                    for (int i = 0; i < 7; i++)
+                    string[] lines = new string[8];
+                    for (int i = 0; i < 8; i++)
                     {
                         lines[i]=sr.ReadLine();
                     }
@@ -98,7 +98,8 @@ namespace Gestione          //Penso possa essere rimosso e fare tutto in maniera
                         DEFMultiplier=float.Parse(lines[2].Split("=")[1],CultureInfo.InvariantCulture.NumberFormat),
                         skillDuration=float.Parse(lines[3].Split("=")[1],CultureInfo.InvariantCulture.NumberFormat)/60.0f,  //non credo sia la soluzione migliore ma è l'unica che mi viene in mente
                         PAConsumati=int.Parse(lines[4].Split("=")[1]),
-                        sprite=Resources.Load("IconeAbilità/"+lines[5].Split("=")[1]) as Sprite
+                        sprite=Resources.Load("IconeAbilità/"+lines[5].Split("=")[1]) as Sprite,
+                        descrizione=lines[6].Split("=")[1]
                     };
                     try
                     {

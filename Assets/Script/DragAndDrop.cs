@@ -46,8 +46,14 @@ public class DragAndDrop : MonoBehaviour, IPointerClickHandler,IEndDragHandler,I
                 }   
             }
         }
-        if (transform.parent.name.Split(" ")[0]=="CellaAbilità"){
-            Debug.Log("Doppio Click su Abilità");
+        if (transform.parent.name.Split(" ")[0]=="CellaAbilità" & transform.parent.parent.name=="Abilità"){
+            GameManager.instanza.menuDiPausa.DequipaggiaAbilità(int.Parse(transform.parent.name.Split(" ")[1])-1);
+            Debug.Log("Doppio Click su Abilità Equipaggiata");
+        }
+        else
+        {
+            GameManager.instanza.menuDiPausa.EquipaggiaAbilità(int.Parse(transform.parent.name.Split(" ")[1])-1);
+            Debug.Log("Doppio Click su Abilità Appresa");
         }
     }
 

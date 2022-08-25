@@ -194,6 +194,14 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void FermaGioco(){
+        Time.timeScale=0;
+    }
+
+    public void RiprendiGioco(){
+        Time.timeScale=1;
+    }
+
     //Aggiorna i file con i valori attualmente salvati nei dizionari
     public void Salva(){
 

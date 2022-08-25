@@ -1,12 +1,12 @@
-LV=1
-EXP=19
+LV=2
+EXP=0
 PVMAX=12
-PV=12
+PV=1
 PAMAX=4
-PA=4
+PA=1
 PMMAX=6
 PM=6
 ATK=3
 DEF=4
-Monete=79
+Monete=124
 Arma=Stocco

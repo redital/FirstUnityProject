@@ -10,4 +10,5 @@ public class Skill
     public float skillDuration;
     public int PAConsumati;
     public Sprite sprite;
+    public string descrizione;
 }

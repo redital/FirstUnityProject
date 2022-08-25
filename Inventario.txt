@@ -1,3 +1,3 @@
-Cristiani=2
+Cristiani=1
 Spada di legno=1
 Stocco=1

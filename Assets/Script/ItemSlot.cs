@@ -28,7 +28,7 @@ public class ItemSlot : MonoBehaviour, IDropHandler
                 GameManager.instanza.menuDiPausa.MoveItem(int.Parse(cellaDiPartenza.name.Split(" ")[1])-1,int.Parse(cellaDestinazione.name.Split(" ")[1])-1);
             }
             
-            if (oggettoDroppato.transform.parent.name.Split(" ")[0]=="CellaAbilità")
+            if (oggettoDroppato.transform.parent.name.Split(" ")[0]=="CellaAbilità" & oggettoDroppato.transform.parent.parent.name=="Abilità")
             {
                 GameManager.instanza.menuDiPausa.MoveSkill(int.Parse(cellaDiPartenza.name.Split(" ")[1])-1,int.Parse(cellaDestinazione.name.Split(" ")[1])-1);
             }
