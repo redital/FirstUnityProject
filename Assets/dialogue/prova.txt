@@ -1,0 +1,3 @@
+<obj> questo è solo un testo di prova per il dialogo </obj>
+<obj> questa è una seconda frase </obj>
+<obj>questa è una terza frase </obj>
