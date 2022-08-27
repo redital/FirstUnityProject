@@ -3,11 +3,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+using Polarith.Utils;
+
 public class Mover : MonoBehaviour
 {
     protected Sprite davanti;
     public Sprite dietro;
     public Sprite diLato; 
+
+    public Polarith.AI.Move.AIMContext Context;
 
     // Movimenti base
     protected BoxCollider2D BoxCollider;
@@ -88,6 +92,63 @@ public class Mover : MonoBehaviour
         secondCurrentWanderingMoveDirection = Mathf.FloorToInt(UnityEngine.Random.Range(0, moveDirections.Length));
     }
 
+    protected void OnEnable()
+    {
+        if (Context == null)
+            Context = GetComponentInChildren<Polarith.AI.Move.AIMContext>();
+        if (Context == null)
+            enabled = false;
+    }
+
+    protected void SetSeek(Transform seguiTransform){
+        Polarith.AI.Move.AIMSeek[] componenti = GetComponents<Polarith.AI.Move.AIMSeek>();
+        for (int i = 0; i < componenti.Length; i++)
+        {
+            if (componenti[i].Label=="SeekInterest")
+            {
+                componenti[i].GameObjects.Add(seguiTransform.gameObject);
+            }
+            if (componenti[i].Label=="SeekDanger")
+            {
+                Transform collision = GameObject.Find("Collision").transform.GetChild(0).transform;
+                for (int j = 0; j < collision.childCount; j++)
+                {
+                    componenti[i].GameObjects.Add(collision.GetChild(j).gameObject);
+                }
+            }
+            if (componenti[i].Label=="SeekPeople")
+            {
+                GameObject[] persone =  GameObject.FindGameObjectsWithTag("Actor");
+                for (int j = 0; j < persone.Length; j++)
+                {
+                    componenti[i].GameObjects.Add(persone[j]);
+                }
+                persone =  GameObject.FindGameObjectsWithTag("Fighter");
+                for (int j = 0; j < persone.Length; j++)
+                {
+                    componenti[i].GameObjects.Add(persone[j]);
+                }
+            }
+        }
+    }
+
+    protected void Segui(Transform seguiTransform , float followDistance){
+        if (Vector3.Distance(seguiTransform.position,transform.position)>followDistance){
+            //transform.GetComponent<Polarith.AI.Move.AIMSimpleController2D>().Speed=1;
+            //UpdateMotor((seguiTransform.position - transform.position).normalized);
+            UpdateMotor(ContextDecision(Context.DecidedDirection * Context.DecidedMagnitude));
+        }    
+        else
+        {
+            //transform.GetComponent<Polarith.AI.Move.AIMSimpleController2D>().Speed=0;
+        }
+    }
+
+    protected Vector3 ContextDecision(Vector3 direzione){
+        if (Mathf2.Approximately(direzione.sqrMagnitude, 0))
+            return new Vector3 (0,0,0);
+        return direzione;
+    }
 
     protected virtual void UpdateMotor(Vector3 input){
         //Reset moveDelta
@@ -128,8 +189,15 @@ public class Mover : MonoBehaviour
             transform.Translate(moveDelta.x*Time.deltaTime*speed,0,0);
         }
 
-        if (this.transform.GetChild(0).name=="WeaponPosition"){
-            this.transform.GetChild(0).GetChild(0).GetComponent<Weapon>().UpdateWeaponPosition(input);
+        try
+        {
+            if (this.transform.GetChild(0).name=="WeaponPosition"){
+                this.transform.GetChild(0).GetChild(0).GetComponent<Weapon>().UpdateWeaponPosition(input);
+            }
         }
+        catch {
+            
+        }
+        
     }
 }

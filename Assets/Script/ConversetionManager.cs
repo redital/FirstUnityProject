@@ -40,7 +40,7 @@ public class ConversetionManager : MonoBehaviour
     }
 
    void Start(){
-     player =  GameObject.Find("Player");
+     player =  GameManager.instanza.player.gameObject;
      testo = parsingConversetion();
    /*   foreach (var a in testo)
      {

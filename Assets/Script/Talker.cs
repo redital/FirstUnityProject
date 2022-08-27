@@ -15,14 +15,14 @@ public class Talker : Collidable
     // Start is called before the first frame update
     protected override void Start()
     {
-        boxCollider=transform.parent.GetComponent<BoxCollider2D>(); 
-        nome = transform.parent.name;
+        boxCollider=transform.GetComponent<BoxCollider2D>(); 
+        nome = transform.name;
     }
 
     
     protected override void OnCollide(Collider2D coll){
         if (Input.GetKeyDown(KeyCode.Space) & !GameManager.instanza.combatStatus){
-            if (coll.name == "Player"){
+            if (coll.name == GameManager.instanza.player.name){
                 GameManager.instanza.MostraConversationText(frasi,nome);
 
             } 

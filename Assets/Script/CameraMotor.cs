@@ -9,7 +9,7 @@ public class CameraMotor : MonoBehaviour
     private Vector3 moveDelta;
 
     private void Start(){
-        lookAt=GameObject.Find("Player").transform;
+        lookAt=GameManager.instanza.player.transform;
     }
 
     // Update is called once per frame

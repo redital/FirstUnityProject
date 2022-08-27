@@ -22,11 +22,12 @@ public class Enemy : Fighter
 
     protected override void Start(){
         base.Start();                   // Per non perdere l'assegnazione del BoxCollider (da Mover) e dell'arma (da Fighter)
-        playerTransform = GameObject.Find("Player").transform;
+        playerTransform = GameManager.instanza.player.transform;
         //playerTransform = GameManager.instanza.player.transform;
         //startingPosition=transform.position;
         hitbox = transform.GetComponent<BoxCollider2D>(); //notare che questo parametro è uguale al BoxCollider, lo teniamo perchè potrebbe esserci casi in cui vogliamo una hitbox diversa dal collider che usiamo per il movimento
         // in caso si volesse usare una hitbox diversa si deve creare un GameObject (visto che ogni GameObject può avere un solo collider) e usare GetChild al posto di transform
+        SetSeek(playerTransform);
     }
     
     
@@ -38,7 +39,7 @@ public class Enemy : Fighter
         collidingWithPlayer = false;
         for (int i=0; i<hits.Length; i++){
             if (hits[i]!=null){
-                if (hits[i].name=="Player")
+                if (hits[i].name==GameManager.instanza.player.name)
                 {
                     collidingWithPlayer = true;
                 }   
@@ -67,7 +68,8 @@ public class Enemy : Fighter
                 Attack();
             }
             else{
-                UpdateMotor((playerTransform.position - transform.position).normalized);
+                Segui(playerTransform, 0);
+                //UpdateMotor((playerTransform.position - transform.position).normalized);
             }
         }
         else{

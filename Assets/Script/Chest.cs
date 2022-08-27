@@ -24,7 +24,7 @@ public class Chest : Collectable
     // Quando il giocatore tocca la chest questa, se non è già stata depredata, si apre
     protected override void OnCollide(Collider2D coll){
         base.OnCollide(coll);
-        if(coll.name=="Player" & collected==false){
+        if(coll.name==GameManager.instanza.player.name & collected==false){
             GetComponent<SpriteRenderer>().sprite = fullChest;
         }
     }

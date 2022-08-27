@@ -11,7 +11,7 @@ public class Collectable : Collidable       // Potrebbe essere una classe astrat
     */
     
     protected override void OnCollide(Collider2D coll){     // Se il giocatore collide con l'oggetto questo viene aiutomaticamente raccolto, se non si intende fare ciò si possono aggiungere condizioni in OnCollect
-        if(coll.name=="Player"){
+        if(coll.name==GameManager.instanza.player.name){
             OnCollect();
         }
     }
