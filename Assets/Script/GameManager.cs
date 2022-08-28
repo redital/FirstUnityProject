@@ -64,9 +64,15 @@ public class GameManager : MonoBehaviour
     // Riferimento al giocatore
     public Player player;
 
-    // Indicatore del se si sta combattendo o meno (da implementare)
+    // Indicatore del se si sta combattendo o meno
     public List<Enemy> chasingEnemy = new List<Enemy>();
     public bool combatStatus;
+
+    // Indicatore del se si sta parlando o meno
+    public bool staParlando;
+
+    // Indicatore del se il menù di pausa è aperto o meno
+    public bool menuAperto;
 
     // Lista di tutte le skill
     public List<Skill> skillList = new List<Skill>();

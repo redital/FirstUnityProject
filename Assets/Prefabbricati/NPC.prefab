@@ -109,7 +109,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.02}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -120,7 +120,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.18, y: 0.26}
+  m_Size: {x: 0.31, y: 0.32}
   m_EdgeRadius: 0
 --- !u!114 &2083684442284482666
 MonoBehaviour:
@@ -134,9 +134,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e52315645ca408d4c91c23ae07305ee5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  davanti: {fileID: -1727646158, guid: 927d01d13d8660c4c85e6de373dbf807, type: 3}
   dietro: {fileID: 1208877365, guid: 927d01d13d8660c4c85e6de373dbf807, type: 3}
   diLato: {fileID: 1890234, guid: 927d01d13d8660c4c85e6de373dbf807, type: 3}
   Context: {fileID: 0}
+  wanderingMoveSpeed: 0.16
 --- !u!114 &1801103819511567832
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -163,11 +165,12 @@ MonoBehaviour:
     maxDepth: 0
     minNormalAngle: 0
     maxNormalAngle: 0
-  nome: NPC a caso
   frasi:
   - Hey Nemaco!
   - Stai ancora dormedo?
   - Vedi di non farmi arrabbiare
+  fileDialogo: {fileID: 4900000, guid: ec2d76a2a02087247883c700c973f7df, type: 3}
+  testoDaFile: 0
 --- !u!114 &7999365875964714755
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -7,7 +7,7 @@ using Polarith.Utils;
 
 public class Mover : MonoBehaviour
 {
-    protected Sprite davanti;
+    public Sprite davanti;
     public Sprite dietro;
     public Sprite diLato; 
 
@@ -20,7 +20,7 @@ public class Mover : MonoBehaviour
     protected float speed = 1.5f;
 
     // Sistema Wandering (cammina in maniera random senza allontanarsi troppo dal punto di partenza)
-    protected float wanderingMoveSpeed = 0.16f;
+    public float wanderingMoveSpeed = 0.16f;
     protected float wanderingMinTime=1.0f, wanderingMaxTime=4.0f;
     protected float wanderingDecisionTimeCount = -1.0f;
     protected float maxWanderingDistance = 0.5f;

@@ -522,7 +522,7 @@ public class MenuDiPausa : MonoBehaviour
     }
 
     private void Update(){
-        if (Input.GetKeyDown(KeyCode.P)){
+        if (Input.GetKeyDown(KeyCode.P) & !GameManager.instanza.staParlando){
             if(!attivo){
                 MostraMenuDiPausa();
             }
@@ -543,5 +543,7 @@ public class MenuDiPausa : MonoBehaviour
         {
             abilitàAppreseAttivo=false;
         }
+
+        GameManager.instanza.menuAperto=attivo;
     }
 }

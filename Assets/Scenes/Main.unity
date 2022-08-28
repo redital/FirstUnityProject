@@ -714,9 +714,10 @@ MonoBehaviour:
     maxDepth: 0
     minNormalAngle: 0
     maxNormalAngle: 0
-  nome: NPC a caso
   frasi:
   - Io sono un oggetto e tu mi stai esaminando
+  fileDialogo: {fileID: 0}
+  testoDaFile: 0
 --- !u!1 &366354015
 GameObject:
   m_ObjectHideFlags: 0
@@ -2203,24 +2204,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 878248742}
   m_CullTransparentMesh: 1
---- !u!1 &931021481 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7999365875964714771, guid: b9ee1215b7c156b42bf7b6e815c43381, type: 3}
-  m_PrefabInstance: {fileID: 1125035675}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &931021482
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 931021481}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8cd793768a787ca4d9aa3a6526f398d2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogo: {fileID: 4900000, guid: ec2d76a2a02087247883c700c973f7df, type: 3}
 --- !u!1 &973230265
 GameObject:
   m_ObjectHideFlags: 0
@@ -2844,10 +2827,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1801103819511567832, guid: b9ee1215b7c156b42bf7b6e815c43381, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7999365875964714767, guid: b9ee1215b7c156b42bf7b6e815c43381, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -2895,10 +2874,6 @@ PrefabInstance:
     - target: {fileID: 7999365875964714771, guid: b9ee1215b7c156b42bf7b6e815c43381, type: 3}
       propertyPath: m_Name
       value: Tomoe
-      objectReference: {fileID: 0}
-    - target: {fileID: 7999365875964714771, guid: b9ee1215b7c156b42bf7b6e815c43381, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b9ee1215b7c156b42bf7b6e815c43381, type: 3}
@@ -5900,9 +5875,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e814ad901390974590b6584c2398e5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  davanti: {fileID: 0}
   dietro: {fileID: 1525622523, guid: 927d01d13d8660c4c85e6de373dbf807, type: 3}
   diLato: {fileID: -1452677337, guid: 927d01d13d8660c4c85e6de373dbf807, type: 3}
   Context: {fileID: 0}
+  wanderingMoveSpeed: 0.16
   LV: 1
   PA: 0
   PAMAX: 0

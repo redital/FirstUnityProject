@@ -20,6 +20,10 @@ public class ConversationTextManager : MonoBehaviour
     public void MostraTesto(string[] testi, string speaker, int fontSize, Color color, Vector3 position, Vector3 motion){
         ConversationText conversationText = GetConversationText();
 
+        if (GameManager.instanza.staParlando | GameManager.instanza.menuAperto){
+            return;
+        }
+
         conversationText.frasi = testi;
         conversationText.fraseCorrente = 0;
         conversationText.text.text = testi[conversationText.fraseCorrente];

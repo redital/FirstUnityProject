@@ -19,22 +19,22 @@ public class ConversationText
     public Image sfondo;            // Immagine di sfondo al testo
 
     public void MostraTesto(){
-        attivo = true;
-        go.SetActive(attivo);
-        sfondo.enabled=true;
-        Time.timeScale=0;
+        GameManager.instanza.staParlando = true;
+        go.SetActive(GameManager.instanza.staParlando);
+        sfondo.enabled=GameManager.instanza.staParlando;
+        GameManager.instanza.FermaGioco();
     }
 
     public void NascondiTesto(){
-        attivo = false;
-        go.SetActive(attivo);
-        sfondo.enabled=false;
-        Time.timeScale=1;
+        GameManager.instanza.staParlando = false;
+        go.SetActive(GameManager.instanza.staParlando);
+        sfondo.enabled=GameManager.instanza.staParlando;
+        GameManager.instanza.RiprendiGioco();
     }
 
     // Per parlare con qulcuno si preme la barra spaziatrice, per andare avanti passando da una frase all'altra si preme la barra spaziatrice, se la frase è l'ultima si chiude la conversazione
     public void UpdateConversationText(){
-        if (attivo){
+        if (GameManager.instanza.staParlando){
             if (Input.GetKeyDown(KeyCode.Space)){   //Forse ha più senso metterlo nel ConversationTextManager
                 if (fraseCorrente<frasi.Length)
                 {
