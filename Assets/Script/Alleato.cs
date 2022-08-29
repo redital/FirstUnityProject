@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -33,6 +34,24 @@ public class Alleato : Fighter
 
         if (!GameManager.instanza.combatStatus){
             Segui(playerTransform , followDistance);
+        }
+        else
+        {
+            int scelto=0;
+            for (int i = 0; i < GameManager.instanza.chasingEnemy.Count; i++)
+            {
+                if ((GameManager.instanza.chasingEnemy[i].transform.position-transform.position).sqrMagnitude<(GameManager.instanza.chasingEnemy[scelto].transform.position-transform.position).sqrMagnitude)
+                {
+                    scelto=i;
+                }
+            }
+            Segui(GameManager.instanza.chasingEnemy[scelto].transform,0.1f);
+            Debug.Log(GameManager.instanza.chasingEnemy[scelto]);
+
+            if ((transform.position - GameManager.instanza.chasingEnemy[scelto].transform.position).sqrMagnitude<0.5f)
+            {
+                Attack();
+            }
         }
         
     }

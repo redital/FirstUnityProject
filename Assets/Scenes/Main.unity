@@ -2832,6 +2832,14 @@ PrefabInstance:
       propertyPath: testoComplesso
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7999365875964714765, guid: b9ee1215b7c156b42bf7b6e815c43381, type: 3}
+      propertyPath: m_Size.x
+      value: 0.31
+      objectReference: {fileID: 0}
+    - target: {fileID: 7999365875964714765, guid: b9ee1215b7c156b42bf7b6e815c43381, type: 3}
+      propertyPath: m_Size.y
+      value: 0.32
+      objectReference: {fileID: 0}
     - target: {fileID: 7999365875964714767, guid: b9ee1215b7c156b42bf7b6e815c43381, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -4895,7 +4903,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2006798703
 RectTransform:
   m_ObjectHideFlags: 0

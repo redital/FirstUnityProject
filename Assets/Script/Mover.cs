@@ -133,6 +133,19 @@ public class Mover : MonoBehaviour
     }
 
     protected void Segui(Transform seguiTransform , float followDistance){
+
+        Polarith.AI.Move.AIMSeek[] componenti = GetComponents<Polarith.AI.Move.AIMSeek>();
+
+        for (int i = 0; i < componenti.Length; i++)
+        {
+            if (componenti[i].Label=="SeekInterest")
+            {
+                if (componenti[i].GameObjects[0]!=seguiTransform.gameObject)
+                {
+                    componenti[i].GameObjects[0]=seguiTransform.gameObject;
+                }
+            }
+        }
         if (Vector3.Distance(seguiTransform.position,transform.position)>followDistance){
             //transform.GetComponent<Polarith.AI.Move.AIMSimpleController2D>().Speed=1;
             //UpdateMotor((seguiTransform.position - transform.position).normalized);
@@ -155,22 +168,25 @@ public class Mover : MonoBehaviour
         moveDelta=input;
 
         //flip del personaggio a seconda che si vada a destra o a sinistra
-        if (Math.Abs(moveDelta.x)>Math.Abs(moveDelta.y)){
-            if(moveDelta.x>0){
-                GetComponent<SpriteRenderer>().sprite = diLato;
-                transform.localScale = new Vector3(1,1,1);
+        
+        if (!Mathf2.Approximately(moveDelta.sqrMagnitude, 0)){
+            if (Math.Abs(moveDelta.x)>Math.Abs(moveDelta.y)){
+                if(moveDelta.x>0){
+                    GetComponent<SpriteRenderer>().sprite = diLato;
+                    transform.localScale = new Vector3(1,1,1);
+                }
+                if(moveDelta.x<0){
+                    GetComponent<SpriteRenderer>().sprite = diLato; 
+                    transform.localScale = new Vector3(-1,1,1);
+                }
             }
-            if(moveDelta.x<0){
-                GetComponent<SpriteRenderer>().sprite = diLato; 
-                transform.localScale = new Vector3(-1,1,1);
-            }
-        }
-        else{
-            if(moveDelta.y>0){
-                GetComponent<SpriteRenderer>().sprite = dietro;
-            }
-            if(moveDelta.y<0){
-                GetComponent<SpriteRenderer>().sprite = davanti;
+            else{
+                if(moveDelta.y>0){
+                    GetComponent<SpriteRenderer>().sprite = dietro;
+                }
+                if(moveDelta.y<0){
+                    GetComponent<SpriteRenderer>().sprite = davanti;
+                }
             }
         }
         
@@ -179,14 +195,19 @@ public class Mover : MonoBehaviour
         hit=Physics2D.BoxCast(transform.position,BoxCollider.size,0,new Vector2(0,moveDelta.y),Mathf.Abs(moveDelta.y*Time.deltaTime*speed),LayerMask.GetMask("Actor","Blocking"));
 
         if (hit.collider==null){
-            transform.Translate(0,moveDelta.y*Time.deltaTime*speed,0);
+            if (!Mathf2.Approximately(moveDelta.y, 0)){
+                transform.Translate(0,moveDelta.y*Time.deltaTime*speed,0);
+            }
+            
         }
 
         //controllo collisioni asse x
         hit=Physics2D.BoxCast(transform.position,BoxCollider.size,0,new Vector2(moveDelta.x,0),Mathf.Abs(moveDelta.x*Time.deltaTime*speed),LayerMask.GetMask("Actor","Blocking"));
 
         if (hit.collider==null){
-            transform.Translate(moveDelta.x*Time.deltaTime*speed,0,0);
+            if (!Mathf2.Approximately(moveDelta.x, 0)){
+                transform.Translate(moveDelta.x*Time.deltaTime*speed,0,0);
+            }
         }
 
         try
