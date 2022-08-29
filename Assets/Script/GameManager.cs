@@ -122,7 +122,7 @@ public class GameManager : MonoBehaviour
         Questo metodo richiama il metodo del ConversationTextManager e serve per impostare i valori di default ma sopratutto per permettere una gestione centralizzata
     */
     public void MostraConversationText(string[] testo, string speaker, Vector3? position = null, Vector3? motion = null, Color? color = null, int fontSize = 46){
-        if(conversationTextManager.GetConversationText().attivo){
+        if(staParlando){
             return;
         }
 

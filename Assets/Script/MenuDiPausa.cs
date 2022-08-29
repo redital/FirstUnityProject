@@ -61,6 +61,7 @@ public class MenuDiPausa : MonoBehaviour
         //                                         // Non metto il timescale qui perchè altrimenti freeza subito tutto e non parte l'animazione, anche metterlo dopo è uguale, devo aspettare che l'animazione sia finita
         anim.SetTrigger("ApriMenu");               // Faccio partire l'animazione di entrata del menu
         attivo=true;
+        transform.GetChild(0).gameObject.SetActive(true);
     }
 
     public void NascondiMenuDiPausa(){
@@ -71,6 +72,7 @@ public class MenuDiPausa : MonoBehaviour
         }
         anim.SetTrigger("ChiudiMenu");             // Faccio partire l'animazione di uscita del menu
         attivo=false;
+        transform.GetChild(0).gameObject.SetActive(false);
     }
 
     public void MostraAbilitàApprese(){
@@ -531,7 +533,7 @@ public class MenuDiPausa : MonoBehaviour
             }
         }
         if (anim.GetCurrentAnimatorStateInfo(0).IsName("Attivo") & attivo & !abilitàAppreseAttivo){
-            GameManager.instanza.FermaGioco();                   // Se l'animazione "Attivo" è in corso allora l'apertura del menù è finita, non faccio lo stesso con "Inattivo" perchè con il inattivo viene dopo l'animazione di uscita ma se il timescale è a 0 non parte proprio l'animazione d''uscita e rimane quindi bloccato
+            GameManager.instanza.FermaGioco();                // Se l'animazione "Attivo" è in corso allora l'apertura del menù è finita, non faccio lo stesso con "Inattivo" perchè con il inattivo viene dopo l'animazione di uscita ma se il timescale è a 0 non parte proprio l'animazione d''uscita e rimane quindi bloccato
         }
         
         if (anim.GetCurrentAnimatorStateInfo(0).IsName("Attivo abilità apprese") & abilitàAppreseAttivo){

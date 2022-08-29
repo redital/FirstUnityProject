@@ -20,6 +20,10 @@ public class Talker : Collidable
     private TextAsset fileDialogo;
     [SerializeField] 
     private bool testoDaFile;
+    [SerializeField] 
+    private bool testoComplesso;
+    private bool finito=true;
+    private int arrivatoA=0;
 
     // Start is called before the first frame update
     protected override void Start()
@@ -35,9 +39,14 @@ public class Talker : Collidable
 
     protected string[] parsingConversetion(TextAsset dialogo){
         ArrayList testo = new ArrayList();
-        string dialogoText=dialogo.text.Replace("\n", "").Replace("\r", ""); // rimuovo i ritorno a capo
-        string startTr1 = "<obj>"; 
-        string endTr1 = "</obj>";
+        return parsingConversetion(dialogo.text);
+    }
+
+    protected string[] parsingConversetion(string dialogo){
+        ArrayList testo = new ArrayList();
+        string dialogoText=dialogo.Replace("\n", "").Replace("\r", ""); // rimuovo i ritorno a capo
+        string startTr1 = "<battuta>"; 
+        string endTr1 = "</battuta>";
 
         //Debug.Log(dialogoText);
         while (dialogoText.Length!= 0)
@@ -54,11 +63,71 @@ public class Talker : Collidable
         string[] text = (String[]) testo.ToArray(typeof(string));
         return text;
     }
+
+    protected void performComplexConversetion(TextAsset dialogo){
+        finito=false;
+
+        string dialogoText=dialogo.text.Replace("\n", "").Replace("\r", ""); // rimuovo i ritorno a capo
+        string start = "<obj>"; 
+        string end = "</obj>";
+        string startTr1 = "<talker>"; 
+        string endTr1 = "</talker>";
+
+        //Debug.Log(dialogoText);
+        dialogoText=dialogoText.Remove(0,arrivatoA);
+        /*
+        while (dialogoText.Length!= 0)
+        {
+            int inizioNome = dialogoText.IndexOf(startTr1,0)+startTr1.Length;
+            int fineNome = dialogoText.IndexOf(endTr1,inizioNome);
+
+            string nome = dialogoText.Substring(inizioNome,fineNome-inizioNome);
+
+            int inizio=dialogoText.IndexOf(start,0)+start.Length;
+            Debug.Log("inizio "+inizio);
+            int fine=dialogoText.IndexOf(end,inizio);
+            Debug.Log("fine "+fine);
+
+            Debug.Log(dialogoText.Substring(fineNome + endTr1.Length,fine-(fineNome + endTr1.Length)));
+            GameManager.instanza.MostraConversationText(parsingConversetion(dialogoText.Substring(fineNome + endTr1.Length,fine - (fineNome + endTr1.Length))),nome);
+
+            arrivatoA = fine + end.Length;
+
+            //parlanti.Add(dialogoText.Substring(inizio,fine-inizio));
+            dialogoText=dialogoText.Remove(inizio-start.Length, fine-inizio+end.Length+start.Length);
+            //Debug.Log(dialogoText);
+        }
+        */
+        int inizioNome = dialogoText.IndexOf(startTr1,0)+startTr1.Length;
+        int fineNome = dialogoText.IndexOf(endTr1,inizioNome);
+
+        string nome = dialogoText.Substring(inizioNome,fineNome-inizioNome);
+
+        int inizio=dialogoText.IndexOf(start,0)+start.Length;
+        //Debug.Log("inizio "+inizio);
+        int fine=dialogoText.IndexOf(end,inizio);
+        //Debug.Log("fine "+fine);
+
+        Debug.Log(dialogoText.Substring(fineNome + endTr1.Length,fine-(fineNome + endTr1.Length)));
+        GameManager.instanza.MostraConversationText(parsingConversetion(dialogoText.Substring(fineNome + endTr1.Length,fine - (fineNome + endTr1.Length))),nome);
+
+        arrivatoA += fine + end.Length;
+        Debug.Log(arrivatoA);
+        Debug.Log(fileDialogo.text.Replace("\n", "").Replace("\r", "").Length);
+    }
+    
     
     protected override void OnCollide(Collider2D coll){
-        if (Input.GetKeyDown(KeyCode.Space) & !GameManager.instanza.combatStatus & !GameManager.instanza.menuAperto){
+        if (Input.GetKeyDown(KeyCode.Space) & finito & !GameManager.instanza.combatStatus & !GameManager.instanza.menuAperto){
             if (coll.name == GameManager.instanza.player.name){
-                GameManager.instanza.MostraConversationText(frasi,nome);
+                if (testoComplesso)
+                {
+                    performComplexConversetion(fileDialogo);
+                }
+                else
+                {
+                    GameManager.instanza.MostraConversationText(frasi,nome);
+                }
             } 
         }
     }
@@ -92,6 +161,22 @@ public class Talker : Collidable
                         GetComponent<SpriteRenderer>().sprite = mover.davanti;
                     }
                 }            
+            }
+        }
+
+        if (!GameManager.instanza.staParlando & !finito)
+        {                
+            Debug.Log(arrivatoA);
+            Debug.Log(fileDialogo.text.Replace("\n", "").Replace("\r", "").Length);
+
+            if (arrivatoA==fileDialogo.text.Replace("\n", "").Replace("\r", "").Length)
+            {
+                finito=true;
+                arrivatoA=0;
+            }
+            else
+            {
+                performComplexConversetion(fileDialogo);
             }
         }
     }

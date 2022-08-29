@@ -1,2 +1,14 @@
-<obj> Probabilmente non è vero </obj>
-<obj> Ma io 3111 euro non me li perdo! </obj>
+<obj>
+<talker> Tomoe </talker>
+<battuta> Probabilmente non è vero </battuta>
+<battuta> Ma io 3111 euro non me li perdo! </battuta>
+</obj>
+<obj>
+<talker> Nemaco</talker>
+<battuta> Tomoe... </battuta>
+<battuta> Sei proprio polla </battuta>
+</obj>
+<obj>
+<talker> Tomoe </talker>
+<battuta> Oh ma Vaffanculo! </battuta>
+</obj>

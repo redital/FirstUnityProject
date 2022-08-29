@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class ConversationText
 {
-    public bool attivo=false;       // Indicatore del se si sta mostrando il testo o meno 
+    //public bool attivo=false;       // Indicatore del se si sta mostrando il testo o meno 
 
     public GameObject go;           // GameObject della casella di testo contenente per l'appunto il testo
     public GameObject goSpeaker;    // GameObject della casella di testo contenente il nome di chi parla 
@@ -36,6 +36,7 @@ public class ConversationText
     public void UpdateConversationText(){
         if (GameManager.instanza.staParlando){
             if (Input.GetKeyDown(KeyCode.Space)){   //Forse ha più senso metterlo nel ConversationTextManager
+            Debug.Log("aggiorno");
                 if (fraseCorrente<frasi.Length)
                 {
                     text.text=frasi[fraseCorrente];

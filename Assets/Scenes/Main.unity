@@ -718,6 +718,7 @@ MonoBehaviour:
   - Io sono un oggetto e tu mi stai esaminando
   fileDialogo: {fileID: 0}
   testoDaFile: 0
+  testoComplesso: 0
 --- !u!1 &366354015
 GameObject:
   m_ObjectHideFlags: 0
@@ -2827,6 +2828,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1801103819511567832, guid: b9ee1215b7c156b42bf7b6e815c43381, type: 3}
+      propertyPath: testoComplesso
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7999365875964714767, guid: b9ee1215b7c156b42bf7b6e815c43381, type: 3}
       propertyPath: m_RootOrder
       value: 4
