@@ -1,21 +1,55 @@
-name=Spada di legno
+name=Spada Goblin
 tipo=Arma
 quantità=1
-spriteName=weapon_0
+spriteName=SpadaGoblin_inventario
 isStackable=false
 feature=1.0
 |
-name=Cristiani
+name=Pozione
 tipo=Consumabile
 quantità=1
-spriteName=Player_1
+spriteName=Pozione_0
 isStackable=true
 feature=2.0
 |
-name=Stocco
+name=Bastone Quadrifoglio
 tipo=Arma
 quantità=1
-spriteName=Weapon_1
+spriteName=BastoneQuadrifoglio_inventario
 isStackable=false
 feature=2.0
 |
+name=Carta da gioco
+tipo=None
+quantità=1
+spriteName=CartaDaGioco
+isStackable=true
+feature=0.0
+|
+name=Coltello rovinato
+tipo=None
+quantità=1
+spriteName=ColtelloRovinato
+isStackable=true
+feature=0.0
+|
+name=Quadrifoglio
+tipo=None
+quantità=1
+spriteName=Quadrifoglio
+isStackable=true
+feature=0.0
+|
+name=Zanna di cinghiale
+tipo=None
+quantità=1
+spriteName=ZannaDiCinghiale
+isStackable=true
+feature=0.0
+|
+name=Coltello
+tipo=Arma
+quantità=1
+spriteName=Coltello_inventario
+isStackable=false
+feature=0.0

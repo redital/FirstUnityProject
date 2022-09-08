@@ -21,7 +21,7 @@ public class GameManager : MonoBehaviour
             return;
         }
         SceneManager.sceneLoaded += CreaEventSystem;
-        //SceneManager.sceneLoaded += RiposizionaGiocatore;   // Ogni volta che viene caricata una nuova scena va posizionato il giocatore nel suo SpownPoint
+        SceneManager.sceneLoaded += RiposizionaGiocatore;   // Ogni volta che viene caricata una nuova scena va posizionato il giocatore nel suo SpownPoint
         SceneManager.sceneLoaded += Pulizia;                // Ogni volta che viene caricata una nuova scena occorre eliminare eventuali duplicati di alcuni oggetti unici (quelli che ci si porta nel DontDestroyOnLoad)
         SceneManager.sceneLoaded += Carica;                 // Gestione tramite eventi: questa riga indica che quando accade SceneManager.sceneLoaded allora deve seguire Carica
         DontDestroyOnLoad(gameObject);
@@ -73,6 +73,9 @@ public class GameManager : MonoBehaviour
 
     // Indicatore del se il menù di pausa è aperto o meno
     public bool menuAperto;
+
+    // Indicatore del se il caricamento dei dati è in corso o meno
+    public bool caricando;
 
     // Lista di tutte le skill
     public List<Skill> skillList = new List<Skill>();
@@ -176,6 +179,16 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void RiposizionaGiocatore(Scene S, LoadSceneMode mode){
+        if (!caricando)
+        {
+            RiposizionaGiocatore();
+        }
+        else{
+            caricando=false;
+        }
+    }
+
     public void Pulizia(Scene S, LoadSceneMode mode){
         DistruggiDuplicati(instanza.player.gameObject);
         DistruggiDuplicati(instanza.floatingTextManager.transform.parent.gameObject);
@@ -230,6 +243,7 @@ public class GameManager : MonoBehaviour
 
     //Aggiorna i dizionari con i valori attualmente salvati nei file
     public void Carica(){
+        caricando=true;
         stats = Gestione.GestioneDizionari.LetturaDizionario("Statistiche.txt");
         inventario = Gestione.GestioneDizionari.LetturaInventario("Inventario.txt");
         posizioniInventario = Gestione.GestioneDizionari.LetturaDizionario("PosizioniInventario.txt");
@@ -242,7 +256,8 @@ public class GameManager : MonoBehaviour
 
         player.transform.GetChild(0).GetChild(0).GetComponent<Weapon>().nomeArma=itemList.Find(x => x.name==stats["Arma"]).name;
         player.transform.GetChild(0).GetChild(0).GetComponent<Weapon>().baseDamage=itemList.Find(x => x.name==stats["Arma"]).feature;
-        player.transform.GetChild(0).GetChild(0).GetComponent<SpriteRenderer>().sprite=Resources.Load("IconeOggetti/"+itemList.Find(x => x.name==stats["Arma"]).spriteName) as Sprite;
+        player.transform.GetChild(0).GetChild(0).GetComponent<SpriteRenderer>().sprite=Resources.Load("SpriteArmi/"+itemList.Find(x => x.name==stats["Arma"]).spriteName.Split("_")[0] + "_sprite") as Sprite;
+
 
         
         posizione = Gestione.GestioneDizionari.LetturaDizionario("Posizione.txt");

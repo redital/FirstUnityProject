@@ -103,7 +103,7 @@ public class MenuDiPausa : MonoBehaviour
         // Arma e statistiche
         nomeArma.text=GameManager.instanza.player.transform.GetChild(0).GetChild(0).GetComponent<Weapon>().nomeArma;
         bonusArma.text="ATK Bonus " + (GameManager.instanza.player.transform.GetChild(0).GetChild(0).GetComponent<Weapon>().baseDamage-1)*100 +"%";
-        spriteArma.sprite=GameManager.instanza.player.transform.GetChild(0).GetChild(0).GetComponent<SpriteRenderer>().sprite;
+        spriteArma.sprite=Resources.Load("ArmiGrandi/"+ GameManager.instanza.player.transform.GetChild(0).GetChild(0).GetComponent<Weapon>().nomeArma.Replace(" ","").Split("_")[0] + "_grande") as Sprite;
 
         // Abilità
 
@@ -332,7 +332,7 @@ public class MenuDiPausa : MonoBehaviour
             RectTransform cellaAbilitàRectTransform = Instantiate (cellaAbilità,containerAbilità).GetComponent<RectTransform>();
             cellaAbilitàRectTransform.gameObject.name = "CellaAbilità " + i;
             cellaAbilitàRectTransform.gameObject.SetActive(true);
-            cellaAbilitàRectTransform.anchoredPosition = new Vector2(x*dimensioneCella + (x)*14.0f + 17.0f , -10.0f);
+            cellaAbilitàRectTransform.anchoredPosition = new Vector2(x*dimensioneCella + (x)*14.0f + 17.0f + 10.8f +10.0f, -10.0f -10.0f - 2.57f);
             if (skill!=null){
                 cellaAbilitàRectTransform.transform.GetChild(0).gameObject.SetActive(true);
                 cellaAbilitàRectTransform.transform.GetChild(0).GetComponent<Image>().sprite=skill.sprite;
@@ -363,12 +363,12 @@ public class MenuDiPausa : MonoBehaviour
             RectTransform cellaAbilitàRectTransform = Instantiate (cellaAbilità,containerAbilitàApprese).GetComponent<RectTransform>();
             cellaAbilitàRectTransform.gameObject.name = "CellaAbilità " + i;
             cellaAbilitàRectTransform.gameObject.SetActive(true);
-            cellaAbilitàRectTransform.anchoredPosition = new Vector2(+17.0f, - y*dimensioneCella - (y)*6.0f -10.0f);
+            cellaAbilitàRectTransform.anchoredPosition = new Vector2(+17.0f, - y*dimensioneCella - (y)*(6.0f+5.75f) -20.0f -10.0f);
             
             RectTransform testoAbilitàRectTransform = Instantiate (testoAbilità,containerAbilitàApprese).GetComponent<RectTransform>();
             testoAbilitàRectTransform.gameObject.name = "TestoAbilità " + i;
             testoAbilitàRectTransform.gameObject.SetActive(true);
-            testoAbilitàRectTransform.anchoredPosition = new Vector2(+17.0f + dimensioneCella + 6.0f, - y*dimensioneCella - (y)*6.0f -10.0f);
+            testoAbilitàRectTransform.anchoredPosition = new Vector2(+17.0f + dimensioneCella + 6.0f, - y*dimensioneCella - (y)*(6.0f+5.75f) -20.0f -10.0f);
             testoAbilitàRectTransform.transform.GetComponent<TMPro.TextMeshProUGUI>().text=skill.name;
             testoAbilitàRectTransform.transform.GetChild(0).GetComponent<TMPro.TextMeshProUGUI>().text=skill.descrizione;
 
@@ -403,7 +403,7 @@ public class MenuDiPausa : MonoBehaviour
             RectTransform cellaInventarioRectTransform = Instantiate (cellaInventario,containerInventario).GetComponent<RectTransform>();
             cellaInventarioRectTransform.gameObject.name = "CellaInventario " + i;
             cellaInventarioRectTransform.gameObject.SetActive(true);
-            cellaInventarioRectTransform.anchoredPosition = new Vector2(x*dimensioneCella + (x)*14.0f + 17.0f ,y*dimensioneCella + (y)*6.0f - (50.0f+13.0f));
+            cellaInventarioRectTransform.anchoredPosition = new Vector2(x*dimensioneCella + (x)*14.0f + 17.0f + 10.8f ,y*dimensioneCella + (y)*6.0f - (50.0f+13.0f + 7.15f));
 
             x++;
             if (x>=5){
@@ -421,7 +421,7 @@ public class MenuDiPausa : MonoBehaviour
 
         GameManager.instanza.player.transform.GetChild(0).GetChild(0).GetComponent<Weapon>().nomeArma=inventario.itemList[indice].name;
         GameManager.instanza.player.transform.GetChild(0).GetChild(0).GetComponent<Weapon>().baseDamage=inventario.itemList[indice].feature;
-        GameManager.instanza.player.transform.GetChild(0).GetChild(0).GetComponent<SpriteRenderer>().sprite=Resources.Load("IconeOggetti/"+inventario.itemList[indice].spriteName) as Sprite;
+        GameManager.instanza.player.transform.GetChild(0).GetChild(0).GetComponent<SpriteRenderer>().sprite=Resources.Load("SpriteArmi/"+inventario.itemList[indice].spriteName.Split("_")[0] + "_sprite") as Sprite;
 
         GameManager.instanza.stats["Arma"]=inventario.itemList[indice].name;
 
@@ -437,7 +437,7 @@ public class MenuDiPausa : MonoBehaviour
 
         inventario.itemList[indice].quantità--;
 
-        if (inventario.itemList[indice].name=="Cristiani"){
+        if (inventario.itemList[indice].name=="Pozione"){
             GameManager.instanza.player.Heal((int)Math.Round(inventario.itemList[indice].feature));
         }
         else{

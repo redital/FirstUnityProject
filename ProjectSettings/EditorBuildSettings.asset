@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Main.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
+    path: Assets/Scenes/Windill.unity
+    guid: 8edbb83c2a4b8b44fa007fdeeda8919b
+  - enabled: 1
     path: Assets/Scenes/Dungeon.unity
     guid: 188b77a0f821ea64fa601bf33624ca23
   m_configObjects: {}

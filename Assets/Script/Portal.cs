@@ -11,7 +11,7 @@ public class Portal : Collidable
        if (coll.name == GameManager.instanza.player.name){
             string sceneName=sceneNames[Random.Range(0,sceneNames.Length)];
             SceneManager.LoadScene(sceneName);
-            GameManager.instanza.RiposizionaGiocatore();
+            //GameManager.instanza.RiposizionaGiocatore();
         } 
     }
     

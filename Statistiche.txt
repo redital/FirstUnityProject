@@ -9,4 +9,4 @@ PM=6
 ATK=3
 DEF=4
 Monete=124
-Arma=Stocco
+Arma=Spada Goblin
