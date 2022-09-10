@@ -151,21 +151,21 @@ public class Talker : Collidable
         QuestGiver questGiver = transform.GetComponent<QuestGiver>();
         if (!questGiver.AssignedQuest && !questGiver.Helped)
         {
-            GameManager.instanza.MostraConversationText(new string[]{"Fra secondo me sei più forte di Alioh", "Fammi vedere come gli fai il culo"},nome);
             questGiver.AssignQuest();
+            GameManager.instanza.MostraConversationText(questGiver.GetFrasiAssegnazione(),nome);
         }
         else if(questGiver.AssignedQuest && !questGiver.Helped)
         {
             if(questGiver.CheckQuest()){
-                GameManager.instanza.MostraConversationText(new string[]{"Sei un grande, è stato fantastico", "Questo è per lo spettacolo che ci hai offerto"},nome);
+                GameManager.instanza.MostraConversationText(questGiver.GetFrasiConclusione(),nome);
             }
             else{
-                GameManager.instanza.MostraConversationText(new string[]{"Che c'è? Te la stai facendo sotto?"},nome);
+                GameManager.instanza.MostraConversationText(questGiver.GetFrasiIncompleta(),nome);
             }
         }
         else
         {
-            GameManager.instanza.MostraConversationText(new string[]{"Quello sì che è stato uno spettacolo"},nome);
+            GameManager.instanza.MostraConversationText(questGiver.GetFrasiCompleta(),nome);
             //DialogueSystem.Instance.AddNewDialogue(new string[] { "Thanks for that stuff that one time." }, name);
         }
     }

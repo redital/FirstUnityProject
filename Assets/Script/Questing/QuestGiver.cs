@@ -13,6 +13,18 @@ public class QuestGiver : NPC {
     private string questType;
     private Quest Quest;
     
+    public string[] GetFrasiAssegnazione(){
+        return Quest.frasiAssegnazione;
+    }
+    public string[] GetFrasiConclusione(){
+        return Quest.frasiConclusione;
+    }
+    public string[] GetFrasiIncompleta(){
+        return Quest.frasiIncompleta;
+    }
+    public string[] GetFrasiCompleta(){
+        return Quest.frasiCompleta;
+    }
 
     public void AssignQuest()
     {
@@ -32,7 +44,7 @@ public class QuestGiver : NPC {
         }
         else
         {
-            //DialogueSystem.Instance.AddNewDialogue(new string[] { "You're still in the middle of helping me. Get back at it!"}, name);
+            //DialogueSystem.Instance.AddNewDialogue(new string[] {"You're still in the middle of helping me. Get back at it!"}, name);
         }
         return Quest.Completed;
     }

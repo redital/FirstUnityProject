@@ -28,6 +28,7 @@ public class Inventario
                         // Se lo trovo aggiorno la quantità dell'occorrenza già presente
                         currentItem.quantità+=quantità;
                         trovato=true;
+                        UIEventHandler.ItemAddedToInventory(item);
                         return;
                     }
                 }
@@ -44,6 +45,7 @@ public class Inventario
                 {
                     item.quantità=quantità;
                     itemList[i]=item;
+                    UIEventHandler.ItemAddedToInventory(item);
                     return;
                 }
             }

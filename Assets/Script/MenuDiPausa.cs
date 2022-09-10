@@ -535,6 +535,18 @@ public class MenuDiPausa : MonoBehaviour
         return inventario.itemList[indice];
     }
 
+    public Item GetItem(string nome){
+        return inventario.itemList.Find(x => x.name==nome);
+    }
+
+    public void RemoveItem(string nome){
+        inventario.itemList.Find(x => x.name==nome).quantità--;
+
+        if (inventario.itemList.Find(x => x.name==nome).quantità<1){
+            inventario.itemList[inventario.itemList.FindIndex(x => x.name==nome)]=null;
+        }
+    }
+
     private void Update(){
         if (Input.GetKeyDown(KeyCode.P) & !GameManager.instanza.staParlando){
             if(!attivo){

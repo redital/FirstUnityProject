@@ -149,7 +149,6 @@ public class GameManager : MonoBehaviour
         GameObject temp1=GameObject.Find("EventSystem");
         if (temp1!=null)
         {
-            Debug.Log(GameObject.Find("EventSystem"));
             Destroy(temp1);
         }
         /*
