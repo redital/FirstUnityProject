@@ -46,7 +46,7 @@ public class Alleato : Fighter
                 }
             }
             Segui(GameManager.instanza.chasingEnemy[scelto].transform,0.1f);
-            Debug.Log(GameManager.instanza.chasingEnemy[scelto]);
+            //Debug.Log(GameManager.instanza.chasingEnemy[scelto]);
 
             if ((transform.position - GameManager.instanza.chasingEnemy[scelto].transform.position).sqrMagnitude<0.5f)
             {

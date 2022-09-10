@@ -36,7 +36,6 @@ public class ConversationText
     public void UpdateConversationText(){
         if (GameManager.instanza.staParlando){
             if (Input.GetKeyDown(KeyCode.Space)){   //Forse ha più senso metterlo nel ConversationTextManager
-            Debug.Log("aggiorno");
                 if (fraseCorrente<frasi.Length)
                 {
                     text.text=frasi[fraseCorrente];

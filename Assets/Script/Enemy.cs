@@ -97,15 +97,17 @@ public class Enemy : Fighter
 
     protected override void Death(){
         base.Death();
+
+        CombatEvents.EnemyDied(this); //evento indicante la morte del giocatore
+
         //Se muore va tolto dalla lista degli inseguitori (se c'è)
         if(GameManager.instanza.chasingEnemy.Find(x=>x.transform.name==transform.name)==this){
             GameManager.instanza.chasingEnemy.Remove(this);
         }
+
         //Distruggo l'oggetto dalla scena
         Destroy(gameObject);
-        //assegno i punti esperienza e lo comunico al giocatore
-        GameManager.instanza.MostraFloatingText("+" + expVal.ToString() + " exp", transform.position + new Vector3 (0.2f,0.2f,0), motion:Vector3.up*25, color:Color.blue);
-        int nuovoValore=expVal + int.Parse(GameManager.instanza.stats["EXP"]);
-        GameManager.instanza.stats["EXP"]=nuovoValore.ToString();
+
+        GameManager.instanza.player.GuadagnaEsperienza(expVal);
     }
 }

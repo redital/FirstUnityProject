@@ -56,6 +56,7 @@ public class MenuDiPausa : MonoBehaviour
         AggiornaContenuto();
     }
 
+    //-------------------------------------------------Sezione per mostrare e nascondere il menù------------------------------------------------------
     public void MostraMenuDiPausa(){
         AggiornaContenuto();
         //                                         // Non metto il timescale qui perchè altrimenti freeza subito tutto e non parte l'animazione, anche metterlo dopo è uguale, devo aspettare che l'animazione sia finita
@@ -95,7 +96,104 @@ public class MenuDiPausa : MonoBehaviour
         }
 
     }
+    
+    
+    //-------------------------------------------------Inizializzazione del contenuto grafico (sono tutte chiamate nello start)
+    private void InizializzaAbilità(){
 
+        int x = 0;
+        float dimensioneCella = 120f;
+        int i=0;
+        foreach (Skill skill in GameManager.instanza.player.skillSet)
+        {
+            i++;
+            RectTransform cellaAbilitàRectTransform = Instantiate (cellaAbilità,containerAbilità).GetComponent<RectTransform>();
+            cellaAbilitàRectTransform.gameObject.name = "CellaAbilità " + i;
+            cellaAbilitàRectTransform.gameObject.SetActive(true);
+            cellaAbilitàRectTransform.anchoredPosition = new Vector2(x*dimensioneCella + (x)*14.0f + 17.0f + 10.8f +10.0f, -10.0f -10.0f - 2.57f);
+            if (skill!=null){
+                cellaAbilitàRectTransform.transform.GetChild(0).gameObject.SetActive(true);
+                cellaAbilitàRectTransform.transform.GetChild(0).GetComponent<Image>().sprite=skill.sprite;
+                
+                cellaAbilitàRectTransform.transform.GetChild(1).gameObject.SetActive(true);
+                cellaAbilitàRectTransform.transform.GetChild(1).GetComponent<TMPro.TextMeshProUGUI>().text=skill.PAConsumati.ToString();
+                
+            }
+            else{
+                cellaAbilitàRectTransform.transform.GetChild(0).gameObject.SetActive(false);
+                cellaAbilitàRectTransform.transform.GetChild(1).gameObject.SetActive(false);
+            }
+
+            x++;
+        }
+    }
+
+    private void InizializzaAbilitàAppresa(){
+
+        int y = 0;
+        float dimensioneCella = 120f;
+        int i=0;
+
+        containerAbilitàApprese.GetComponent<RectTransform>().sizeDelta=new Vector2(containerAbilitàApprese.GetComponent<RectTransform>().sizeDelta.x, GameManager.instanza.skillApprese.Count*dimensioneCella + (GameManager.instanza.skillApprese.Count)*6.0f +10.0f);
+        foreach (Skill skill in GameManager.instanza.skillApprese)
+        {
+            i++;
+            RectTransform cellaAbilitàRectTransform = Instantiate (cellaAbilità,containerAbilitàApprese).GetComponent<RectTransform>();
+            cellaAbilitàRectTransform.gameObject.name = "CellaAbilità " + i;
+            cellaAbilitàRectTransform.gameObject.SetActive(true);
+            cellaAbilitàRectTransform.anchoredPosition = new Vector2(+17.0f, - y*dimensioneCella - (y)*(6.0f+5.75f) -20.0f -10.0f);
+            
+            RectTransform testoAbilitàRectTransform = Instantiate (testoAbilità,containerAbilitàApprese).GetComponent<RectTransform>();
+            testoAbilitàRectTransform.gameObject.name = "TestoAbilità " + i;
+            testoAbilitàRectTransform.gameObject.SetActive(true);
+            testoAbilitàRectTransform.anchoredPosition = new Vector2(+17.0f + dimensioneCella + 6.0f, - y*dimensioneCella - (y)*(6.0f+5.75f) -20.0f -10.0f);
+            testoAbilitàRectTransform.transform.GetComponent<TMPro.TextMeshProUGUI>().text=skill.name;
+            testoAbilitàRectTransform.transform.GetChild(0).GetComponent<TMPro.TextMeshProUGUI>().text=skill.descrizione;
+
+
+            if (skill!=null){
+                cellaAbilitàRectTransform.transform.GetChild(0).gameObject.SetActive(true);
+                cellaAbilitàRectTransform.transform.GetChild(0).GetComponent<Image>().sprite=skill.sprite;
+                
+                cellaAbilitàRectTransform.transform.GetChild(1).gameObject.SetActive(true);
+                cellaAbilitàRectTransform.transform.GetChild(1).GetComponent<TMPro.TextMeshProUGUI>().text=skill.PAConsumati.ToString();
+                
+            }
+            else{
+                cellaAbilitàRectTransform.transform.GetChild(0).gameObject.SetActive(false);
+                cellaAbilitàRectTransform.transform.GetChild(1).gameObject.SetActive(false);
+            }
+
+            y++;
+        }
+    }
+
+    private void InizializzaInventario(){
+        inventario=GameManager.instanza.player.inventario;
+
+        int x = 0;
+        int y = 0;
+        float dimensioneCella = 120f;
+        int i=0;
+        foreach (Item item in inventario.itemList)
+        {
+            i++;
+            RectTransform cellaInventarioRectTransform = Instantiate (cellaInventario,containerInventario).GetComponent<RectTransform>();
+            cellaInventarioRectTransform.gameObject.name = "CellaInventario " + i;
+            cellaInventarioRectTransform.gameObject.SetActive(true);
+            cellaInventarioRectTransform.anchoredPosition = new Vector2(x*dimensioneCella + (x)*14.0f + 17.0f + 10.8f ,y*dimensioneCella + (y)*6.0f - (50.0f+13.0f + 7.15f));
+
+            x++;
+            if (x>=5){
+                x=0;
+                y--;
+            }
+            
+        }
+    }
+
+    //-------------------------------------------------Sezione per la gestione del contenuto grafico---------------------------------------------------------
+    // Aggiornamento contenuto e/o posizioni contenuto (è il metodo principale che richiama i successivi di questa sezione)
     private void AggiornaContenuto(){
         // Nome e livello
         testoNomeLivello.text= /*testoNomeLivello.text*/ "Nemaco - LV " + GameManager.instanza.stats["LV"];
@@ -223,6 +321,25 @@ public class MenuDiPausa : MonoBehaviour
         AggiornaInventario(inventario);
     }
 
+    private void AggiornaInventario(Inventario inventario){
+        GameManager.instanza.inventario=new Dictionary<int, Item>();
+        int indice=0;
+        foreach (Item item in inventario.itemList)
+        {
+            if (item!=null)
+            {
+                GameManager.instanza.inventario[indice]=item;
+                indice++;
+            }
+        }
+        GameManager.instanza.player.LoadInventario();
+    }
+
+    public void AggiungiOggetto(Item item, int quantità){
+        inventario.AddItem(item,quantità); 
+        AggiornaInventario(inventario);
+    }
+
     private Inventario RiordinaInventario(Inventario inventario){
 
         posizioniInventario=GameManager.instanza.posizioniInventario;
@@ -297,6 +414,7 @@ public class MenuDiPausa : MonoBehaviour
 
         return inventario;
     }
+
     private Dictionary<string,string> SetPosizioniInventario(Inventario inventario){
         Dictionary<string, string> posizioniInventario = new Dictionary<string, string>();
         for (int i = 0; i < inventario.itemList.Count; i++){
@@ -306,112 +424,6 @@ public class MenuDiPausa : MonoBehaviour
         }
         
         return posizioniInventario;
-    }
-    private void AggiornaInventario(Inventario inventario){
-        GameManager.instanza.inventario=new Dictionary<int, Item>();
-        int indice=0;
-        foreach (Item item in inventario.itemList)
-        {
-            if (item!=null)
-            {
-                GameManager.instanza.inventario[indice]=item;
-                indice++;
-            }
-        }
-        GameManager.instanza.player.LoadInventario();
-    }
-
-    private void InizializzaAbilità(){
-
-        int x = 0;
-        float dimensioneCella = 120f;
-        int i=0;
-        foreach (Skill skill in GameManager.instanza.player.skillSet)
-        {
-            i++;
-            RectTransform cellaAbilitàRectTransform = Instantiate (cellaAbilità,containerAbilità).GetComponent<RectTransform>();
-            cellaAbilitàRectTransform.gameObject.name = "CellaAbilità " + i;
-            cellaAbilitàRectTransform.gameObject.SetActive(true);
-            cellaAbilitàRectTransform.anchoredPosition = new Vector2(x*dimensioneCella + (x)*14.0f + 17.0f + 10.8f +10.0f, -10.0f -10.0f - 2.57f);
-            if (skill!=null){
-                cellaAbilitàRectTransform.transform.GetChild(0).gameObject.SetActive(true);
-                cellaAbilitàRectTransform.transform.GetChild(0).GetComponent<Image>().sprite=skill.sprite;
-                
-                cellaAbilitàRectTransform.transform.GetChild(1).gameObject.SetActive(true);
-                cellaAbilitàRectTransform.transform.GetChild(1).GetComponent<TMPro.TextMeshProUGUI>().text=skill.PAConsumati.ToString();
-                
-            }
-            else{
-                cellaAbilitàRectTransform.transform.GetChild(0).gameObject.SetActive(false);
-                cellaAbilitàRectTransform.transform.GetChild(1).gameObject.SetActive(false);
-            }
-
-            x++;
-        }
-    }
-
-    private void InizializzaAbilitàAppresa(){
-
-        int y = 0;
-        float dimensioneCella = 120f;
-        int i=0;
-
-        containerAbilitàApprese.GetComponent<RectTransform>().sizeDelta=new Vector2(containerAbilitàApprese.GetComponent<RectTransform>().sizeDelta.x, GameManager.instanza.skillApprese.Count*dimensioneCella + (GameManager.instanza.skillApprese.Count)*6.0f +10.0f);
-        foreach (Skill skill in GameManager.instanza.skillApprese)
-        {
-            i++;
-            RectTransform cellaAbilitàRectTransform = Instantiate (cellaAbilità,containerAbilitàApprese).GetComponent<RectTransform>();
-            cellaAbilitàRectTransform.gameObject.name = "CellaAbilità " + i;
-            cellaAbilitàRectTransform.gameObject.SetActive(true);
-            cellaAbilitàRectTransform.anchoredPosition = new Vector2(+17.0f, - y*dimensioneCella - (y)*(6.0f+5.75f) -20.0f -10.0f);
-            
-            RectTransform testoAbilitàRectTransform = Instantiate (testoAbilità,containerAbilitàApprese).GetComponent<RectTransform>();
-            testoAbilitàRectTransform.gameObject.name = "TestoAbilità " + i;
-            testoAbilitàRectTransform.gameObject.SetActive(true);
-            testoAbilitàRectTransform.anchoredPosition = new Vector2(+17.0f + dimensioneCella + 6.0f, - y*dimensioneCella - (y)*(6.0f+5.75f) -20.0f -10.0f);
-            testoAbilitàRectTransform.transform.GetComponent<TMPro.TextMeshProUGUI>().text=skill.name;
-            testoAbilitàRectTransform.transform.GetChild(0).GetComponent<TMPro.TextMeshProUGUI>().text=skill.descrizione;
-
-
-            if (skill!=null){
-                cellaAbilitàRectTransform.transform.GetChild(0).gameObject.SetActive(true);
-                cellaAbilitàRectTransform.transform.GetChild(0).GetComponent<Image>().sprite=skill.sprite;
-                
-                cellaAbilitàRectTransform.transform.GetChild(1).gameObject.SetActive(true);
-                cellaAbilitàRectTransform.transform.GetChild(1).GetComponent<TMPro.TextMeshProUGUI>().text=skill.PAConsumati.ToString();
-                
-            }
-            else{
-                cellaAbilitàRectTransform.transform.GetChild(0).gameObject.SetActive(false);
-                cellaAbilitàRectTransform.transform.GetChild(1).gameObject.SetActive(false);
-            }
-
-            y++;
-        }
-    }
-
-    private void InizializzaInventario(){
-        inventario=GameManager.instanza.player.inventario;
-
-        int x = 0;
-        int y = 0;
-        float dimensioneCella = 120f;
-        int i=0;
-        foreach (Item item in inventario.itemList)
-        {
-            i++;
-            RectTransform cellaInventarioRectTransform = Instantiate (cellaInventario,containerInventario).GetComponent<RectTransform>();
-            cellaInventarioRectTransform.gameObject.name = "CellaInventario " + i;
-            cellaInventarioRectTransform.gameObject.SetActive(true);
-            cellaInventarioRectTransform.anchoredPosition = new Vector2(x*dimensioneCella + (x)*14.0f + 17.0f + 10.8f ,y*dimensioneCella + (y)*6.0f - (50.0f+13.0f + 7.15f));
-
-            x++;
-            if (x>=5){
-                x=0;
-                y--;
-            }
-            
-        }
     }
 
     public void EquipaggiaArma(int indice){

@@ -25,6 +25,13 @@ public class Player : Fighter
         
     }
 
+    public void GuadagnaEsperienza(int expVal){
+        //Assegno i punti esperienza e lo comunico al giocatore                 //Adesso che ci sono gli eventi potrebbe essere gestito tramite esssi
+        GameManager.instanza.MostraFloatingText("+" + expVal.ToString() + " exp", transform.position + new Vector3 (0.2f,0.2f,0), motion:Vector3.up*25, color:Color.blue);
+        int nuovoValore=expVal + int.Parse(GameManager.instanza.stats["EXP"]);
+        GameManager.instanza.stats["EXP"]=nuovoValore.ToString();
+    }
+
     public void LoadInventario(){
         inventario=new Inventario();
         foreach (int key in GameManager.instanza.inventario.Keys)
@@ -100,9 +107,9 @@ public class Player : Fighter
         
 
         //Se raggiunge il numero di punti esperienza richiesti sale di livello e si aggiornano le informazioni
-        if(EXP==NextLevelEXP){
+        if(EXP>=NextLevelEXP){
             LV++;
-            EXP=0;
+            EXP-=NextLevelEXP;
             GameManager.instanza.stats["EXP"]=EXP.ToString();
             NextLevelEXP=20*LV;
             GameManager.instanza.stats["LV"]=LV.ToString();

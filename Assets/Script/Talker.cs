@@ -25,6 +25,8 @@ public class Talker : Collidable
     private bool finito=true;
     private int arrivatoA=0;
 
+    private bool isQuestGiver=false;
+
     // Start is called before the first frame update
     protected override void Start()
     {
@@ -35,6 +37,10 @@ public class Talker : Collidable
             frasi=parsingConversetion(fileDialogo);
         }
         
+        if (transform.GetComponent<QuestGiver>()!=null)
+        {
+            isQuestGiver=true;
+        }
     }
 
     protected string[] parsingConversetion(TextAsset dialogo){
@@ -120,15 +126,47 @@ public class Talker : Collidable
     protected override void OnCollide(Collider2D coll){
         if (Input.GetKeyDown(KeyCode.Space) & finito & !GameManager.instanza.combatStatus & !GameManager.instanza.menuAperto){
             if (coll.name == GameManager.instanza.player.name){
-                if (testoComplesso)
-                {
-                    performComplexConversetion(fileDialogo);
-                }
-                else
-                {
-                    GameManager.instanza.MostraConversationText(frasi,nome);
-                }
+                Interagisci();
             } 
+        }
+    }
+
+    protected void Interagisci(){
+        if (isQuestGiver)
+        {
+            GestistioneStatoQuest();
+        }
+        else if (testoComplesso)
+        {
+            performComplexConversetion(fileDialogo);
+        }
+        else
+        {
+            GameManager.instanza.MostraConversationText(frasi,nome);
+        }
+    }
+
+    protected void GestistioneStatoQuest()
+    {
+        QuestGiver questGiver = transform.GetComponent<QuestGiver>();
+        if (!questGiver.AssignedQuest && !questGiver.Helped)
+        {
+            GameManager.instanza.MostraConversationText(new string[]{"Fra secondo me sei più forte di Alioh", "Fammi vedere come gli fai il culo"},nome);
+            questGiver.AssignQuest();
+        }
+        else if(questGiver.AssignedQuest && !questGiver.Helped)
+        {
+            if(questGiver.CheckQuest()){
+                GameManager.instanza.MostraConversationText(new string[]{"Sei un grande, è stato fantastico", "Questo è per lo spettacolo che ci hai offerto"},nome);
+            }
+            else{
+                GameManager.instanza.MostraConversationText(new string[]{"Che c'è? Te la stai facendo sotto?"},nome);
+            }
+        }
+        else
+        {
+            GameManager.instanza.MostraConversationText(new string[]{"Quello sì che è stato uno spettacolo"},nome);
+            //DialogueSystem.Instance.AddNewDialogue(new string[] { "Thanks for that stuff that one time." }, name);
         }
     }
 
