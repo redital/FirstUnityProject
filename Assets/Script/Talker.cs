@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
 using System;
-using UnityEditor.VersionControl;
+//using UnityEditor.VersionControl;
 
 public class Talker : Collidable
 {
