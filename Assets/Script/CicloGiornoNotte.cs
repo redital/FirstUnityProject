@@ -20,6 +20,6 @@ public class CicloGiornoNotte : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        luce.color = colore.Evaluate((float)(GameManager.instanza.timeSystem.ora-8)/16);
+        luce.color = colore.Evaluate((float)((GameManager.instanza.timeSystem.ora-8)*60 + GameManager.instanza.timeSystem.minuto)/(16*60));
     }
 }
