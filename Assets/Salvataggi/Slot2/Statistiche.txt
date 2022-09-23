@@ -1,0 +1,12 @@
+LV=1
+EXP=0
+PVMAX=12
+PV=12
+PAMAX=4
+PA=4
+PMMAX=6
+PM=6
+ATK=3
+DEF=4
+Monete=0
+Arma=Spada Goblin

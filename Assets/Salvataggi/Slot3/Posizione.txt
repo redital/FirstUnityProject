@@ -1,0 +1,7 @@
+Scena=Main
+x=1,589999
+y=0,7799997
+z=0
+Giorno=1
+Ora=8
+Minuto=30

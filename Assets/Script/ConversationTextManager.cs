@@ -28,13 +28,13 @@ public class ConversationTextManager : MonoBehaviour
         conversationText.fraseCorrente = 0;
         conversationText.text.text = testi[conversationText.fraseCorrente];
         conversationText.text.fontSize = fontSize;
-        conversationText.text.color = color;
+        conversationText.text.color = Color.black; //color;
         conversationText.go.transform.position = Camera.main.WorldToScreenPoint(position);
         conversationText.motion = motion;
 
         conversationText.speaker.text = speaker;
         conversationText.speaker.fontSize = fontSize;
-        conversationText.speaker.color = color;
+        conversationText.speaker.color = Color.white; //color;
         conversationText.goSpeaker.transform.position = Camera.main.WorldToScreenPoint(position + new Vector3(0,0.3f,0));
 
         conversationText.MostraTesto();

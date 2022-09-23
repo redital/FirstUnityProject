@@ -1,0 +1,16 @@
+name=RotationSkill
+ATKMultiplier=2.0
+DEFMultiplier=1.0
+skillDuration=50.0
+PAConsumati=1
+Sprite=RotationSkill
+Descrizione=Fa roteare l'arma (ATK+100%)
+|
+name=Lancio
+ATKMultiplier=1.3
+DEFMultiplier=1.0
+skillDuration=40.0
+PAConsumati=2
+Sprite=Lancio
+Descrizione=Lancia l'arma (ATK+30%)
+|

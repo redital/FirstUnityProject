@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+using System.IO;
+
 using static Gestione.GestioneDizionari;    //Penso possa essere rimosso e fare tutto in maniera molto più semplice
 
 public class GameManager : MonoBehaviour
@@ -34,18 +36,26 @@ public class GameManager : MonoBehaviour
         //DontDestroyOnLoad(instanza.eventSystem);
 
         // Volevo metterlo nello start ma siccome il primo Carica viene chiamato a scena caricata nell'Awake, alloraavverrebbe dopo, ma queste cose servono per il carica quindi lo metto qui
-        skillList=LetturaListaSkill("ListaSkill.txt");
-        itemList=LetturaListaItems("ListaOggetti.txt");
+        skillList=LetturaListaSkill(percorsoSalvataggio + slotSalvataggio + "/" + "ListaSkill.txt");
+        itemList=LetturaListaItems(percorsoSalvataggio + slotSalvataggio + "/" + "ListaOggetti.txt");
+
+        
+        using (var sr = new StreamReader("Assets/Salvataggi/UltimoSlot.txt"))
+        {
+            slotSalvataggio=int.Parse(sr.ReadLine());
+        }
     }
 
     // Risorse
+
     // Tutte le informazioni sono salvate all'interno di file che vengono letti quando i dati vengono caricati e memorizzati all'interno di dizionari
     public Dictionary<string, string> stats = new Dictionary<string, string>();
     public Dictionary<int, Item> inventario = new Dictionary<int, Item>();
     public Dictionary<string, string> posizioniInventario = new Dictionary<string, string>();
-    
-    // Il salvataggio/Caricamento della posizione non è ancora stato implementato, ci sono stati dei tentativi fallimentari :(
     public Dictionary<string, string> posizione = new Dictionary<string, string>();
+
+    private string percorsoSalvataggio = "Assets/Salvataggi/Slot";
+    public int slotSalvataggio=1;
     
     // Queste variabili non servono davvero sono state messe per comodità di testing, sono solo copie dei dati salvati nei dizionari che dichiarate pubbliche appaiono nell'inspector, così posso vederle cambiare in tempo reale
     public int monete;
@@ -64,6 +74,9 @@ public class GameManager : MonoBehaviour
     // Riferimento al giocatore
     public Player player;
 
+    // Riferimento al sistema di giorni e orari
+    public TimeSystem timeSystem;
+
     // Indicatore del se si sta combattendo o meno
     public List<Enemy> chasingEnemy = new List<Enemy>();
     public bool combatStatus;
@@ -76,6 +89,9 @@ public class GameManager : MonoBehaviour
 
     // Indicatore del se il caricamento dei dati è in corso o meno
     public bool caricando;
+
+    // Indicatore del se il c'è una cutscene in corso o meno
+    public bool cutScene;
 
     // Lista di tutte le skill
     public List<Skill> skillList = new List<Skill>();
@@ -134,7 +150,7 @@ public class GameManager : MonoBehaviour
             color=Color.white;
         }
         if(position==null){
-            position = Camera.main.ViewportToWorldPoint (new Vector3(900.0f/Camera.main.pixelWidth + 0.01f, 0.135f,0));
+            position = Camera.main.ViewportToWorldPoint (new Vector3(900.0f/Camera.main.pixelWidth + 0.05f, 0.135f - 0.01f,0));
             //Debug.Log(300.0f/Camera.main.pixelWidth);
         }
         if(motion==null){
@@ -150,6 +166,31 @@ public class GameManager : MonoBehaviour
         if (temp1!=null)
         {
             Destroy(temp1);
+        }
+        GameObject temp2=GameObject.Find("EventSystem(Clone)");
+        if (temp2!=null)
+        {
+            Destroy(temp2);
+        }
+        temp1=GameObject.Find("EventSystem");
+        if (temp1!=null)
+        {
+            Destroy(temp1);
+        }
+        temp2=GameObject.Find("EventSystem(Clone)");
+        if (temp2!=null)
+        {
+            Destroy(temp2);
+        }
+        temp1=GameObject.Find("EventSystem");
+        if (temp1!=null)
+        {
+            Destroy(temp1);
+        }
+        temp2=GameObject.Find("EventSystem(Clone)");
+        if (temp2!=null)
+        {
+            Destroy(temp2);
         }
         /*
         GameObject temp2=GameObject.Find("EventSystem");
@@ -223,18 +264,19 @@ public class GameManager : MonoBehaviour
     //Aggiorna i file con i valori attualmente salvati nei dizionari
     public void Salva(){
 
-        Gestione.GestioneDizionari.ScritturaDizionario(stats,"Statistiche.txt");
-        Gestione.GestioneDizionari.ScritturaInventario(inventario,"Inventario.txt");
-        Gestione.GestioneDizionari.ScritturaDizionario(posizioniInventario,"PosizioniInventario.txt");
-        Gestione.GestioneDizionari.ScritturaSkillApprese(skillApprese,"SkillApprese.txt");
-        Gestione.GestioneDizionari.ScritturaSkillEquipaggiate(player.skillSet,"SkillEquipaggiate.txt");
+        Gestione.GestioneDizionari.ScritturaDizionario(stats,percorsoSalvataggio + slotSalvataggio + "/" + "Statistiche.txt");
+        Gestione.GestioneDizionari.ScritturaInventario(inventario,percorsoSalvataggio + slotSalvataggio + "/" + "Inventario.txt");
+        Gestione.GestioneDizionari.ScritturaDizionario(posizioniInventario,percorsoSalvataggio + slotSalvataggio + "/" + "PosizioniInventario.txt");
+        Gestione.GestioneDizionari.ScritturaSkillApprese(skillApprese,percorsoSalvataggio + slotSalvataggio + "/" + "SkillApprese.txt");
+        Gestione.GestioneDizionari.ScritturaSkillEquipaggiate(player.skillSet,percorsoSalvataggio + slotSalvataggio + "/" + "SkillEquipaggiate.txt");
 
         
         posizione["Scena"] = SceneManager.GetActiveScene().name;
         posizione["x"] = player.transform.position.x.ToString();
         posizione["y"] = player.transform.position.y.ToString();
         posizione["z"] = player.transform.position.z.ToString();
-        Gestione.GestioneDizionari.ScritturaDizionario(posizione,"Posizione.txt");
+        instanza.timeSystem.Salva();
+        Gestione.GestioneDizionari.ScritturaDizionario(posizione,percorsoSalvataggio + slotSalvataggio + "/" + "Posizione.txt");
         
 
         Debug.Log("Dati salvati");
@@ -243,11 +285,12 @@ public class GameManager : MonoBehaviour
     //Aggiorna i dizionari con i valori attualmente salvati nei file
     public void Carica(){
         caricando=true;
-        stats = Gestione.GestioneDizionari.LetturaDizionario("Statistiche.txt");
-        inventario = Gestione.GestioneDizionari.LetturaInventario("Inventario.txt");
-        posizioniInventario = Gestione.GestioneDizionari.LetturaDizionario("PosizioniInventario.txt");
-        skillApprese = Gestione.GestioneDizionari.LetturaSkillApprese("SkillApprese.txt");
-        player.skillSet = Gestione.GestioneDizionari.LetturaSkillEquipaggiate("SkillEquipaggiate.txt");
+        
+        stats = Gestione.GestioneDizionari.LetturaDizionario(percorsoSalvataggio + slotSalvataggio + "/" + "Statistiche.txt");
+        inventario = Gestione.GestioneDizionari.LetturaInventario(percorsoSalvataggio + slotSalvataggio + "/" + "Inventario.txt");
+        posizioniInventario = Gestione.GestioneDizionari.LetturaDizionario(percorsoSalvataggio + slotSalvataggio + "/" + "PosizioniInventario.txt");
+        skillApprese = Gestione.GestioneDizionari.LetturaSkillApprese(percorsoSalvataggio + slotSalvataggio + "/" + "SkillApprese.txt");
+        player.skillSet = Gestione.GestioneDizionari.LetturaSkillEquipaggiate(percorsoSalvataggio + slotSalvataggio + "/" + "SkillEquipaggiate.txt");
         
         monete = int.Parse(stats["Monete"]);
         player.LoadStats();
@@ -259,10 +302,11 @@ public class GameManager : MonoBehaviour
 
 
         
-        posizione = Gestione.GestioneDizionari.LetturaDizionario("Posizione.txt");
+        posizione = Gestione.GestioneDizionari.LetturaDizionario(percorsoSalvataggio + slotSalvataggio + "/" + "Posizione.txt");
         scena = posizione["Scena"];
         SceneManager.LoadScene(scena);
         player.transform.position = new Vector3(float.Parse(posizione["x"]),float.Parse(posizione["y"]),float.Parse(posizione["z"]));
+        instanza.timeSystem.Carica();
         
 
         Debug.Log("Dati caricati");

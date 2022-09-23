@@ -1,3 +1,4 @@
 Pozione=1
+Quadrifoglio=2
 Coltello=1
 Bastone Quadrifoglio=1
