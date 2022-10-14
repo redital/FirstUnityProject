@@ -44,6 +44,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f40759e21f568d4ab74e9cf22b0e597, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ActiveAllies: []
-  NotActiveAllies: []
+  AllPossibleAllies: {fileID: 11400000, guid: e5aa6ff0030ad2747a5a2b54126e9987, type: 2}
+  MaxAlliesNumberAvailable: 10
   AlliesStartingPositions: []
