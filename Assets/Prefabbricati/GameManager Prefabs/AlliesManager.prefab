@@ -46,4 +46,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AllPossibleAllies: {fileID: 11400000, guid: e5aa6ff0030ad2747a5a2b54126e9987, type: 2}
   MaxAlliesNumberAvailable: 10
-  AlliesStartingPositions: []
+  ActiveAllies: []
+  NotActiveAllies: []
+  AlliesStartingPositionsOffsetFromPlayer:
+  - {x: 1, y: 0, z: 0}
+  - {x: 2, y: 0, z: 0}
+  - {x: -1, y: 0, z: 0}
+  - {x: -2, y: 0, z: 0}
