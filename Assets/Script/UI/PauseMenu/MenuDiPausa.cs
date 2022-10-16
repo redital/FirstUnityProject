@@ -96,8 +96,8 @@ public class MenuDiPausa : MonoBehaviour
         }
 
     }
-    
-    
+
+
     //-------------------------------------------------Inizializzazione del contenuto grafico (sono tutte chiamate nello start)
     private void InizializzaAbilità(){
 
