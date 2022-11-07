@@ -4,5 +4,6 @@ using UnityEngine;
 
 public static class ObserverEventNames
 {
-    public const string EXAMPLEEVENT = "EXAMPLEEVENT";
+    public const string PAUSEGAME = "PAUSEGAME";
+    public const string RESUMEGAME = "RESUMEGAME";
 }

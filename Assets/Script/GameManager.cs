@@ -253,12 +253,14 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void FermaGioco(){
-        Time.timeScale=0;
+    public void FermaGioco()
+    {
+        ObserverEventManager.Trigger<object>(ObserverEventNames.PAUSEGAME,null);
     }
 
-    public void RiprendiGioco(){
-        Time.timeScale=1;
+    public void RiprendiGioco()
+    {
+        ObserverEventManager.Trigger<object>(ObserverEventNames.RESUMEGAME,null);
     }
 
     //Aggiorna i file con i valori attualmente salvati nei dizionari

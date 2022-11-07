@@ -547,14 +547,18 @@ public class MenuDiPausa : MonoBehaviour
         }
     }
 
-    private void Update(){
+    private void Update()
+    {
+        return;
         if (Input.GetKeyDown(KeyCode.P) & !GameManager.instanza.staParlando){
+            
             if(!attivo){
                 MostraMenuDiPausa();
             }
             else{
                 NascondiMenuDiPausa();
             }
+            
         }
         if (anim.GetCurrentAnimatorStateInfo(0).IsName("Attivo") & attivo & !abilitàAppreseAttivo){
             GameManager.instanza.FermaGioco();                // Se l'animazione "Attivo" è in corso allora l'apertura del menù è finita, non faccio lo stesso con "Inattivo" perchè con il inattivo viene dopo l'animazione di uscita ma se il timescale è a 0 non parte proprio l'animazione d''uscita e rimane quindi bloccato
