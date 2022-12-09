@@ -547,7 +547,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8640756497156623732}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: GenericMenuPanel, Assembly-CSharp
         m_MethodName: OpenIfCloseCloseIfOpen
         m_Mode: 1
@@ -1171,7 +1171,6 @@ GameObject:
   - component: {fileID: 6202902386104643123}
   - component: {fileID: 6202902386104643277}
   - component: {fileID: 6202902386104643276}
-  - component: {fileID: 7536771710913236205}
   m_Layer: 5
   m_Name: Inventario
   m_TagString: Untagged
@@ -1239,21 +1238,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &7536771710913236205
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6202902386104643122}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a5c6920048efa1642a08b251b8ebe067, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  PanelsToMove: []
-  PanelsToClose: []
-  IsPanelOpen: 0
 --- !u!1 &6202902386148337003
 GameObject:
   m_ObjectHideFlags: 0
@@ -1446,7 +1430,6 @@ GameObject:
   - component: {fileID: 6202902386315250991}
   - component: {fileID: 6202902386315250990}
   - component: {fileID: 6202902386315250984}
-  - component: {fileID: 4803689935637132245}
   m_Layer: 5
   m_Name: "Abilit\xE0 apprese"
   m_TagString: Untagged
@@ -1544,23 +1527,6 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &4803689935637132245
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6202902386315250988}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1ba0f37babda5fc43bcf7ceb8f98e856, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  PanelsToMove:
-  - {fileID: 7552399457319020863}
-  PanelsToClose:
-  - {fileID: 8640756497156623732}
-  IsPanelOpen: 0
 --- !u!1 &6202902386318713308
 GameObject:
   m_ObjectHideFlags: 0
@@ -3174,7 +3140,6 @@ GameObject:
   - component: {fileID: 6202902387189151741}
   - component: {fileID: 6202902387189151743}
   - component: {fileID: 6202902387189151742}
-  - component: {fileID: 5694190236866717544}
   m_Layer: 5
   m_Name: Statistiche e Armi
   m_TagString: Untagged
@@ -3249,21 +3214,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &5694190236866717544
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6202902387189151740}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0c82106ab718a724cb16f5fc2fc456ed, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  PanelsToMove: []
-  PanelsToClose: []
-  IsPanelOpen: 0
 --- !u!1 &6202902387201955683
 GameObject:
   m_ObjectHideFlags: 0
@@ -3623,7 +3573,6 @@ GameObject:
   - component: {fileID: 6202902387329088967}
   - component: {fileID: 6202902387329088961}
   - component: {fileID: 6202902387329088960}
-  - component: {fileID: 2399488423307869199}
   m_Layer: 5
   m_Name: "Abilit\xE0"
   m_TagString: Untagged
@@ -3691,21 +3640,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &2399488423307869199
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6202902387329088966}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fbf7fd2db00688340803336d9aac7cf2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  PanelsToMove: []
-  PanelsToClose: []
-  IsPanelOpen: 0
 --- !u!1 &6202902387469869700
 GameObject:
   m_ObjectHideFlags: 0
@@ -4286,7 +4220,6 @@ GameObject:
   - component: {fileID: 6448594185103410783}
   - component: {fileID: 774354234722052510}
   - component: {fileID: 5416678129652175051}
-  - component: {fileID: 8640756497156623732}
   m_Layer: 5
   m_Name: Allies
   m_TagString: Untagged
@@ -4384,23 +4317,6 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &8640756497156623732
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6908287258542846492}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 45bfead38b9d81e4e91635563feb5738, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  PanelsToMove:
-  - {fileID: 7552399457319020863}
-  PanelsToClose:
-  - {fileID: 4803689935637132245}
-  IsPanelOpen: 0
 --- !u!1 &9178052092065437105
 GameObject:
   m_ObjectHideFlags: 0
@@ -4453,8 +4369,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89b450f8d6b3ff8438d7aa7ca0522daf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OpeningPosition: {x: 0, y: 0}
+  OpeningDuration: 0
+  ClosingPosition: {x: 0, y: 0}
+  ClosingDuration: 0
   PanelsToMove:
-  - {fileID: 4803689935637132245}
-  - {fileID: 8640756497156623732}
+    m_Keys: []
+    m_Values: []
+  PanelsToMoveDuration: 0
   PanelsToClose: []
   IsPanelOpen: 0
+  RectTransform: {fileID: 0}

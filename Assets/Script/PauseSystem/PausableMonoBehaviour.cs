@@ -1,18 +1,28 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-abstract class PausableMonoBehaviour : MonoBehaviour,IObservable
+public abstract class PausableMonoBehaviour : MonoBehaviour,IObservable
 {
     private bool paused = false;
+
+    private bool Paused
+    {
+        get
+        {
+            return this.paused;
+        }
+        set
+        {
+            paused = value;
+        }
+    }
     
-    private void Awake()
+    protected virtual void Awake()
     {
         this.StartListening();
     }
 
-    private void OnDestroy()
+    protected virtual void OnDestroy()
     {
         this.StopListening();
     }
@@ -34,10 +44,10 @@ abstract class PausableMonoBehaviour : MonoBehaviour,IObservable
         switch (eventName)
         {
             case ObserverEventNames.PAUSEGAME:
-                this.paused = true;
+                this.Paused = true;
                 break;
             case ObserverEventNames.RESUMEGAME:
-                this.paused = false;
+                this.Paused = false;
                 break;
         }
     }
@@ -48,11 +58,16 @@ abstract class PausableMonoBehaviour : MonoBehaviour,IObservable
         {
             this.PausableUpdate();
         }
-        
-        this.NotPausableUpdate();
+    }
+
+    private void FixedUpdate()
+    {
+        if (!this.paused)
+        {
+            this.PausableFixedUpdate();
+        }
     }
 
     protected abstract void PausableUpdate();
-
-    protected abstract void NotPausableUpdate();
+    protected abstract void PausableFixedUpdate();
 }

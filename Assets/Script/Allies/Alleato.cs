@@ -27,11 +27,10 @@ public class Alleato : Fighter
         OnEnable();
     }
 
-
-    // Update is called once per frame
-    protected override void FixedUpdate(){
-        base.FixedUpdate();
-
+    protected override void PausableFixedUpdate()
+    {
+        base.PausableFixedUpdate();
+        
         if (!GameManager.instanza.combatStatus){
             Segui(playerTransform , followDistance);
         }
@@ -53,6 +52,5 @@ public class Alleato : Fighter
                 Attack();
             }
         }
-        
     }
 }

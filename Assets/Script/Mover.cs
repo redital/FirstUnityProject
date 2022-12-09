@@ -5,7 +5,7 @@ using UnityEngine;
 
 using Polarith.Utils;
 
-public class Mover : MonoBehaviour
+public class Mover : PausableMonoBehaviour
 {
     public Sprite davanti;
     public Sprite dietro;
@@ -44,7 +44,12 @@ public class Mover : MonoBehaviour
         *   Oggetto in movimento nelle 4 direzioni principali (lento) = 50%
         *   Oggetto in movimento nelle 4 direzioni principali (veloce) = 6.25%
         *   Oggetto in movimento in diagonale = 12.5%
-    */    
+    */
+
+    protected override void Awake()
+    {
+        base.Awake();
+    }
 
     protected virtual void Start(){
         BoxCollider = GetComponent<BoxCollider2D>();
@@ -219,6 +224,16 @@ public class Mover : MonoBehaviour
         catch {
             
         }
+        
+    }
+
+    protected override void PausableUpdate()
+    {
+        
+    }
+
+    protected override void PausableFixedUpdate()
+    {
         
     }
 }

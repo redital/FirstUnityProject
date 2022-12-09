@@ -31537,10 +31537,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 6202902385871321288, guid: 363d73996aa6afe418d460ddd420a38a, type: 3}
-      propertyPath: m_BlockingMask.m_Bits
-      value: 247
-      objectReference: {fileID: 0}
     - target: {fileID: 6202902385871321291, guid: 363d73996aa6afe418d460ddd420a38a, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -31628,18 +31624,6 @@ PrefabInstance:
     - target: {fileID: 6202902385871321294, guid: 363d73996aa6afe418d460ddd420a38a, type: 3}
       propertyPath: m_Name
       value: Menu di pausa
-      objectReference: {fileID: 0}
-    - target: {fileID: 6202902386578742618, guid: 363d73996aa6afe418d460ddd420a38a, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6202902387201955708, guid: 363d73996aa6afe418d460ddd420a38a, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6202902387802350714, guid: 363d73996aa6afe418d460ddd420a38a, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 363d73996aa6afe418d460ddd420a38a, type: 3}

@@ -33,7 +33,10 @@ public class Fighter : Mover
     protected float immuneTime = 1.0f;
     protected float lastImmune;
 
-    
+    protected override void Awake()
+    {
+        base.Awake();
+    }
 
     protected override void Start(){
         base.Start();
@@ -73,8 +76,11 @@ public class Fighter : Mover
             PV=PVMAX;
         }
     }
+    
+    protected override void PausableFixedUpdate()
+    {
+        base.PausableFixedUpdate();
 
-    protected virtual void FixedUpdate(){
         //Quando si è accumulato almeno un punto abilità questo viene assegnato (ricordo PA è un intero)
         if ((int)Math.Floor(PARecovery)==1)
         {
