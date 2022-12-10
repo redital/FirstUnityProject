@@ -1,85 +1,296 @@
+using System;
 using System.Collections.Generic;
 using DG.Tweening;
+using DG.Tweening.Core;
+using DG.Tweening.Plugins.Options;
+using Sirenix.OdinInspector;
 using UnityEngine;
-using UnityEngine.Rendering;
-using UnityEngine.Serialization;
 
-public abstract class GenericMenuPanel : MonoBehaviour
+public class GenericMenuPanel : MonoBehaviour
 {
-    [Header("Opening Animation")]
-    public Vector2 OpeningFinalPosition;
-    public float OpeningDuration;
-    
-    
-    [Space(10)]
-    [Header("Closing Animation")]
-    public Vector2 ClosingFinalPosition;
-    public float ClosingDuration;
+    [Serializable]
+    private struct GenericMenuPanelMoving
+    {
+        public GenericMenuPanel Panel;
+        public Vector2 Position;
+    }
 
-    [Space(10)]
-    [Header("Panels to move when Animating")]
-    public SerializedDictionary<GenericMenuPanel,Vector2> PanelsToMove;
-    public float PanelsToMoveDuration;
-    
-    [Space(10)]
-    [Header("Panels to close when Animating")]
-    public List<GenericMenuPanel> PanelsToClose;
+    [Serializable]
+    private struct GenericMenuPanelAnimation
+    {
+        public enum Vector2AnimationType
+        {
+            XOnly,
+            YOnly,
+            Full
+        }
 
-    [HideInInspector]
-    public bool IsPanelOpen;
+        public Vector2AnimationType AnimationType;
+        public Vector2 Vector;
+        public float Duration;
+    }
+
+    [Title("General Settings")]
+    [SerializeField] private bool PauseGameOnOpen;
+    [SerializeField] private bool UnpauseGameOnClose;
+    [SerializeField] private KeyCode ChangeStatusWithKey;
+    
+    [Space(20)]
+    [Title("Opening Animation Settings")]
+    [SerializeField] private GenericMenuPanelAnimation openingAnimation;
+
+    [Space(15)]
+    [SerializeField] private GenericMenuPanelMoving[] PanelsToMoveOnOpening;
+    [SerializeField] private float PanelsToMoveOnOpeningDuration;
+    
+    [Space(15)]
+    [SerializeField] private List<GenericMenuPanel> PanelsToCloseOnOpening;
+    
+    
+    [Space(20)]
+    [Title("Closing Animation Settings")]
+    [SerializeField] private GenericMenuPanelAnimation closingAnimation;
+
+    [Space(15)]
+    [SerializeField] private GenericMenuPanelMoving[] PanelsToMoveOnClosing;
+    [SerializeField] private float PanelsToMoveOnClosingDuration;
+    
+    [Space(15)]
+    [SerializeField] private List<GenericMenuPanel> PanelsToCloseOnClosing;
+    
+    
     [HideInInspector]
     public RectTransform RectTransform;
+    
+    [ReadOnly,ShowInInspector,PropertySpace(20)]
+    public bool IsOpen { get; private set; }
+    
+    [ReadOnly,ShowInInspector]
+    public bool IsBeingMoved { get; private set; }
+    public TweenerCore<Vector2, Vector2, VectorOptions> TweenerCorePerformingTheMotion;
+    public bool IsMoving { get; private set; }
+    [HideInInspector]
+    public GenericMenuPanel PanelPerformingTheMotion;
+    private int movingCounter;
+
+    private Vector2 defaultPosition;
 
     private void Awake()
     {
         this.RectTransform = this.GetComponent<RectTransform>();
+        this.defaultPosition = this.RectTransform.anchoredPosition;
     }
-
-    public void OpeningAnimation()
+    
+    private void Update()
     {
-        this.RectTransform.DOAnchorPos(this.OpeningFinalPosition, OpeningDuration);
-
-        foreach (var panel in this.PanelsToMove)
+        if (Input.GetKeyDown(this.ChangeStatusWithKey))
         {
-            var anchoredPosition = panel.Key.RectTransform.anchoredPosition;
-
-            panel.Key.RectTransform.DOAnchorPos(new Vector2(anchoredPosition.x + panel.Value.x,anchoredPosition.y + panel.Value.y), this.PanelsToMoveDuration);
+            this.ChangePanelStatus();
         }
-        
-        this.IsPanelOpen = true;
     }
-
-    public void ClosingAnimation()
+    
+    /// <summary>
+    /// Changes the status of the panel (Open -> Close or Close -> Open)
+    /// To be used on a button
+    /// </summary>
+    public void ChangePanelStatus()
     {
-        this.RectTransform.DOAnchorPos(this.ClosingFinalPosition, ClosingDuration);
-        
-        foreach (var panel in this.PanelsToMove)
+        if (GameManager.instanza.staParlando)
         {
-            var anchoredPosition = panel.Key.RectTransform.anchoredPosition;
-
-            panel.Key.RectTransform.DOAnchorPos(new Vector2(anchoredPosition.x + panel.Value.x,anchoredPosition.y + panel.Value.y), this.PanelsToMoveDuration);
+            return;
         }
-        
-        this.IsPanelOpen = false;
-    }
 
-    public void OpenIfCloseCloseIfOpen()
-    {
-        if (this.IsPanelOpen)
+        if (this.IsOpen)
         {
             this.ClosingAnimation();
+
+            if (this.UnpauseGameOnClose && GameManager.instanza.IsGamePaused)
+            {
+                GameManager.instanza.RiprendiGioco();
+            }
         }
         else
         {
             this.OpeningAnimation();
+            
+            if (this.PauseGameOnOpen && !GameManager.instanza.IsGamePaused)
+            {
+                GameManager.instanza.FermaGioco();
+            }
+            
+        }
+    }
+    
+
+    
+#region OpeningAnimation
+
+    private void OpeningAnimation()
+    {
+        this.IsOpen = true;
+
+        switch (this.openingAnimation.AnimationType)
+        {
+            case GenericMenuPanelAnimation.Vector2AnimationType.XOnly:
+                this.RectTransform.DOAnchorPosX(this.openingAnimation.Vector.x, this.openingAnimation.Duration);
+                break;
+            
+            
+            case GenericMenuPanelAnimation.Vector2AnimationType.YOnly:
+                this.RectTransform.DOAnchorPosY(this.openingAnimation.Vector.y, this.openingAnimation.Duration);
+                break;
+            
+            
+            case GenericMenuPanelAnimation.Vector2AnimationType.Full:
+                this.RectTransform.DOAnchorPos(this.openingAnimation.Vector, this.openingAnimation.Duration);
+                break;
+            
+            
+            default:
+                throw new ArgumentOutOfRangeException();
+        }
+
+        this.MovePanelsOnOpening();
+        this.ClosePanelsOnOpening();
+    }
+    
+    private void MovePanelsOnOpening()
+    {
+        foreach (var panelToBeMoved in this.PanelsToMoveOnOpening)
+        {
+            if (panelToBeMoved.Panel.IsOpen)
+            {
+                if (panelToBeMoved.Panel.IsBeingMoved)
+                {
+                    panelToBeMoved.Panel.TweenerCorePerformingTheMotion.Kill();
+                }
+                
+                panelToBeMoved.Panel.IsBeingMoved = true;
+                panelToBeMoved.Panel.PanelPerformingTheMotion = this;
+                
+                this.IsMoving = true;
+
+                panelToBeMoved.Panel.TweenerCorePerformingTheMotion = panelToBeMoved.Panel.RectTransform
+                                                                 .DOAnchorPos(new Vector2(panelToBeMoved.Position.x,panelToBeMoved.Position.y), this.PanelsToMoveOnOpeningDuration)
+                                                                 .OnComplete( () =>
+                                                                 {
+                                                                     panelToBeMoved.Panel.IsBeingMoved = false;
+                                                                     panelToBeMoved.Panel.TweenerCorePerformingTheMotion = null;
+                                                                     panelToBeMoved.Panel.PanelPerformingTheMotion = null;
+
+                                                                     this.movingCounter++;
+
+                                                                     if (this.movingCounter == this.PanelsToMoveOnOpening.Length)
+                                                                     {
+                                                                         this.movingCounter = 0;
+
+                                                                         this.IsMoving = false;
+                                                                     }
+                                                                 });
+            }
+        }
+    }
+    
+    private void ClosePanelsOnOpening()
+    {
+        foreach (var panel in this.PanelsToCloseOnOpening)
+        {
+            if (panel.IsOpen)
+            {
+                panel.ClosingAnimation();   
+            }
         }
     }
 
-    private void ClosingAnimationForPanelsToClose()
+#endregion OpeningAnimation
+    
+    
+
+#region ClosingAnimation
+
+    private void ClosingAnimation()
     {
-        foreach (var panel in this.PanelsToClose)
+        this.IsOpen = false;
+
+        TweenerCore<Vector2,Vector2,VectorOptions> closingTweenerCore;
+
+        switch (this.openingAnimation.AnimationType)
         {
-            panel.ClosingAnimation();
+            case GenericMenuPanelAnimation.Vector2AnimationType.XOnly:
+                closingTweenerCore = this.RectTransform.DOAnchorPosX(this.closingAnimation.Vector.x, this.closingAnimation.Duration);
+                break;
+            
+            
+            case GenericMenuPanelAnimation.Vector2AnimationType.YOnly:
+                closingTweenerCore = this.RectTransform.DOAnchorPosY(this.closingAnimation.Vector.y, this.closingAnimation.Duration);
+                break;
+            
+            
+            case GenericMenuPanelAnimation.Vector2AnimationType.Full:
+                
+                closingTweenerCore = this.RectTransform.DOAnchorPos(this.closingAnimation.Vector, this.closingAnimation.Duration);
+                break;
+            
+            
+            default:
+                throw new ArgumentOutOfRangeException();
+        }
+
+        closingTweenerCore.OnComplete(() =>
+        {
+            this.RectTransform.anchoredPosition = this.defaultPosition;
+        });
+
+        this.MovePanelsOnClosing();
+        this.ClosePanelsOnClosing();
+    }
+
+    private void ClosePanelsOnClosing()
+    {
+        foreach (var panel in this.PanelsToCloseOnClosing)
+        {
+            if (panel.IsOpen)
+            {
+                panel.ClosingAnimation();   
+            }
         }
     }
+
+    private void MovePanelsOnClosing()
+    {
+        foreach (var panelToBeMoved in this.PanelsToMoveOnClosing)
+        {
+            if (panelToBeMoved.Panel.IsOpen)
+            {
+                if (panelToBeMoved.Panel.IsBeingMoved && this != panelToBeMoved.Panel.PanelPerformingTheMotion)
+                {
+                    return;
+                }
+                
+                panelToBeMoved.Panel.IsBeingMoved = true;
+                panelToBeMoved.Panel.PanelPerformingTheMotion = this;
+                
+                this.IsMoving = true;
+                
+                panelToBeMoved.Panel.TweenerCorePerformingTheMotion = panelToBeMoved.Panel.RectTransform
+                                                                 .DOAnchorPos(new Vector2(panelToBeMoved.Position.x,panelToBeMoved.Position.y), this.PanelsToMoveOnClosingDuration)
+                                                                .OnComplete( () =>
+                                                                {
+                                                                    panelToBeMoved.Panel.IsBeingMoved = false;
+                                                                    panelToBeMoved.Panel.TweenerCorePerformingTheMotion = null;
+                                                                    panelToBeMoved.Panel.PanelPerformingTheMotion = null;
+                                                                    
+                                                                    if (this.movingCounter == this.PanelsToMoveOnOpening.Length)
+                                                                    {
+                                                                        this.movingCounter = 0;
+
+                                                                        this.IsMoving = false;
+                                                                    }
+                                                                });
+            }
+        }
+    }
+
+#endregion ClosingAnimation
+    
 }

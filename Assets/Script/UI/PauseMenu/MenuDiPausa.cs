@@ -1,9 +1,7 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro;
 
 public class MenuDiPausa : MonoBehaviour
 {
@@ -67,34 +65,9 @@ public class MenuDiPausa : MonoBehaviour
 
     public void NascondiMenuDiPausa(){
         GameManager.instanza.RiprendiGioco();      // Rimetto il timescale a 1 altrimenti non può fare l'animazione e rimane tutto bloccato
-        if (abilitàAppreseAttivo)
-        {
-            NascondiAbilitàApprese();
-        }
         anim.SetTrigger("ChiudiMenu");             // Faccio partire l'animazione di uscita del menu
         attivo=false;
         transform.GetChild(0).gameObject.SetActive(false);
-    }
-
-    public void MostraAbilitàApprese(){
-        if (attivo)
-        {
-            GameManager.instanza.RiprendiGioco(); 
-            //                                      // Non metto il timescale qui perchè altrimenti freeza subito tutto e non parte l'animazione, anche metterlo dopo è uguale, devo aspettare che l'animazione sia finita
-            anim.SetTrigger("ApriAbilitàApprese");            // Faccio partire l'animazione di entrata del menu
-            abilitàAppreseAttivo=true;
-        }
-        
-    }
-
-    public void NascondiAbilitàApprese(){
-        if (attivo)
-        {
-            GameManager.instanza.RiprendiGioco();      // Rimetto il timescale a 1 altrimenti non può fare l'animazione e rimane tutto bloccato
-            anim.SetTrigger("ChiudiAbilitàApprese");          // Faccio partire l'animazione di uscita del menu
-            abilitàAppreseAttivo=false;            
-        }
-
     }
 
 
