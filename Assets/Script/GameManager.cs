@@ -1,15 +1,16 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
 using System.IO;
-
+using Sirenix.OdinInspector;
 using static Gestione.GestioneDizionari;    //Penso possa essere rimosso e fare tutto in maniera molto più semplice
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager instanza;
+
+    [ReadOnly]
+    public bool IsGamePaused;
 
     /*
     Deve sempre esserci una ed una sola instanza di tipo GameManager
@@ -259,12 +260,16 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void FermaGioco(){
-        Time.timeScale=0;
+    public void FermaGioco()
+    {
+        this.IsGamePaused = true;
+        ObserverEventManager.Trigger<object>(ObserverEventNames.PAUSEGAME,null);
     }
 
-    public void RiprendiGioco(){
-        Time.timeScale=1;
+    public void RiprendiGioco()
+    {
+        this.IsGamePaused = false;
+        ObserverEventManager.Trigger<object>(ObserverEventNames.RESUMEGAME,null);
     }
 
     //Aggiorna i file con i valori attualmente salvati nei dizionari

@@ -29,11 +29,11 @@ public class Enemy : Fighter
         // in caso si volesse usare una hitbox diversa si deve creare un GameObject (visto che ogni GameObject può avere un solo collider) e usare GetChild al posto di transform
         SetSeek(playerTransform);
     }
-    
-    
-    // Update is called once per frame
-    protected override void FixedUpdate(){
-        base.FixedUpdate();
+
+    protected override void PausableFixedUpdate()
+    {
+        base.PausableFixedUpdate();
+        
         //Controllo se c'è collisione con il giocatore
         hitbox.OverlapCollider(filter,hits);
         collidingWithPlayer = false;

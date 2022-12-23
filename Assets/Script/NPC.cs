@@ -4,10 +4,9 @@ using UnityEngine;
 
 public class NPC : Mover
 {
-
-    void Update()
+    protected override void PausableUpdate()
     {   
-        Wandering();   
+        Wandering();  
     }
 
 }

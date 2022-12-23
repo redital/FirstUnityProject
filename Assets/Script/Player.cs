@@ -1,6 +1,4 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 
@@ -15,6 +13,21 @@ public class Player : Fighter
     private int lastSkill;
 
     public Inventario inventario;
+
+    public static Player Instance { get; private set; }
+
+    protected override void Awake()
+    {
+        base.Awake();
+        if (Instance != null && Instance != this) 
+        { 
+            Destroy(this); 
+        } 
+        else 
+        { 
+            Instance = this; 
+        } 
+    }
 
     protected override void Start(){
         base.Start();                   // Per non perdere l'assegnazione del BoxCollider (da Mover) e dell'arma (da Fighter)
@@ -59,12 +72,14 @@ public class Player : Fighter
         DEF=int.Parse(GameManager.instanza.stats["DEF"]);
     }
 
-    protected override void FixedUpdate(){
-        base.FixedUpdate();
+    protected override void PausableFixedUpdate()
+    {
+        base.PausableFixedUpdate();
+
         //Imposto il movimento del giocatore in base agli input ricevuti
         float x = Input.GetAxisRaw("Horizontal");
         float y = Input.GetAxisRaw("Vertical");
-        
+
         UpdateMotor(new Vector3(x,y,0));
 
         //Per attaccare bisogna premere la barra spaziatrice.
@@ -119,6 +134,5 @@ public class Player : Fighter
         /*
         Le funzioni Update (e le sue varianti) vengono richiamate ad ogni frame, gestiamo quindi qui tutti gli input.
         */
-        
     }
 }
