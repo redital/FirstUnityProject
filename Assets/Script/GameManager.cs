@@ -57,10 +57,12 @@ public class GameManager : MonoBehaviour
     private string percorsoSalvataggio = "Assets/Salvataggi/Slot";
     public int slotSalvataggio=1;
     
+    /*
     // Queste variabili non servono davvero sono state messe per comodità di testing, sono solo copie dei dati salvati nei dizionari che dichiarate pubbliche appaiono nell'inspector, così posso vederle cambiare in tempo reale
     public int monete;
     public string scena;
     public Vector3 position;
+    */
 
     // Riferimenti alla UI
     public MenuDiPausa menuDiPausa;
@@ -76,6 +78,9 @@ public class GameManager : MonoBehaviour
 
     // Riferimento al sistema di giorni e orari
     public TimeSystem timeSystem;
+    
+    // Gestione Quest Attive
+    public GameObject quests;
 
     // Indicatore del se si sta combattendo o meno
     public List<Enemy> chasingEnemy = new List<Enemy>();
@@ -100,6 +105,7 @@ public class GameManager : MonoBehaviour
 
     // Lista di tutti gli ogetti
     public List<Item> itemList = new List<Item>();
+
 
 
     
@@ -292,7 +298,7 @@ public class GameManager : MonoBehaviour
         skillApprese = Gestione.GestioneDizionari.LetturaSkillApprese(percorsoSalvataggio + slotSalvataggio + "/" + "SkillApprese.txt");
         player.skillSet = Gestione.GestioneDizionari.LetturaSkillEquipaggiate(percorsoSalvataggio + slotSalvataggio + "/" + "SkillEquipaggiate.txt");
         
-        monete = int.Parse(stats["Monete"]);
+        //monete = int.Parse(stats["Monete"]);
         player.LoadStats();
 
 
@@ -303,8 +309,8 @@ public class GameManager : MonoBehaviour
 
         
         posizione = Gestione.GestioneDizionari.LetturaDizionario(percorsoSalvataggio + slotSalvataggio + "/" + "Posizione.txt");
-        scena = posizione["Scena"];
-        SceneManager.LoadScene(scena);
+        //scena = posizione["Scena"];
+        SceneManager.LoadScene(posizione["Scena"]);
         player.transform.position = new Vector3(float.Parse(posizione["x"]),float.Parse(posizione["y"]),float.Parse(posizione["z"]));
         instanza.timeSystem.Carica();
         

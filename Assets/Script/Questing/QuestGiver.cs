@@ -6,24 +6,40 @@ public class QuestGiver : NPC {
     public bool AssignedQuest;
     public bool Helped;
 
-    [SerializeField]
+    //[SerializeField]
     private GameObject quests;
 
     [SerializeField]
     private string questType;
     private Quest Quest;
+
+    protected override void Start(){
+        base.Start();
+        quests=GameManager.instanza.quests;
+
+        /*
+        if (quests.GetComponent<System.Type.GetType(questType)>().gameObject!=null )
+        {
+            /if ((Quest)quests.GetComponent<System.Type.GetType(questType)>().Completed==false)
+            {
+                AssignedQuest=true;
+                Quest=(Quest)quests.GetComponent<System.Type.GetType(questType)>()
+            }
+        }
+        */
+    }
     
     public string[] GetFrasiAssegnazione(){
-        return Quest.frasiAssegnazione;
+        return Quest.GetFrasiAssegnazione();
     }
     public string[] GetFrasiConclusione(){
-        return Quest.frasiConclusione;
+        return Quest.GetFrasiConclusione();
     }
     public string[] GetFrasiIncompleta(){
-        return Quest.frasiIncompleta;
+        return Quest.GetFrasiIncompleta();
     }
     public string[] GetFrasiCompleta(){
-        return Quest.frasiCompleta;
+        return Quest.GetFrasiCompleta();
     }
 
     public void AssignQuest()

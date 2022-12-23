@@ -72,6 +72,7 @@ public class Player : Fighter
             Attack();
         }
 
+        //Per usare le skill bidogna premere il numero corrispondente
         if(Input.inputString != "" & !usingSkill){
             int indice;                                                         //numero premuto
             bool is_a_number = Int32.TryParse(Input.inputString, out indice);   //controllo se è effettivamente un numero e nel caso lo memorizzo

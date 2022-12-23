@@ -192,8 +192,12 @@ public class Mover : MonoBehaviour
         
 
         //controllo collisioni asse y
-        hit=Physics2D.BoxCast(transform.position,BoxCollider.size,0,new Vector2(0,moveDelta.y),Mathf.Abs(moveDelta.y*Time.deltaTime*speed),LayerMask.GetMask("Actor","Blocking"));
+        hit=Physics2D.BoxCast(transform.position,BoxCollider.size,0,new Vector2(0,moveDelta.y),Mathf.Abs(moveDelta.y*Time.deltaTime*speed),LayerMask.GetMask("Blocking"));
 
+        if (hit.collider==null){
+            hit=Physics2D.BoxCast(transform.position,BoxCollider.size,0,new Vector2(0,moveDelta.y),Mathf.Abs(moveDelta.y*Time.deltaTime*speed/2),LayerMask.GetMask("Actor"));
+        }
+        
         if (hit.collider==null){
             if (!Mathf2.Approximately(moveDelta.y, 0)){
                 transform.Translate(0,moveDelta.y*Time.deltaTime*speed,0);
@@ -202,7 +206,10 @@ public class Mover : MonoBehaviour
         }
 
         //controllo collisioni asse x
-        hit=Physics2D.BoxCast(transform.position,BoxCollider.size,0,new Vector2(moveDelta.x,0),Mathf.Abs(moveDelta.x*Time.deltaTime*speed),LayerMask.GetMask("Actor","Blocking"));
+        hit=Physics2D.BoxCast(transform.position,BoxCollider.size,0,new Vector2(moveDelta.x,0),Mathf.Abs(moveDelta.x*Time.deltaTime*speed),LayerMask.GetMask("Blocking"));
+        if (hit.collider==null){
+            hit=Physics2D.BoxCast(transform.position,BoxCollider.size,0,new Vector2(moveDelta.x,0),Mathf.Abs(moveDelta.x*Time.deltaTime*speed/2),LayerMask.GetMask("Actor"));
+        }
 
         if (hit.collider==null){
             if (!Mathf2.Approximately(moveDelta.x, 0)){

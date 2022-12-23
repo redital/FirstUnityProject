@@ -9,4 +9,4 @@ PM=6
 ATK=3
 DEF=4
 Monete=0
-Arma=Spada Goblin
+Arma=Coltello

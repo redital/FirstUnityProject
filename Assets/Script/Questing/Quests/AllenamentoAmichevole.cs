@@ -9,6 +9,12 @@ public class AllenamentoAmichevole : Quest
         Debug.Log("Allenamento amichevole");
         QuestName = "Allenamento amichevole";
         Description = "Sconfiggi Alioh";
+
+        frasiAssegnazione = new string[]{"Fra secondo me sei più forte di Alioh", "Fammi vedere come gli fai il culo"};
+        frasiConclusione = new string[]{"Sei un grande, è stato fantastico", "Questo è per lo spettacolo che ci hai offerto"};
+        frasiIncompleta = new string[]{"Che c'è? Te la stai facendo sotto?"};
+        frasiCompleta = new string[]{"Quello sì che è stato uno spettacolo"};
+
         ItemRewards.Add(GameManager.instanza.itemList.Find(x => x.name=="Pozione"),2);
         ItemRewards.Add(GameManager.instanza.itemList.Find(x => x.name=="Carta da gioco"),3);
         ExperienceReward = 50;
@@ -21,5 +27,18 @@ public class AllenamentoAmichevole : Quest
         };
 
         Goals.ForEach(g => g.Init());
+    }
+
+    public override string[] GetFrasiAssegnazione(){
+        return frasiAssegnazione;
+    }
+    public override string[] GetFrasiConclusione(){
+        return frasiConclusione;
+    }
+    public override string[] GetFrasiIncompleta(){
+        return frasiIncompleta;
+    }
+    public override string[] GetFrasiCompleta(){
+        return frasiCompleta;
     }
 }

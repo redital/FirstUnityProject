@@ -25,10 +25,23 @@ public class Quest : MonoBehaviour {
     public Dictionary<Item, int> ItemRewards = new Dictionary<Item, int>();
     public bool Completed;
 
-    public string[] frasiAssegnazione = new string[]{"Fra secondo me sei più forte di Alioh", "Fammi vedere come gli fai il culo"};
-    public string[] frasiConclusione = new string[]{"Sei un grande, è stato fantastico", "Questo è per lo spettacolo che ci hai offerto"};
-    public string[] frasiIncompleta = new string[]{"Che c'è? Te la stai facendo sotto?"};
-    public string[] frasiCompleta = new string[]{"Quello sì che è stato uno spettacolo"};
+    public string[] frasiAssegnazione = new string[]{""};
+    public string[] frasiConclusione = new string[]{""};
+    public string[] frasiIncompleta = new string[]{""};
+    public string[] frasiCompleta = new string[]{""};
+
+    public virtual string[] GetFrasiAssegnazione(){
+        return frasiAssegnazione;
+    }
+    public virtual string[] GetFrasiConclusione(){
+        return frasiConclusione;
+    }
+    public virtual string[] GetFrasiIncompleta(){
+        return frasiIncompleta;
+    }
+    public virtual string[] GetFrasiCompleta(){
+        return frasiCompleta;
+    }
 
 
     public void CheckGoals()
